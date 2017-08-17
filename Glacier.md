@@ -384,8 +384,7 @@ If you encounter **anything** **that is different** from what the protocol says 
 
 # Setup Protocol
 
-## Setup Protocol, Section I:
-Verify and Print Protocol Document
+## Setup Protocol, Section I: Verify and Print Protocol Document
 
 The Setup Protocol is used to prepare hardware, and download and verify needed software & documentation.
 
@@ -519,8 +518,7 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
 You are strongly encouraged to use the printed copy as a checklist, physically marking off each step as you complete it. This reduces the risk of execution error by ensuring you don't lose your place.
 
-## Setup Protocol, Section II:
-Prepare Non-Quarantined Hardware
+## Setup Protocol, Section II: Prepare Non-Quarantined Hardware
 
 1. Select two (2) computers which will be used as "Setup Computers" to set up USB drives.
 
@@ -548,8 +546,7 @@ Prepare Non-Quarantined Hardware
 
 6. Once you have a clean virus scan, your Setup Computers are ready.
 
-## Setup Protocol, Section III:
-Prepare Quarantined Hardware
+## Setup Protocol, Section III: Prepare Quarantined Hardware
 
 1. Separate your quarantined hardware into two parallel sets. Each set should contain:
 
@@ -592,8 +589,7 @@ Prepare Quarantined Hardware
 
 5. Fully charge both laptops.
 
-## Setup Protocol, Section IV:
-Create Boot USBs
+## Setup Protocol, Section IV: Create Boot USBs
 
 Because the eternally quarantined computers cannot connect to a network, they cannot download software. We'll be using USB drives to transfer the necessary software to them.
 
@@ -929,8 +925,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
     13. Repeat steps 1-7 using the SETUP 2 computer, SETUP 2 BOOT USB, and Q2 BOOT USB.
 
-## Setup Protocol, Section V:
-Create App USBs
+## Setup Protocol, Section V: Create App USBs
 
 We will prepare two (2) "Quarantined App USB" drives with the software needed to execute the remainder of the protocol. These are the USB drives you labeled "Q1 APP" and "Q2 APP" in Section III.
 
@@ -1130,8 +1125,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
 10. Find a container in which to store all of your labeled hardware, along with the Glacier document hardcopy, when you are finished.
 
-## Setup Protocol, Section VI:
-Prepare Quarantined Workspaces
+## Setup Protocol, Section VI: Prepare Quarantined Workspaces
 
 This section is meant to be done immediately before executing the Deposit or Withdrawal protocols. 
 
@@ -1220,8 +1214,7 @@ If you are executing the Setup Protocol for the first time and do **not** plan o
 
 # Deposit Protocol
 
-## Deposit Protocol, Section I:
-Generate Cold Storage Data
+## Deposit Protocol, Section I: Generate Cold Storage Data
 
 The Deposit Protocol is used to transfer bitcoins into high-security cold storage. 
 
@@ -1357,8 +1350,7 @@ In this protocol, the total number of private keys you're creating will be refer
 
             5. Seek assistance if discrepancies persist.
 
-## Deposit Protocol, Section II:
-Transfer Cold Storage Data to Paper
+## Deposit Protocol, Section II: Transfer Cold Storage Data to Paper
 
 In this section, you'll move the cold storage data you generated in Section I from the quarantined computing environments onto physical paper. This will be done using a combination hand transcription and [QR codes](https://en.wikipedia.org/wiki/QR_code).
 
@@ -1507,8 +1499,7 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
     23. Put your Cold Storage Information Packets somewhere out of sight for the moment.
 
-## Deposit Protocol, Section III:
-Test Deposit and Withdrawal 
+## Deposit Protocol, Section III: Test Deposit and Withdrawal 
 
 It's important to make sure everything is working properly before proceeding. You'll verify this by making a token deposit to, and withdrawal from, your cold storage address.
 
@@ -1530,8 +1521,7 @@ Depositing funds requires the Internet, and does not require handling any critic
 
     4. Wait for the Bitcoin network to confirm the transaction at least once. (Instructions for doing this are in the Withdrawal protocol.)
 
-## Deposit Protocol, Section IV:
-Deposit Execution
+## Deposit Protocol, Section IV: Deposit Execution
 
 Depositing funds requires the Internet, and does not require handling any critically sensitive cold storage data, so you can use any Internet-connected computer for this section.
 
@@ -1579,8 +1569,7 @@ Your funds are now secured in cold storage.
 
 If this was your first deposit to this cold storage address, proceed to the next section. Otherwise, you have completed the Deposit Protocol.
 
-## Deposit Protocol, Section V:
-Store Cold Storage Data
+## Deposit Protocol, Section V: Store Cold Storage Data
 
 1. Shut down any nearby computers or smartphones, or other devices with cameras.
 
@@ -1628,8 +1617,7 @@ You have finished securing your cold storage funds.
 
 # Withdrawal Protocol
 
-## Withdrawal Protocol, Section I:
-Preparation
+## Withdrawal Protocol, Section I: Preparation
 
 The Withdrawal Protocol is used to transfer bitcoins out of high-security cold storage. 
 
@@ -1738,8 +1726,7 @@ On any Internet-connected computer:
 
         14. Write that number down on a piece of paper labeled "Fee rate".
 
-## Withdrawal Protocol, Section II:
-Transaction Construction
+## Withdrawal Protocol, Section II: Transaction Construction
 
 In this section, we construct a "signed transaction" in our quarantined environments, verify it, and then use QR codes to extract it from the quarantined environments (for execution in the following section).
 
@@ -1897,8 +1884,7 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
  The recommended Acer laptop may require you to hold down the power button for several seconds to complete the shutdown.
 
-## Withdrawal Protocol, Section III:
-Transaction Execution & Verification
+## Withdrawal Protocol, Section III: Transaction Execution & Verification
 
 On any Internet-connected computer:
 
@@ -1992,8 +1978,7 @@ We recommend the Maintenance Protocol be executed **six months** after the initi
 
 # Appendices
 
-## Appendix A:
-Exceptional Security Measures
+## Appendix A: Exceptional Security Measures
 
 Glacier is designed to provide strong protection for almost everyone -- even those storing many millions of dollars.
 
@@ -2063,10 +2048,7 @@ We do not recommend considering these measures unless you feel you have a strong
 
 * **Conventional personal security:** Home surveillance systems, bodyguards, etc.
 
-## Appendix B:
-Identified Attack Surface & Failure Points
-
- 
+## Appendix B: Identified Attack Surface & Failure Points
 
 This list describes the attack surface and other failure points for Glacier. We include only attacks and failures limited in scope to specific coins. Attacks and failures related to the Bitcoin ecosystem as a whole (newly discovered cryptographic flaws, critical Bitcoin protocol security or scalability failures, etc.) are not included as most are equally likely to impact the value of all Bitcoins whether or not they are secured with Glacier.
 
@@ -2094,7 +2076,7 @@ Most attacks require the presence of malware, either in or near the quarantined 
 
     * Malware on Setup Computer infects Setup USB software AND malware on Setup USB infects Quarantined USB software AND checksum verifications produces false positives
 
-        * Checksum false positives could happen becuase:
+        * Checksum false positives could happen because:
 
             * Malware might interfere with the verification process (or the display of its results).
 
@@ -2171,8 +2153,7 @@ The protocol document does begin with document self-verification on one Setup Co
 
 * Design failure in the protocol misses or inadequately addresses a risk
 
-## Appendix C:
-Possible Future Glacier Improvements
+## Appendix C: Possible Future Glacier Improvements
 
 ### Don't store electronic copy of Cold Storage Information Page
 
@@ -2218,8 +2199,7 @@ Use an entropy test suite such as [ent](http://www.fourmilab.ch/random/) to veri
 
 Currently, we download Bitcoin Core on to the Quarantined App USBs via the Ubuntu Package archive. However, because Bitcoin is a privately-managed archive, it only hosts the latest release, rather than all previous versions. This prevents us from pinning the protocol to use a specific release (desireable for ongoing compatibility).
 
-## Appendix D:
-Recommended Bitcoin Ecosystem Improvements
+## Appendix D: Recommended Bitcoin Ecosystem Improvements
 
 The Glacier protocol is lengthy and complex because the tools for high-security cold storage do not exist. This appendix briefly outlines some of the tool functionality that would address this gap. For additional technical details, see the [Glacier design document](https://glacierprotocol.org/releases/Glacier%20Design%20Document%20v0.9%20Beta.pdf).
 
@@ -2275,8 +2255,7 @@ Until robust cold storage hardware wallets are created, improvements in Bitcoin 
 
     * Promotes security through ease of use, and reduces risk of transcription errors
 
-## Appendix E:
-Release Notes
+## Appendix E: Release Notes
 
 ### Version 0.91:
 
@@ -2318,8 +2297,7 @@ Workarounds have been implemented for both issues.
 
 Initial non-public release to selected reviewers.
 
-## Appendix F:
-Acknowledgments
+## Appendix F: Acknowledgments
 
 The [Glacier website](https://glacierprotocol.org) lists the project's leads and security advisors.
 
