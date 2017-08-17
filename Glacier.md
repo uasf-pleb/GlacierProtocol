@@ -3,7 +3,7 @@
 
 **A Protocol for High-Security Bitcoin Storage**
 
-**Version 0.91 Beta** (Beta Release Note:  This protocol is complete, believed to be secure, and is being used today to secure real money. However, as this is the initial public release, it has not been widely tested by the global community.)
+**Version 0.91 Beta** (Beta Release Note: This protocol is complete, believed to be secure, and is being used today to secure real money. However, as this is the initial public release, it has not been widely tested by the global community.)
 
 **License**
 
@@ -60,7 +60,7 @@ If you like, you may review the [Glacier design document](https://glacierprotoco
 
 Let's start by assessing whether Glacier is right for you.
 
-There is no such thing as perfect security. There are only *degrees* of security, and those degrees come at a *cost* (in time, money, convenience, etc.)  So the first question is:  How much security are you willing to invest in?
+There is no such thing as perfect security. There are only *degrees* of security, and those degrees come at a *cost* (in time, money, convenience, etc.) So the first question is: How much security are you willing to invest in?
 
 For most people, most of the time, the authors recommend storing Bitcoin using a high-quality online storage service. The pros and cons of the various online services are beyond the scope of this document, but most popular ones are fairly secure and easy to use. Some popular options are [Blockchain](http://blockchain.info), [Coinbase](http://coinbase.com), [Gemini](https://gemini.com), and [Kraken](http://kraken.com).
 
@@ -68,7 +68,7 @@ However, all online storage services still come with some notable risks which se
 
 1. **Identity spoofing:** Your account on the service could be hacked (including through methods such as identity theft, where someone convinces the service they are you).
 
-2. **Network exposure:  **Online services still need to transmit security-critical information over the Internet, which creates an opportunity for that information to be stolen. In contrast, self-managed storage can be done with no network exposure.
+2. **Network exposure:** Online services still need to transmit security-critical information over the Internet, which creates an opportunity for that information to be stolen. In contrast, self-managed storage can be done with no network exposure.
 
 3. **Under constant attack:** Online services can be hacked by attackers from anywhere in the world. People know these services store lots of funds, which makes them much larger targets. If there's a flaw in their security, it's more likely to be found and exploited.
 
@@ -92,7 +92,7 @@ Glacier focuses exclusively on self-managed storage.
 
 Many people who choose self-managed storage (as opposed to an online storage service) use "hardware wallets" such as the [Trezor](https://bitcointrezor.com), [Ledger](https://www.ledgerwallet.com), and [KeepKey](https://www.keepkey.com) to store their bitcoins. While these are great products that provide strong security, Glacier is intended to offer an even higher level of protection than today's hardware wallets can provide.
 
-The primary security consideration is that all hardware wallets today operate via a physical USB link to a regular computer. While they employ extensive safeguards to prevent any sensitive data (such as private keys) from being transmitted over this connection, it's possible that an undiscovered vulnerability could be exploited by malware to steal private keys from the device. (For details on this and other security considerations, see the "No Hardware Wallets" section of the Glacier design document.)  
+The primary security consideration is that all hardware wallets today operate via a physical USB link to a regular computer. While they employ extensive safeguards to prevent any sensitive data (such as private keys) from being transmitted over this connection, it's possible that an undiscovered vulnerability could be exploited by malware to steal private keys from the device. (For details on this and other security considerations, see the "No Hardware Wallets" section of the Glacier design document.) 
 
 As with online multisig vaults, many people *do* use hardware wallets to store sizeable amounts of money. We personally recommend Glacier for large investments, but ultimately it's a personal decision based on your risk tolerance and costs you're willing to pay (in money and time) for security.
 
@@ -116,7 +116,7 @@ Online keys are inherently exposed to hackers. You therefore need to make sure y
 
 ### Paper Key Storage
 
-Because the private key is a relatively small piece of information, it can be stored on paper as easily as it can be stored on a computer. And when it comes to key storage, paper has various advantages compared to computers:  It's always offline (no chance of accidentally connecting it to the Internet!), it's easy & cheap to make multiple copies for backups (and different keys for multisignature security -- see below), and it's not susceptible to mechanical failure.
+Because the private key is a relatively small piece of information, it can be stored on paper as easily as it can be stored on a computer. And when it comes to key storage, paper has various advantages compared to computers: It's always offline (no chance of accidentally connecting it to the Internet!), it's easy & cheap to make multiple copies for backups (and different keys for multisignature security -- see below), and it's not susceptible to mechanical failure.
 
 For these reasons, Glacier uses paper to store all keys.
 
@@ -152,7 +152,7 @@ Multisignature security protects against the following scenarios:
 
 Below are common options for withdrawal policies. You will need to select one before beginning the protocol.
 
-#### Option 1:  Self-custody of keys
+#### Option 1: Self-custody of keys
 
 Our default recommendation is a 2-of-4 withdrawal policy where you manage all of your own keys (i.e. you do not entrust any to the custody of friends or family). 2-of-4 means there are four keys, and any two of those keys can be combined to access your money, ensuring access even if two keys are lost or stolen.
 
@@ -166,7 +166,7 @@ It's important to think about estate planning -- making arrangements for your de
 
 If you have a living trust, one option may be to have your trust as the co-owner of your safe deposit box. That generally allows a successor trustee to access the box.)
 
-#### Option 2:  Distributed custody of keys
+#### Option 2: Distributed custody of keys
 
 Another option is to distribute some of your keys to individuals who you trust ("signatories"). This can offer some advantages:
 
@@ -178,7 +178,7 @@ Another option is to distribute some of your keys to individuals who you trust (
 
 However, there are significant drawbacks:
 
-* **Privacy:  **Other signatories will have the ability to see your balance. (Technical details:  Every private key needs to be packaged with the multisig redemption script (since losing all redemption scripts is just as bad as losing all keys). Redemption scripts, however, allow one to view funds. An alternate version of this protocol could be created using a different multisig approach besides P2SH transactions, which would eliminate the ability of signatories to view balances; see Appendix C for details.)
+* **Privacy:** Other signatories will have the ability to see your balance. (Technical details: Every private key needs to be packaged with the multisig redemption script (since losing all redemption scripts is just as bad as losing all keys). Redemption scripts, however, allow one to view funds. An alternate version of this protocol could be created using a different multisig approach besides P2SH transactions, which would eliminate the ability of signatories to view balances; see Appendix C for details.)
 
 * **Signatory collusion:** Although possessing one key won't allow a signatory to access your funds, two signatories might collude with each other to steal your money.
 
@@ -186,9 +186,9 @@ However, there are significant drawbacks:
 
 * **Signatory safety:** Giving your signatories custody of a valuable key may expose them to the risk of targeted physical theft. 
 
-* **Kidnapping risk:** If you anticipate traveling in [high-crime areas with kidnapping risk](http://www.nytimes.com/2012/05/03/business/kidnapping-becomes-a-growing-travel-risk.html), your funds will be at greater risk because you'll have the ability to access them remotely (by contacting your signatories and asking for their keys). (Financially-motivated kidnapping hinges on your ability to access funds to give to the kidnappers. If you are literally unable to access additional funds (because the keys are stored in remote vaults which you must be physically present to access, as opposed to held by friends or family who you can call), kidnappers will have no incentive to hold you. )
+* **Kidnapping risk:** If you anticipate traveling in [high-crime areas with kidnapping risk](http://www.nytimes.com/2012/05/03/business/kidnapping-becomes-a-growing-travel-risk.html), your funds will be at greater risk because you'll have the ability to access them remotely (by contacting your signatories and asking for their keys). (Financially-motivated kidnapping hinges on your ability to access funds to give to the kidnappers. If you are literally unable to access additional funds (because the keys are stored in remote vaults which you must be physically present to access, as opposed to held by friends or family who you can call), kidnappers will have no incentive to hold you.)
 
-For distributed custody, we recommend a 2-of-5 withdrawal policy. The extra key (5 keys, rather than the recommended 4 keys in Option 1) is recommended since you have less control over whether a signatory effectively protects their key against theft or loss.. (If you have estate planning arrangements which you are confident will allow your agents to access the keys in your custody when needed, you should be fine with 4 keys instead of 5 (two keys going to trusted signatories rather than three). Make sure your executors and signatories know to get in touch with each other when needed.)  
+For distributed custody, we recommend a 2-of-5 withdrawal policy. The extra key (5 keys, rather than the recommended 4 keys in Option 1) is recommended since you have less control over whether a signatory effectively protects their key against theft or loss.. (If you have estate planning arrangements which you are confident will allow your agents to access the keys in your custody when needed, you should be fine with 4 keys instead of 5 (two keys going to trusted signatories rather than three). Make sure your executors and signatories know to get in touch with each other when needed.) 
 
 We also recommend keeping at least two keys in your own custody (in different locations) so that you retain the ability to access your own funds.
 
@@ -208,7 +208,7 @@ This bulk of the Glacier protocol consists of ways to safeguard against theft of
 
 ## Parallel Hardware Stacks
 
-There is a class of attacks which rely not on *stealing* your sensitive data (e.g. private keys), but in subverting the process of *generating* your sensitive data so it can be more easily guessed by a third party. (For example, a variant of the Trojan.Bitclip attack which replaces keys displayed on your screen (or keys stored in your clipboard) with insecure keys.)  We call this "flawed data."
+There is a class of attacks which rely not on *stealing* your sensitive data (e.g. private keys), but in subverting the process of *generating* your sensitive data so it can be more easily guessed by a third party. (For example, a variant of the Trojan.Bitclip attack which replaces keys displayed on your screen (or keys stored in your clipboard) with insecure keys.) We call this "flawed data."
 
 Because we are generating our data in eternally quarantined environments, any malware infection attempting this is unlikely to have come from your other computers -- it would likely have already been present when the quarantined system arrived from the manufacturer. (For example, the Lenovo rootkit or this Dell firmware malware infection.)
 
@@ -226,7 +226,7 @@ The end result of the Glacier protocol is a set of paper information packets, on
 
 * One **private key** -- an alphanumeric string used to secure the funds
 
-* The **cold storage address** (Technical details:  The Glacier protocol reuses Bitcoin addresses. See the design document for a detailed analysis.) -- an alphanumeric string designating the virtual "location" of the funds
+* The **cold storage address** (Technical details: The Glacier protocol reuses Bitcoin addresses. See the design document for a detailed analysis.) -- an alphanumeric string designating the virtual "location" of the funds
 
 * The **"redemption script"** -- an additional code needed to access funds, shared by all private keys. 
 
@@ -256,7 +256,7 @@ This is true not just of individuals, but entities. That is, any online wallet s
 
 If this is a concern for you, the easiest way to keep your cold storage balance private from a particular entity is to route the payment through one (or more) intermediary addresses before sending it to your cold storage address, with a few transactions going to each intermediate address. This does not provide perfect privacy, but each intermediate address provides increasing levels of obfuscation and uncertainty.
 
-If privacy is very important to you, you might consider using a service like [Shapeshift](https://shapeshift.io/#/coins) to exchange your Bitcoins for an more anonymous cryptocurrency, such as [Monero](http://monero.org), and then exchange them back to Bitcoins. ( This guide gives additional detail about how to increase Bitcoin anonymity using Monero & Tor. )  However, this will cost you fees, and importantly, it requires you trust the operator of the exchange service not to steal or lose your funds.
+If privacy is very important to you, you might consider using a service like [Shapeshift](https://shapeshift.io/#/coins) to exchange your Bitcoins for an more anonymous cryptocurrency, such as [Monero](http://monero.org), and then exchange them back to Bitcoins. ( This guide gives additional detail about how to increase Bitcoin anonymity using Monero & Tor.) However, this will cost you fees, and importantly, it requires you trust the operator of the exchange service not to steal or lose your funds.
 
 ## Lower-security Protocol Variants
 
@@ -280,13 +280,13 @@ For some additional security precautions beyond those provided in the standard p
 
 Glacier has been written and tested around these specific equipment recommendations.
 
-### Eternally quarantined hardware:  Set 1
+### Eternally quarantined hardware: Set 1
 
 * Factory-sealed computer with 2 USB ports (We'll be using two USB drives at the same time. If the computer has only one USB port, you'd need to use a USB hub, which is a separate piece of USB hardware subject to malware infection of its firmware.) and a camera (For reading QR codes.) [Amazon: [2016 Dell Inspiron 11.6"](https://www.amazon.com/Dell-Inspiron-Celeron-Processor-Windows/dp/B01H7Q4LG8/ref=sr_1_14?s=pc&ie=UTF8&qid=1471767727&sr=1-14&keywords=inspiron&refinements=p_85%3A2470955011)]
 
 * Two (2) factory-sealed USB drives (2GB+) from the same manufacturer [Amazon: [SanDisk Cruzer 8GB](https://www.amazon.com/SanDisk-Cruzer-Frustration-Free-Packaging-SDCZ36-008G-AFFP2/dp/B00E9W1UKY/ref=sr_1_7?ie=UTF8&qid=1485220606&sr=8-7&keywords=2GB+USB+drive)].
 
-### Eternally quarantined hardware:  Set 2
+### Eternally quarantined hardware: Set 2
 
 * Factory-sealed computer from a different manufacturer, also with 2 USB ports and a camera [Amazon: [Acer Aspire One Cloudbook 11"](https://www.amazon.com/Acer-Cloudbook-11-6-inch-Dual-Core-Processor/dp/B01DNHFDUI/ref=sr_1_6?s=pc&rps=1&ie=UTF8&qid=1474415095&sr=1-6&keywords=windows+laptop+new&refinements=p_85%3A2470955011%2Cp_36%3A1253506011)]
 
@@ -310,7 +310,7 @@ Glacier has been written and tested around these specific equipment recommendati
 
 * Electrical tape [[Amazon](https://www.amazon.com/Duck-299006-4-Inch-Utility-Electrical/dp/B001B19JLS/ref=sr_1_4?s=hi&ie=UTF8&qid=1476232566&sr=1-4&keywords=electrical%2Btape&th=1)]
 
-* Casino-grade six-sided dice. (Standard software algorithms that generate random numbers, such as those used to generate Bitcoin private keys, are vulnerable to exploitation, either due to malware or algorithmic weakness (i.e. they often provide numbers that are not truly random). Dice offer something closer to true randomness.)  [[Amazon]](https://www.amazon.com/Trademark-Poker-Grade-Serialized-Casino/dp/B00157YFJE/ref=sr_1_1?ie=UTF8&qid=1473894884&sr=8-1&keywords=casino+dice)  (Regular dice are insufficient. (Casino dice are created specifically to remove any potential dice bias (square corners, filled in pips, low manufacturing tolerance, etc.)  That's why casinos use them! ))
+* Casino-grade six-sided dice. (Standard software algorithms that generate random numbers, such as those used to generate Bitcoin private keys, are vulnerable to exploitation, either due to malware or algorithmic weakness (i.e. they often provide numbers that are not truly random). Dice offer something closer to true randomness.) [[Amazon]](https://www.amazon.com/Trademark-Poker-Grade-Serialized-Casino/dp/B00157YFJE/ref=sr_1_1?ie=UTF8&qid=1473894884&sr=8-1&keywords=casino+dice) (Regular dice are insufficient. (Casino dice are created specifically to remove any potential dice bias (square corners, filled in pips, low manufacturing tolerance, etc.) That's why casinos use them!))
 
 * Faraday bag [[Amazon](https://www.amazon.com/Rugged-Forensic-Faraday-Anti-Radiation-Complimentary/dp/B01KKKQPKS/ref=pd_sbs_107_6?_encoding=UTF8&pd_rd_i=B01KKKQPKS&pd_rd_r=WY23DQKFV40BC6G3A797&pd_rd_w=6IUzW&pd_rd_wg=f3ylB&psc=1&refRID=WY23DQKFV40BC6G3A797)]. Used to prevent smartphone malware from [stealing sensitive data using radio frequencies](https://www.usenix.org/legacy/event/sec09/tech/full_papers/vuagnoux.pdf). 
 
@@ -318,7 +318,7 @@ Glacier has been written and tested around these specific equipment recommendati
 
 * Home safe [[Amazon](https://www.amazon.com/AmazonBasics-Security-Safe-Cubic-Feet/dp/B00UG9HB1Q/ref=sr_1_3?ie=UTF8&qid=1471759897&sr=8-3&keywords=home+safe)]. Consider bolting it to your floor to deter theft.
 
-* TerraSlate paper [[Amazon](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B01996ZYB0/ref=sr_1_3?ie=UTF8&qid=1474415948&sr=8-3&keywords=terraslate+25)]. (TerraSlate paper is extremely rugged, but you might also consider laminating the paper for additional protection. You'll need a thermal laminator [Amazon] and laminating pouches [Amazon].)  Waterproof, heat resistant, and tear-resistant.
+* TerraSlate paper [[Amazon](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B01996ZYB0/ref=sr_1_3?ie=UTF8&qid=1474415948&sr=8-3&keywords=terraslate+25)]. (TerraSlate paper is extremely rugged, but you might also consider laminating the paper for additional protection. You'll need a thermal laminator [Amazon] and laminating pouches [Amazon].) Waterproof, heat resistant, and tear-resistant.
 
 * Cardboard envelopes, for opacity [[Amazon](https://www.amazon.com/Quality-Park-Extra-Rigid-Fiberboard-64014/dp/B0006VPH60/ref=sr_1_3?ie=UTF8&qid=1485299028&sr=8-3&keywords=CARDboard%2Benvelopes&th=1)]
 
@@ -330,7 +330,7 @@ Glacier has been written and tested around these specific equipment recommendati
 
 The overall Glacier protocol consists of several distinct subprotocols:
 
-* **Setup:  **Prepares hardware, and downloads and verifies needed software & documentation. 
+* **Setup:** Prepares hardware, and downloads and verifies needed software & documentation. 
 
 * **Deposit:** For securely storing bitcoins.
 
@@ -358,11 +358,11 @@ Do *not* do anything with critically sensitive data that the protocol does not s
 
 * Never let any untrusted person see it
 
-*Moderately-sensitive data* (e.g. a cold storage address or redemption script) will be highlighted in yellow, like this:  moderately-sensitive-data-here. 
+*Moderately-sensitive data* (e.g. a cold storage address or redemption script) will be highlighted in yellow, like this: moderately-sensitive-data-here. 
 
 *Moderately* sensitive data impacts privacy, but does not directly impact security. (It does indirectly impact security, in that if someone knows you own a lot of difficult-to-trace money, they have some incentive to rob, extort, or attack you to get it.) It cannot be used to steal your bitcoins, but it *can* be used to see how many bitcoins you own (if someone knows that the moderately sensitive data in question belongs to you). 
 
-The protocol recommends storing copies of moderately-sensitive data electronically, in a "conventionally secure" manner (for example, in a password manager such as [1Password](http://1password.com)). (This means that knowledge of your cold storage balance will be as secure as access to any accounts which have their credentials stored in your password manager. For most people, this is sufficient.)  If you're particularly concerned about privacy, you *can* forego electronic storage, because the protocol also stores copies of moderately-sensitive data in cold storage with each private key. However, this is not recommended. (If you use only hardcopies, you'll need to manually type in a large amount of gibberish data, by hand, with no errors, every time you withdraw funds from cold storage.)
+The protocol recommends storing copies of moderately-sensitive data electronically, in a "conventionally secure" manner (for example, in a password manager such as [1Password](http://1password.com)). (This means that knowledge of your cold storage balance will be as secure as access to any accounts which have their credentials stored in your password manager. For most people, this is sufficient.) If you're particularly concerned about privacy, you *can* forego electronic storage, because the protocol also stores copies of moderately-sensitive data in cold storage with each private key. However, this is not recommended. (If you use only hardcopies, you'll need to manually type in a large amount of gibberish data, by hand, with no errors, every time you withdraw funds from cold storage.)
 
 ### Terminal Usage
 
@@ -405,9 +405,9 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
 6. If you have used Glacier before, *and* you know you have the Glacier public key imported into a local GPG keyring, skip the next step. (If you don't know, that's fine; proceed as normal.)
 
-7. Obtain the Glacier "public key," used to cryptographically verify the protocol document. (Technical details:  Glacier's GPG keys are handled with good security practices. They were generated while booting off an Ubuntu Live USB on a factory-new laptop with the wireless card removed, and transferred via USB to a MacBook. The private key is not stored in the cloud. The public key is hosted separately from our software distributions, on Keybase, secured with separate credentials (all of which are in password managers).)
+7. Obtain the Glacier "public key," used to cryptographically verify the protocol document. (Technical details: Glacier's GPG keys are handled with good security practices. They were generated while booting off an Ubuntu Live USB on a factory-new laptop with the wireless card removed, and transferred via USB to a MacBook. The private key is not stored in the cloud. The public key is hosted separately from our software distributions, on Keybase, secured with separate credentials (all of which are in password managers).)
 
- **If you are ever using Glacier in the future and notice that this step has changed (or that this warning has been removed), there is a security risk.** Stop and seek assistance. (Technical details:  There's a chicken-and-egg problem here, in that this document is giving instructions for how to verify itself. Any attacker that compromised this document could also compromise these instructions so that the verification (erroneously) passes. There's no way to prevent this, unless a reader is familiar with the document before the compromise and recognizes that the verification instructions have changed. (This is why we don't just include a direct download link to the public key -- if an attacker changed the link, it would be easy for people not to notice.)
+ **If you are ever using Glacier in the future and notice that this step has changed (or that this warning has been removed), there is a security risk.** Stop and seek assistance. (Technical details: There's a chicken-and-egg problem here, in that this document is giving instructions for how to verify itself. Any attacker that compromised this document could also compromise these instructions so that the verification (erroneously) passes. There's no way to prevent this, unless a reader is familiar with the document before the compromise and recognizes that the verification instructions have changed. (This is why we don't just include a direct download link to the public key -- if an attacker changed the link, it would be easy for people not to notice.)
 
  In the unfortunate event we legitimately need to change the verification instructions (i.e. to publish a new public key, or change the means of obtaining the existing key), we'll first disseminate a public announcement, signed at a minimum with our personal keys, and hopefully with the keys of well-known individuals from the Bitcoin community.)
 
@@ -421,9 +421,9 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
     6. Name the file "glacier.asc".
 
-8. Download and install [GnuPG](http://gnupg.org), the software we'll use for doing the cryptographic verification. (GnuPG is the same software recommended by the Electronic Frontier Foundation's Surveillance Self Defense protocol.)  (Technical details: Note that we are foregoing verification of the integrity of GnuPG itself. Verification requires having access to a pre-existing, trusted installation of GnuPG, and for many Glacier users, this will not be easy to come by. If you do have access to a trusted installation of GnuPG, and understand how to do the verification process, we encourage you to do so. 
+8. Download and install [GnuPG](http://gnupg.org), the software we'll use for doing the cryptographic verification. (GnuPG is the same software recommended by the Electronic Frontier Foundation's Surveillance Self Defense protocol.) (Technical details: Note that we are foregoing verification of the integrity of GnuPG itself. Verification requires having access to a pre-existing, trusted installation of GnuPG, and for many Glacier users, this will not be easy to come by. If you do have access to a trusted installation of GnuPG, and understand how to do the verification process, we encourage you to do so. 
 
- The risk of an unverified PGP installation is relatively small, since an attacker would have to compromise not just the hosting of GPG distributions, but also the hosting of other software distributions used by Glacier, and such a breach would be quickly detected by the global community. )
+ The risk of an unverified PGP installation is relatively small, since an attacker would have to compromise not just the hosting of GPG distributions, but also the hosting of other software distributions used by Glacier, and such a breach would be quickly detected by the global community.)
 
     7. **Windows:** Download and install the latest available version of [Gpg4win](http://gpg4win.org). Use the default options.
 
@@ -441,11 +441,17 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
 10. Change the terminal window's active folder to your downloads folder. The commands below are based on common default settings; if you put your downloads is in a different place, you will need to customize this command.
 
-    13. **Windows:** > cd $HOME/Downloads/glacier
+    13. **Windows:**
 
-    14. **macOS:** $ cd $HOME/Downloads/glacier
+            > cd $HOME/Downloads/glacier
 
-    15. **Linux:** $ cd $HOME/Downloads/glacier
+    14. **macOS:**
+
+            $ cd $HOME/Downloads/glacier
+
+    15. **Linux:**
+
+            $ cd $HOME/Downloads/glacier
 
 11. Verify the integrity of the downloaded document. (For technical background about this process, see https://en.wikipedia.org/wiki/Digital_signature.)
 
@@ -471,7 +477,7 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
      The warning message is expected, and is not cause for alarm. (Technical details: GPG was designed on the premise that public keys would be verified as actually belonging to their owners -- either directly, by receiving a key face-to-face from someone known to you, or indirectly, via cryptographic signature by someone whose public key you've already verified. The warning message merely indicates that you have done neither of these verifications for Glacier's public key.
 
-     This is standard practice with software distribution, even for major software packages like Ubuntu. Although you do not have the opportunity to personally verify Glacier's public key came from the Glacier team, you can nonetheless have some degree of trust in the validity of the key, to the extent you trust it was generated and is hosted in a secure manner, and that someone in the community may have noticed and raised an alarm if it were surreptitiously changed by an attacker. )
+     This is standard practice with software distribution, even for major software packages like Ubuntu. Although you do not have the opportunity to personally verify Glacier's public key came from the Glacier team, you can nonetheless have some degree of trust in the validity of the key, to the extent you trust it was generated and is hosted in a secure manner, and that someone in the community may have noticed and raised an alarm if it were surreptitiously changed by an attacker.)
 
     18. Verify the fingerprints in the fingerprint file match the fingerprints of the downloaded Glacier files.
 
@@ -530,13 +536,13 @@ Prepare Non-Quarantined Hardware
 
     4. Remember that, per the equipment list, you should have 4 remaining USB drives -- two from one manufacturer, and two from a *different* manufacturer.
 
-4. Run a virus scan on the Setup Computers. (This is probably unnecessary, as the Setup Computer is only used for creating the USB drives, and our protocol for doing that safely is very robust. Still, can't hurt.)  If you don't have virus scanning software installed, here are some options:
+4. Run a virus scan on the Setup Computers. (This is probably unnecessary, as the Setup Computer is only used for creating the USB drives, and our protocol for doing that safely is very robust. Still, can't hurt.) If you don't have virus scanning software installed, here are some options:
 
-    - Windows:  [Kapersky](http://usa.kaspersky.com/products-services/home-computer-security/anti-virus/?affiliate=oND_NAM&CAMPAIGN=OND1673786&src_id=3&ond_affiliate_id=rn_a48914&ClickID=bsvzznnk1nkyl6zkssgvnykn6m1lkvnmmvlv) (Top-rated by Top Ten Reviews) ($39.99/yr), [Avira](https://www.avira.com/en/free-antivirus-windows) (Top-rated by TechRadar) (Free)
+    - Windows: [Kapersky](http://usa.kaspersky.com/products-services/home-computer-security/anti-virus/?affiliate=oND_NAM&CAMPAIGN=OND1673786&src_id=3&ond_affiliate_id=rn_a48914&ClickID=bsvzznnk1nkyl6zkssgvnykn6m1lkvnmmvlv) (Top-rated by Top Ten Reviews) ($39.99/yr), [Avira](https://www.avira.com/en/free-antivirus-windows) (Top-rated by TechRadar) (Free)
 
-    - macOS:  [BitDefender](http://www.bitdefender.com/solutions/antivirus-for-mac.html?clickid=wXJWub03zwQTS5IVXDy3J2beUkkUjC0BMRboy80&bdaffc=global&irgwc=1) (Top-rated by AV-TEST and Tom's Guide) ($59.95/yr), [Sophos](https://www.sophos.com/en-us/lp/sophos-home.aspx) (Top-rated by Tom's Guide) (Free)
+    - macOS: [BitDefender](http://www.bitdefender.com/solutions/antivirus-for-mac.html?clickid=wXJWub03zwQTS5IVXDy3J2beUkkUjC0BMRboy80&bdaffc=global&irgwc=1) (Top-rated by AV-TEST and Tom's Guide) ($59.95/yr), [Sophos](https://www.sophos.com/en-us/lp/sophos-home.aspx) (Top-rated by Tom's Guide) (Free)
 
-    - Linux:  Unnecessary (See http://askubuntu.com/a/506577)
+    - Linux: Unnecessary (See http://askubuntu.com/a/506577)
 
 5. If the virus scan comes up with any viruses, take steps to remove them.
 
@@ -595,7 +601,7 @@ We will prepare four (4) bootable [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_
 
 The *first two* USB drives ("Setup Boot USBs") are the USB drives you labeled "SETUP 1 BOOT" and "SETUP 2 BOOT" in Section II. They will be prepared using your Setup Computers, which may be running Windows, macOS, or something else.
 
-The *last two* USB drives ("Quarantined Boot USBs") are the USB drives you labeled "Q1 BOOT" and "Q2 BOOT" in Section II. They will be prepared using your Setup Computers *while booted off a Setup Boot USB.* (Technical details:  The Non-Quarantined OS USBs serve two purposes:
+The *last two* USB drives ("Quarantined Boot USBs") are the USB drives you labeled "Q1 BOOT" and "Q2 BOOT" in Section II. They will be prepared using your Setup Computers *while booted off a Setup Boot USB.* (Technical details: The Non-Quarantined OS USBs serve two purposes:
 
 First, they are used for creating the Quarantined App USBs in the next section, which greatly simplifies the process of doing so because we know it'll always be done from an Ubuntu environment. (We can't use the Quarantined OS USBs for this -- they're eternally quarantined, so they need to be permanently unplugged from their Setup Computer the moment they are created.)
 
@@ -805,7 +811,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
             33. On your desktop, right-click the corresponding USB drive icon in your dock and select Eject from the pop-up menu.
 
-            34. Remove the USB drive from the USB slot and immediately re-insert it. (Technical details:  In order to avoid detection, it's conceivable that malware might wait until a USB drive is in the process of being ejected (and all integrity checks presumably completed) before infecting the USB. Ejecting and re-inserting the USB before integrity checking is a simple workaround to defend against this.)
+            34. Remove the USB drive from the USB slot and immediately re-insert it. (Technical details: In order to avoid detection, it's conceivable that malware might wait until a USB drive is in the process of being ejected (and all integrity checks presumably completed) before infecting the USB. Ejecting and re-inserting the USB before integrity checking is a simple workaround to defend against this.)
 
             35. Wait 10 seconds for the operating system to recognize the USB.
 
@@ -851,13 +857,13 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
         26. Select the proper device to boot from.
 
-            44. **PC:  **Varies by manufacturer; option will often say "USB" and/or "UEFI".
+            44. **PC:** Varies by manufacturer; option will often say "USB" and/or "UEFI".
 
                 6. On the recommended Dell laptop, select "USB1" under "UEFI OPTIONS".
 
                 7. The recommended Acer laptop does not have a boot menu. See below for instructions. 
 
-            45. **Mac:** Click the "EFI Boot" option and then click the up arrow underneath it. (If more than one identical "EFI boot" option is shown, you may need to guess and reboot if you pick the wrong one.)  You do not need to select a network at this time.
+            45. **Mac:** Click the "EFI Boot" option and then click the up arrow underneath it. (If more than one identical "EFI boot" option is shown, you may need to guess and reboot if you pick the wrong one.) You do not need to select a network at this time.
 
         27. Some laptops don't have a boot device selection menu, and you need to go into the BIOS configuration and change the boot order so that the USB drive is first.
 
@@ -1025,7 +1031,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
                     $ mv ~/.config/nautilus ~/.config/nautilus-bak
 
-            2. Log out of Ubuntu:  Click the power icon in the top right of the screen and select "logout" from the drop-down menu. 
+            2. Log out of Ubuntu: Click the power icon in the top right of the screen and select "logout" from the drop-down menu. 
 
             3. Login again with user "ubuntu" and leave the password blank.
 
@@ -1033,7 +1039,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
 6. Install the remaining application software on the Q1 APP USB.
 
-    7. Configure our system to enable access to the software we need in Ubuntu's "package repository": (A "package repository" is roughly analogous to an "app store" on other platforms, although all of the software is free.)  (Technical details:  On Ubuntu 16.04.01 there is a bug in Ubuntu's package manager that affects systems running off a bootable Ubuntu USB. The commands in steps a and b are a workaround.)
+    7. Configure our system to enable access to the software we need in Ubuntu's "package repository": (A "package repository" is roughly analogous to an "app store" on other platforms, although all of the software is free.) (Technical details: On Ubuntu 16.04.01 there is a bug in Ubuntu's package manager that affects systems running off a bootable Ubuntu USB. The commands in steps a and b are a workaround.)
 
         19. 
 
@@ -1067,7 +1073,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
     9. Copy that software to the Q1 APP USB.
 
-        24. Create a folder for the application files that will be moved to the USB:  
+        24. Create a folder for the application files that will be moved to the USB: 
 
                 $ mkdir ~/apps
 
@@ -1085,7 +1091,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
 7. Click on the USB drive icon to verify that it has the correct files.
 
- The contents should look like this: (The reason the list has more than the software packages we explicitly downloaded is because the software we requested requires the other pieces of software to work properly, so apt-get automatically downloaded them. )
+ The contents should look like this: (The reason the list has more than the software packages we explicitly downloaded is because the software we requested requires the other pieces of software to work properly, so apt-get automatically downloaded them.)
 
         apps
         glacier
@@ -1337,7 +1343,7 @@ In this protocol, the total number of private keys you're creating will be refer
 
             3. Redemption script
 
-         **For the private keys and cold storage address, verify every character.** For the redemption script, it's sufficient to check the first 8 characters, last 8 characters, and a few somewhere in the middle. (Technical notes:  There are attack vectors which could replace just a portion of private keys or a cold storage address, making the private keys easier to brute force, so it's important to check them thoroughly. If we know the private keys and cold storage address are good, then the redemption script is almost certainly good as well. And if there are any errors in the redemption script, they will be caught during the test deposit & withdrawal process later in the protocol; a painstaking manual verification is not required.)
+         **For the private keys and cold storage address, verify every character.** For the redemption script, it's sufficient to check the first 8 characters, last 8 characters, and a few somewhere in the middle. (Technical notes: There are attack vectors which could replace just a portion of private keys or a cold storage address, making the private keys easier to brute force, so it's important to check them thoroughly. If we know the private keys and cold storage address are good, then the redemption script is almost certainly good as well. And if there are any errors in the redemption script, they will be caught during the test deposit & withdrawal process later in the protocol; a painstaking manual verification is not required.)
 
         15. **If there are any discrepancies, do not proceed.**
 
@@ -1439,7 +1445,7 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
     9. If the smartphone doesn't already have a QR code reader on it, install one.
 
-     Any reader is fine as long as it can read all types of QR codes, but here are recommendations we've tested with Glacier:  [iOS](https://itunes.apple.com/us/app/qr-reader-for-iphone/id368494609?mt=8), [Android](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en)
+     Any reader is fine as long as it can read all types of QR codes, but here are recommendations we've tested with Glacier: [iOS](https://itunes.apple.com/us/app/qr-reader-for-iphone/id368494609?mt=8), [Android](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en)
 
 4. Transfer the cold storage address to a non-quarantined computer.
 
@@ -1627,7 +1633,7 @@ Preparation
 
 The Withdrawal Protocol is used to transfer bitcoins out of high-security cold storage. 
 
-Before beginning, consider whether you want to route your funds through one or more intermediary non-cold-storage addresses for privacy purposes. (Review the [Privacy Considerations](#bookmark=id.9tdlm88u1jd2) subsection for details.)  If you do, you may want to withdraw the funds to an intermediary address *first* before sending them on to their final destination.
+Before beginning, consider whether you want to route your funds through one or more intermediary non-cold-storage addresses for privacy purposes. (Review the [Privacy Considerations](#bookmark=id.9tdlm88u1jd2) subsection for details.) If you do, you may want to withdraw the funds to an intermediary address *first* before sending them on to their final destination.
 
 In this first section, we'll gather physical hardcopies of all information needed to do the withdrawal. This is done with the help of a regular networked computer to find some of this information online and translate it into printed QR codes.
 
@@ -1645,7 +1651,7 @@ On any Internet-connected computer:
 
 2. Open your electronic copy of the Cold Storage Information Page (see Section II of the Deposit Protocol for details). (If you've lost access to it, you'll need to recreate a new electronic copy by transcribing one of the hardcopies (attached to each public key) by hand.)
 
-3. Identify the blockchain transactions associated with the funds you'd like to withdraw. (This process is necessary due to the internal workings of Bitcoin. With Internet connectivity, wallet software handles this step for you automatically, but since we'll be creating transactions in a non-networked quarantined environment, we need a different approach. )
+3. Identify the blockchain transactions associated with the funds you'd like to withdraw. (This process is necessary due to the internal workings of Bitcoin. With Internet connectivity, wallet software handles this step for you automatically, but since we'll be creating transactions in a non-networked quarantined environment, we need a different approach.)
 
     5. Go to [Blockchain.info](https://blockchain.info), paste your cold storage address into the search bar, and press Enter.
 
@@ -1657,7 +1663,7 @@ On any Internet-connected computer:
 
      ![](null)
 
-    8. Identify a set of transaction IDs whose amounts are **cumulatively** greater than or equal to the amount you would like to withdraw. (Technical note:  If a transaction ID is listed more than once (i.e. the same transaction has more than one unspent output going to your cold storage address), you just need to include the transaction ID once. GlacierScript will include all UTXOs in every supplied transaction ID.) 
+    8. Identify a set of transaction IDs whose amounts are **cumulatively** greater than or equal to the amount you would like to withdraw. (Technical note: If a transaction ID is listed more than once (i.e. the same transaction has more than one unspent output going to your cold storage address), you just need to include the transaction ID once. GlacierScript will include all UTXOs in every supplied transaction ID.) 
 
     9. Copy-paste these transaction IDs to a temporary scratchpad for reference.
 
@@ -1779,7 +1785,7 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
     5. If any raw unspent transactions are too long, move each too-long transaction to its own file.
 
-     GlacierScript normally takes input by copy-pasting values, but it can only accept copy-pasted values up to about 4000 characters in size. (Technical note:  This seems to be due to limitations inherent in Unix terminals.)
+     GlacierScript normally takes input by copy-pasting values, but it can only accept copy-pasted values up to about 4000 characters in size. (Technical note: This seems to be due to limitations inherent in Unix terminals.)
 
         5. If any raw unspent transaction is longer than 4000 characters, you'll need to save it to its own file on disk.
 
@@ -1821,11 +1827,11 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
 3. Verify transaction construction
 
-    10. **On the Q2 computer, **repeat step 2 above.
+    10. **On the Q2 computer,**repeat step 2 above.
 
         11. Note: it is important to enter the private keys in the same order on each of the quarantined computers.
 
-    11. Verify that the "Transaction fingerprint" output by GlacierScript is identical on both computers. (Technical details:  It is possible for malware to exfiltrate bits of the private key in the transaction signature by choosing the nonce in a particular way. Bitcoin Core generates the nonce deterministically, as a function of a hash of the transaction, so we can detect the presence of any environment-specific malware by comparing the transaction generated in each quarantined environment.) 
+    11. Verify that the "Transaction fingerprint" output by GlacierScript is identical on both computers. (Technical details: It is possible for malware to exfiltrate bits of the private key in the transaction signature by choosing the nonce in a particular way. Bitcoin Core generates the nonce deterministically, as a function of a hash of the transaction, so we can detect the presence of any environment-specific malware by comparing the transaction generated in each quarantined environment.) 
 
     12. **If there are any discrepancies, do not proceed.** Restart the Withdrawal Protocol and seek assistance if discrepancies persist.
 
@@ -1867,7 +1873,7 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
         15. If the smartphone doesn't already have a QR code reader on it, install one.
 
-         Any reader is fine as long as it can read all types of QR codes, but here are recommendations we've tested with this protocol:  [iOS](https://itunes.apple.com/us/app/qr-reader-for-iphone/id368494609?mt=8), [Android](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en)
+         Any reader is fine as long as it can read all types of QR codes, but here are recommendations we've tested with this protocol: [iOS](https://itunes.apple.com/us/app/qr-reader-for-iphone/id368494609?mt=8), [Android](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en)
 
     18. Transfer the signed transaction data to a non-quarantined computer.
 
@@ -1948,9 +1954,9 @@ The Viewing Protocol is a simple procedure for viewing your balance of funds cur
 
 The Maintenance Protocol is designed to minimize the risk of losing funds due to:
 
-* **Loss of private keys:  **Obviously if too many keys are compromised or lost (due to theft, damage, or misplacement), your funds are lost. It's therefore important to know ASAP if even a *single* key is lost, so you can generate a replacement before *more* keys are lost.
+* **Loss of private keys:** Obviously if too many keys are compromised or lost (due to theft, damage, or misplacement), your funds are lost. It's therefore important to know ASAP if even a *single* key is lost, so you can generate a replacement before *more* keys are lost.
 
-* **New security threats:  **Glacier may contain weaknesses which are currently undiscovered -- perhaps related to attacks which are not part of the current security landscape. 
+* **New security threats:** Glacier may contain weaknesses which are currently undiscovered -- perhaps related to attacks which are not part of the current security landscape. 
 
 * **[Bit rot](https://en.wikipedia.org/wiki/Software_rot):** The Withdrawal Protocol depends on the availability of certain software (including not just the applications themselves, but also software libraries those applications depend on), plus hardware and networks that are compatible with that software. If your funds are in storage for a long time, the withdrawal tools may become obsolete and no longer function.
 
@@ -1997,13 +2003,13 @@ We do not recommend considering these measures unless you feel you have a strong
 
 ### Digital software security
 
-* **Verify GnuPG installation:  **When downloading a new copy of GnuPG on the setup computer, one would ideally also verify the integrity of the download using the signed checksum. This requires having a pre-existing trusted installation of GnuPG available for verifying the checksum signature.
+* **Verify GnuPG installation:** When downloading a new copy of GnuPG on the setup computer, one would ideally also verify the integrity of the download using the signed checksum. This requires having a pre-existing trusted installation of GnuPG available for verifying the checksum signature.
 
 * **Cross-network checksum sourcing:** Using two different computers on two different networks, obtain all the software checksums from the Internet and verify they are identical, to reduce the risk that the checksums are being compromised by a man-in-the-middle attack.
 
-* **Quarantined checksum verification:  **Verify all USB checksums *on* the quarantined computers to eliminate any risk that software was altered between checksum verification on the Setup Computers and when the USB is used in the quarantined environment. (The only reason Glacier doesn't currently do this is because the process of verifying the App USB checksums happens as part of Ubuntu's apt-get application, which requires network connectivity. It can be done by hand without apt-get, but it's significantly more involved and so was not included in the protocol.)
+* **Quarantined checksum verification:** Verify all USB checksums *on* the quarantined computers to eliminate any risk that software was altered between checksum verification on the Setup Computers and when the USB is used in the quarantined environment. (The only reason Glacier doesn't currently do this is because the process of verifying the App USB checksums happens as part of Ubuntu's apt-get application, which requires network connectivity. It can be done by hand without apt-get, but it's significantly more involved and so was not included in the protocol.)
 
-* **Greater differentiation of quarantined environments:  **Instead of simply using different hardware in each quarantined environment, use different software (Different software stacks eliminate the risk that a software bug or vulnerability may generate a flawed key. See the design document for details on why this risk is small enough to justify leaving it unaddressed in the formal protocol.) (including a non-Linux-derived OS and a different Bitcoin wallet), different smartphones (and different smartphone software, i.e. QR code readers).
+* **Greater differentiation of quarantined environments:** Instead of simply using different hardware in each quarantined environment, use different software (Different software stacks eliminate the risk that a software bug or vulnerability may generate a flawed key. See the design document for details on why this risk is small enough to justify leaving it unaddressed in the formal protocol.) (including a non-Linux-derived OS and a different Bitcoin wallet), different smartphones (and different smartphone software, i.e. QR code readers).
 
 * **Dedicated pair of environments for each private key:** Use extra environments such that each environment only touches one key both when generating keys and signing transactions. Expand the definition of "environment" to include the physical location in which Glacier is executed. This way, compromising one environment will only compromise one key.
 
@@ -2015,17 +2021,17 @@ We do not recommend considering these measures unless you feel you have a strong
 
 * **Faraday cage:** Use a [Faraday cage](https://en.wikipedia.org/wiki/Faraday_cage) to protect against electromagnetic side channels ([example](https://www.usenix.org/legacy/event/sec09/tech/full_papers/vuagnoux.pdf)). Faraday cages can be [self-built](http://www.thesurvivalistblog.net/build-your-own-faraday-cage-heres-how/) or [professionally built](https://www.faradaycages.com/server-rooms).
 
-* **No QR codes:** Reading and relaying QR codes to a printer requires a networked device, such as a smartphone, which could potentially receive data from side channels. Instead of using QR codes, copy all redemption scripts and transactions by hand, and keep all nearby smartphones powered off and in Faraday bags through protocol execution. (Note that transcription of redeem scripts and transactions is not only a painstakingly long process, but dangerously vulnerable to human error:  any mistakes in the initial transcription & storage of the redemption script will cause all funds to be lost.)
+* **No QR codes:** Reading and relaying QR codes to a printer requires a networked device, such as a smartphone, which could potentially receive data from side channels. Instead of using QR codes, copy all redemption scripts and transactions by hand, and keep all nearby smartphones powered off and in Faraday bags through protocol execution. (Note that transcription of redeem scripts and transactions is not only a painstakingly long process, but dangerously vulnerable to human error: any mistakes in the initial transcription & storage of the redemption script will cause all funds to be lost.)
 
 ### Hardware security
 
 * **Purchase factory-new Setup Computers:** Don't use existing computers for your Setup Computers. Purchase them factory-new, and never use them on the same network (to reduce the risk of infection by identical malware).
 
-* **Use firmware-protected USBs:  **Some USBs have extra features to protect against malware targeting their firmware (e.g. [BadUSB](http://arstechnica.com/security/2014/07/this-thumbdrive-hacks-computers-badusb-exploit-makes-devices-turn-evil/) or [Psychson](https://github.com/brandonlw/Psychson)). Examples include [Kanguru drives](https://www.kanguru.com/secure-storage/defender-secure-flash-drives.shtml) and [IronKey drives](http://www.ironkey.com/en-US/encrypted-storage-drives/250-basic.html).
+* **Use firmware-protected USBs:** Some USBs have extra features to protect against malware targeting their firmware (e.g. [BadUSB](http://arstechnica.com/security/2014/07/this-thumbdrive-hacks-computers-badusb-exploit-makes-devices-turn-evil/) or [Psychson](https://github.com/brandonlw/Psychson)). Examples include [Kanguru drives](https://www.kanguru.com/secure-storage/defender-secure-flash-drives.shtml) and [IronKey drives](http://www.ironkey.com/en-US/encrypted-storage-drives/250-basic.html).
 
 * **Purchase a factory-new printer:** Printers can have malware, which could conceivably interfere with printing the hardcopy of the Glacier document. Use a new printer for printing the Glacier document. Choose one without wireless capabilities.
 
-* **Purchase non-recommended equipment:** Don't purchase any of the suggested equipment linked in this document -- if Glacier achieves widespread adoption, that particular equipment may be targeted for sabotage to undermine the protocol (e.g. loaded dice, malware pre-installed on computers, etc.)  Select your own comparable equipment from different manufacturers.
+* **Purchase non-recommended equipment:** Don't purchase any of the suggested equipment linked in this document -- if Glacier achieves widespread adoption, that particular equipment may be targeted for sabotage to undermine the protocol (e.g. loaded dice, malware pre-installed on computers, etc.) Select your own comparable equipment from different manufacturers.
 
 * **Purchase from stores:** Buy all equipment from stores, to reduce the risk it will be [tampered with before it is delivered to you](http://arstechnica.com/tech-policy/2014/05/photos-of-an-nsa-upgrade-factory-show-cisco-router-getting-implant/). Don't choose the stores nearest your home or office. Don't leave the equipment unattended until you are done using it.
 
@@ -2128,7 +2134,7 @@ Most attacks require the presence of malware, either in or near the quarantined 
 
         * Magnetic side channel ([example](http://fc15.ifca.ai/preproceedings/paper_14.pdf))
 
-    * Malware on a Quarantined Computer exfiltrates critically sensitive data via QR codes AND cooperating malware on the QR reading device steals the data (The risk of this scenario is negligible; unless the attacker simultaneously compromised every major smartphone QR reader with cooperating malware, any manipulation of QR codes would be quickly detected by people using non-compromised QR reader software, leading to widespread awareness and isolation of the threat. This makes it a very unattractive attack vector. )
+    * Malware on a Quarantined Computer exfiltrates critically sensitive data via QR codes AND cooperating malware on the QR reading device steals the data (The risk of this scenario is negligible; unless the attacker simultaneously compromised every major smartphone QR reader with cooperating malware, any manipulation of QR codes would be quickly detected by people using non-compromised QR reader software, leading to widespread awareness and isolation of the threat. This makes it a very unattractive attack vector.)
 
     * Critically sensitive data is leaked (intentionally or otherwise) as part of the payload of valid data (e.g. if the nonce used for a transaction signature contains bits of the private key) 
 
@@ -2194,7 +2200,7 @@ Bringing multiple private keys together in the same physical location for the Wi
 
 Glacier currently uses P2SH transactions. This allows all signatories storing private keys to view the user's balance, because a copy of the redeem script must be kept with each private key. 
 
-Vanilla multisig transactions would address this, but it's not clear if it's possible to do vanilla multisig configurations with over 3 keys. (http://bitcoin.stackexchange.com/questions/23893/what-are-the-limits-of-m-and-n-in-m-of-n-multisig-addresses)  Another option is to use a single Bitcoin private key, split into n pieces using [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing), which would not have any limitations on the number of keyholders, but *would* require additional cryptographic software be integrated into Glacier.
+Vanilla multisig transactions would address this, but it's not clear if it's possible to do vanilla multisig configurations with over 3 keys. (http://bitcoin.stackexchange.com/questions/23893/what-are-the-limits-of-m-and-n-in-m-of-n-multisig-addresses) Another option is to use a single Bitcoin private key, split into n pieces using [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing), which would not have any limitations on the number of keyholders, but *would* require additional cryptographic software be integrated into Glacier.
 
 ### Automate Quarantined USB creation
 
@@ -2298,7 +2304,7 @@ Workarounds have been implemented for both issues.
 
 * Fixed various typos (thanks /u/dooglus)
 
-### Version 0.9 Beta:  February 10, 2017
+### Version 0.9 Beta: February 10, 2017
 
 * Enabled HTTPS on website for improved security of protocol distribution
 
@@ -2308,7 +2314,7 @@ Workarounds have been implemented for both issues.
 
 * Revised online wallet section to describe a wider variety of market options
 
-### Version 0.1 Alpha:  January 24, 2017
+### Version 0.1 Alpha: January 24, 2017
 
 Initial non-public release to selected reviewers.
 
