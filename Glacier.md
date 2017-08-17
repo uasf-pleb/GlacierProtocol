@@ -411,7 +411,7 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
  In the unfortunate event we legitimately need to change the verification instructions (i.e. to publish a new public key, or change the means of obtaining the existing key), we'll first disseminate a public announcement, signed at a minimum with our personal keys, and hopefully with the keys of well-known individuals from the Bitcoin community.)
 
-    2. Access Glacier's Keybase profile at [https://keybase.io/glacierprotocol](https://keybase.io/glacierprotocol).
+    1. Access Glacier's Keybase profile at [https://keybase.io/glacierprotocol](https://keybase.io/glacierprotocol).
 
     3. Click the string of letters and numbers next to the key icon.
 
@@ -425,7 +425,7 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
  The risk of an unverified PGP installation is relatively small, since an attacker would have to compromise not just the hosting of GPG distributions, but also the hosting of other software distributions used by Glacier, and such a breach would be quickly detected by the global community.)
 
-    7. **Windows:** Download and install the latest available version of [Gpg4win](http://gpg4win.org). Use the default options.
+    1. **Windows:** Download and install the latest available version of [Gpg4win](http://gpg4win.org). Use the default options.
 
     8. **macOS:** Download and install the latest available version of [GPG Suite](http://gpgtools.org).
 
