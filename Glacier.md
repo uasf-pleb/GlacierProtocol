@@ -1763,15 +1763,15 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
    4. Transcribe the other information you will be using into the Quarantined Scratchpad. (If you make a transcription error, it will be easier to identify and fix in the scratchpad compared to a situation where you transcribed it directly into GlacierScript.)
 
-        3. Private keys
+      3. Private keys
 
-        4. Fee rate
+      4. Fee rate
 
-     Transcribe the private keys with reasonable care, but painstaking verification is not critical. (If you make an error, the withdrawal will simply fail, prompting you to fix your transcription error.)
+      Transcribe the private keys with reasonable care, but painstaking verification is not critical. (If you make an error, the withdrawal will simply fail, prompting you to fix your transcription error.)
 
    5. If any raw unspent transactions are too long, move each too-long transaction to its own file.
 
-     GlacierScript normally takes input by copy-pasting values, but it can only accept copy-pasted values up to about 4000 characters in size. (Technical note: This seems to be due to limitations inherent in Unix terminals.)
+      GlacierScript normally takes input by copy-pasting values, but it can only accept copy-pasted values up to about 4000 characters in size. (Technical note: This seems to be due to limitations inherent in Unix terminals.)
 
         5. If any raw unspent transaction is longer than 4000 characters, you'll need to save it to its own file on disk.
 
@@ -1823,33 +1823,33 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
 4. Visually hide all critically sensitive data.
 
- We'll be using a smartphone with a live Internet connection to read QR codes from the quarantined computer screens. Any malware (or a malicious QR reader app) could steal sensitive data if it is not visually hidden.
+   We'll be using a smartphone with a live Internet connection to read QR codes from the quarantined computer screens. Any malware (or a malicious QR reader app) could steal sensitive data if it is not visually hidden.
 
- **This step is important. Failing to execute it properly creates a substantial security risk.**
+   **This step is important. Failing to execute it properly creates a substantial security risk.**
 
-    13. Put your Cold Storage Information Packets out of sight -- this prevents a smartphone camera from accidentally seeing them.
+   13. Put your Cold Storage Information Packets out of sight -- this prevents a smartphone camera from accidentally seeing them.
 
-    14. Delete all text from the Quarantined Scratchpad on the **Q1 and Q2** computers.
+   14. Delete all text from the Quarantined Scratchpad on the **Q1 and Q2** computers.
 
-    15. **On the Q1 computer:**
+   15. **On the Q1 computer:**
 
-        12. Copy-paste the raw signed transaction from the terminal window to the Quarantined Scratchpad.
+       12. Copy-paste the raw signed transaction from the terminal window to the Quarantined Scratchpad.
 
-        13. Enable line wrapping so the entire raw signed transaction can be seen.
+       13. Enable line wrapping so the entire raw signed transaction can be seen.
 
-            7. With the Quarantined Scratchpad window active, go to the menu bar at the top of the screen.
+           7. With the Quarantined Scratchpad window active, go to the menu bar at the top of the screen.
 
-            8. Select Edit.
+           8. Select Edit.
 
-            9. Select Preferences.
+           9. Select Preferences.
 
-            10. Select the View tab.
+           10. Select the View tab.
 
-            11. Uncheck "Do not split words over two lines".
+           11. Uncheck "Do not split words over two lines".
 
-    16. Clear the terminal windows on the **Q1 and Q2** computers.
+   16. Clear the terminal windows on the **Q1 and Q2** computers.
 
-        $ clear
+           $ clear
 
 5. Extract the signed transaction from the quarantined environment.
 
