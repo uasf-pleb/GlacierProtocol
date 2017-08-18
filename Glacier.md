@@ -1879,9 +1879,9 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
 6. Shut down **both** quarantined computers entirely. (As a precaution against side channel attacks, the quarantined computers should not be active except when they absolutely need to be.)
 
-        $ sudo shutdown now
+       $ sudo shutdown now
 
- The recommended Acer laptop may require you to hold down the power button for several seconds to complete the shutdown.
+   The recommended Acer laptop may require you to hold down the power button for several seconds to complete the shutdown.
 
 ## Withdrawal Protocol, Section III: Transaction Execution & Verification
 
@@ -1891,33 +1891,33 @@ On any Internet-connected computer:
 
 2. Verify the transaction data.
 
-    1. Go to [https://coinb.in/#verify](https://coinb.in/#verify).
+   1. Go to [https://coinb.in/#verify](https://coinb.in/#verify).
 
-    2. Copy-paste the raw signed transaction into the webpage and click Submit.
+   2. Copy-paste the raw signed transaction into the webpage and click Submit.
 
-    3. Under "Outputs":
+   3. Under "Outputs":
 
-        1. **Verify the destination address is correct.**
+      1. **Verify the destination address is correct.**
 
-        2. Verify the amount going to the destination address is correct.
+      2. Verify the amount going to the destination address is correct.
 
-        3. If you did *not* withdraw all funds from these unspent transactions, you'll also see a second output which "sends" the remainder of the funds "back" to your cold storage address. (This is necessary; it's how Bitcoin is designed to operate.)
+      3. If you did *not* withdraw all funds from these unspent transactions, you'll also see a second output which "sends" the remainder of the funds "back" to your cold storage address. (This is necessary; it's how Bitcoin is designed to operate.)
 
 3. Execute the transaction.
 
-    4. Go to [https://coinb.in/#broadcast](https://coinb.in/#broadcast) (or any comparable public service which can broadcast a raw signed transaction to the Bitcoin network).
+   1. Go to [https://coinb.in/#broadcast](https://coinb.in/#broadcast) (or any comparable public service which can broadcast a raw signed transaction to the Bitcoin network).
 
-    5. Copy-paste the raw signed transaction into the webpage and click Submit.
+   5. Copy-paste the raw signed transaction into the webpage and click Submit.
 
-    6. You should see a green bar appear with a transaction ID in it. This is the transaction ID for your withdrawal; make a note of it.
+   6. You should see a green bar appear with a transaction ID in it. This is the transaction ID for your withdrawal; make a note of it.
 
 4. Verify the withdrawal on the public blockchain.
 
-    7. Go to [Blockr](http://blockr.io), paste the destination address into the search bar, and press Enter. You'll be taken to a page that says "Bitcoin Address" at the top, with the destination address listed underneath.
+   1. Go to [Blockr](http://blockr.io), paste the destination address into the search bar, and press Enter. You'll be taken to a page that says "Bitcoin Address" at the top, with the destination address listed underneath.
 
-    8. Within a couple of minutes (and often much faster), you should be able to refresh this page and see your funds listed under "Unconfirmed".
+   8. Within a couple of minutes (and often much faster), you should be able to refresh this page and see your funds listed under "Unconfirmed".
 
-    9. Periodically refresh the page until you see the funds moved from "Unconfirmed" to be reflected in "Balance". (This generally happens within 15 minutes; if the Bitcoin network is unusually congested, it may take longer.)
+   9. Periodically refresh the page until you see the funds moved from "Unconfirmed" to be reflected in "Balance". (This generally happens within 15 minutes; if the Bitcoin network is unusually congested, it may take longer.)
 
 # Viewing Protocol
 
