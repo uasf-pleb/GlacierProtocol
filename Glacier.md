@@ -680,13 +680,15 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
       1. Prepare the Ubuntu download for copying to the USB.
 
-         1. 
+         1.  
+
 
                 $ cd $HOME/Downloads
 
             (This command changes your terminal's active folder to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.)
 
-         2. 
+         2.  
+
 
                 $ hdiutil convert ubuntu-16.04.1-desktop-amd64.iso -format UDRW -o ubuntu-16.04.1-desktop-amd64.img
 
