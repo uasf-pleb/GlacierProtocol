@@ -440,15 +440,15 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
 10. Change the terminal window's active folder to your downloads folder. The commands below are based on common default settings; if you put your downloads is in a different place, you will need to customize this command.
 
-    1. **Windows:**
+    - **Windows:**
 
             > cd $HOME/Downloads/glacier
 
-    2. **macOS:**
+    - **macOS:**
 
             $ cd $HOME/Downloads/glacier
 
-    3. **Linux:**
+    - **Linux:**
 
             $ cd $HOME/Downloads/glacier
 
@@ -480,39 +480,39 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
     18. Verify the fingerprints in the fingerprint file match the fingerprints of the downloaded Glacier files.
 
-        1. On Linux or Mac:
+        - On Linux or Mac:
 
            Linux:
 
-                $ sha256sum -c SHA256SUMS 2>&1
+               $ sha256sum -c SHA256SUMS 2>&1
 
            Mac:
 
-                $ shasum -a 256 -c SHA256SUMS 2>&1
+               $ shasum -a 256 -c SHA256SUMS 2>&1
 
            Expected output:
 
-                Glacier.pdf: OK
-                glacierscript.py: OK
-                base58.py: OK
-                README.md: OK
+               Glacier.pdf: OK
+               glacierscript.py: OK
+               base58.py: OK
+               README.md: OK
 
-        2. On Windows (Get-FileHash is only available starting with Windows 10. On Windows 8.1, use CertUtil instead: 
+        - On Windows (Get-FileHash is only available starting with Windows 10. On Windows 8.1, use CertUtil instead: 
 
-                > Get-FileHash -a sha256 Glacier.pdf
-                > cat SHA256SUMS | select-string -pattern "Glacier.pdf"
+               > Get-FileHash -a sha256 Glacier.pdf
+               > cat SHA256SUMS | select-string -pattern "Glacier.pdf"
 
-           Ensure that the hash output from the first command matches the output by the second command. Upper/lower case doesn't matter.
+          Ensure that the hash output from the first command matches the output by the second command. Upper/lower case doesn't matter.
 
     19. If you do not see the expected output, your copy of the document has not been verified. Stop and seek assistance.
 
 12. Switch to use the new document.
 
-    20. Open the version of the document that you just verified.
+    1. Open the version of the document that you just verified.
 
-    21. Close this window (of the unverified version of the document you *had* been using).
+    2. Close this window (of the unverified version of the document you *had* been using).
 
-    22. Delete the old, unverified copy of the document.
+    3. Delete the old, unverified copy of the document.
 
 13. Print the verified document.
 
