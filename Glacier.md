@@ -569,7 +569,7 @@ You are strongly encouraged to use the printed copy as a checklist, physically m
 
     5. **Don't** plug a **"SETUP 2"** USB drive into a **"Q1"** or **"Q2"** laptop.
 
-    6. **Don't** plug an **unlabeled** USB drive into a **"Q1" **or **"Q2"** laptop.
+    6. **Don't** plug an **unlabeled** USB drive into a **"Q1"**or **"Q2"** laptop.
 
 4. Quarantine the network and wireless interfaces for both laptops: 
 
@@ -772,7 +772,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                     ubuntu-16.04.1-desktop-amd64.img.dmg /dev/disk2 differ: byte 1, line 1 
 
-             If you see a message like this, STOP -- this may be a security risk.  Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
+             If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
 
     9. **Ubuntu** (Adapted from this official guide.)
 
@@ -833,7 +833,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                     ubuntu-16.04.1-desktop-amd64.iso /dev/sda differ: byte 1, line 1 
 
-             If you see a message like this, STOP -- this may be a security risk.  Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
+             If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
 
 7. Create the Q1 BOOT USB
 
@@ -1398,8 +1398,7 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
  We'll be using a smartphone with a live Internet connection to read QR codes from the quarantined computer screens. Any malware (or a malicious QR reader app) could steal sensitive data if it is not visually hidden.
 
- **This step is important. Failing to execute it properly creates a substantial security risk.
-**
+ **This step is important. Failing to execute it properly creates a substantial security risk.**
 
     4. Put your handwritten private keys out of sight (don't just turn them face down; paper is not completely opaque). This prevents a smartphone camera from accidentally seeing them.
 
