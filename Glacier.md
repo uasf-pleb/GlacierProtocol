@@ -532,7 +532,7 @@ You are strongly encouraged to use the printed copy as a checklist, physically m
 
 3. With a permanent marker, label two USB drives "SETUP 1  BOOT" and "SETUP 2 BOOT".
 
-   4. Remember that, per the equipment list, you should have 4 remaining USB drives -- two from one manufacturer, and two from a *different* manufacturer.
+   1. Remember that, per the equipment list, you should have 4 remaining USB drives -- two from one manufacturer, and two from a *different* manufacturer.
 
 4. Run a virus scan on the Setup Computers. (This is probably unnecessary, as the Setup Computer is only used for creating the USB drives, and our protocol for doing that safely is very robust. Still, can't hurt.) If you don't have virus scanning software installed, here are some options:
 
@@ -654,7 +654,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
           dc7dee086faabc9553d5ff8ff1b490a7f85c379f49de20c076f11fb6ac7c0f34
 
-   It's not important to check every single character when visually verifying a fingerprint. It's sufficient to check the **first 8 characters, last 8 characters, and a few somewhere in the middle.** (The way these fingerprints work mathematically is that changing even a single bit in the file will result in a completely different fingerprint, so any modification is easy to detect. For technical details about our specific spot checking recommendation, see the design document.)
+      It's not important to check every single character when visually verifying a fingerprint. It's sufficient to check the **first 8 characters, last 8 characters, and a few somewhere in the middle.** (The way these fingerprints work mathematically is that changing even a single bit in the file will result in a completely different fingerprint, so any modification is easy to detect. For technical details about our specific spot checking recommendation, see the design document.)
 
 6. Create the SETUP 1 BOOT USB.
 
@@ -694,85 +694,85 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                   $ hdiutil convert ubuntu-16.04.1-desktop-amd64.iso -format UDRW -o ubuntu-16.04.1-desktop-amd64.img
 
-        18. Determine the macOS "device identifier" for the Boot USB.
+         18. Determine the macOS "device identifier" for the Boot USB.
 
-            1. 
+             1. 
 
-                   $ diskutil list
+                    $ diskutil list
 
-            4. Insert the SETUP 1 BOOT USB in an empty USB slot.
+             4. Insert the SETUP 1 BOOT USB in an empty USB slot.
 
-            5. Wait 10 seconds for the operating system to recognize the USB.
+             5. Wait 10 seconds for the operating system to recognize the USB.
 
-            6. Once more:
+             6. Once more:
 
-                   $ diskutil list
+                    $ diskutil list
 
-            7. The output of the second command should include an additional section that was not present in the first command's output.
+             7. The output of the second command should include an additional section that was not present in the first command's output.
 
                 1. This section will have (external, physical) in the header.
 
                 2. The first line of the section's SIZE column should reflect the capacity of the USB drive.
 
-            8. Make a note of the device identifier.
+             8. Make a note of the device identifier.
 
                 1. The device identifier is the part of the new section header that comes before (external, physical) (for example /dev/disk2).
 
-        19. Put Ubuntu on the SETUP 1 BOOT USB.
+         19. Put Ubuntu on the SETUP 1 BOOT USB.
 
-            1. First, unmount the usb
+             1. First, unmount the usb
 
-                   $ diskutil unmountDisk USB-device-identifier-here
+                    $ diskutil unmountDisk USB-device-identifier-here
 
-            10. Enter the following command, **making sure to use the correct device identifier; using the wrong one could overwrite your hard drive!**
+             10. Enter the following command, **making sure to use the correct device identifier; using the wrong one could overwrite your hard drive!**
 
-                   $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=USB-device-identifier-here bs=1m
+                     $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=USB-device-identifier-here bs=1m
 
-                Example:
+                 Example:
 
-                   $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=/dev/disk2 bs=1m
+                     $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=/dev/disk2 bs=1m
 
-            11. Enter your administrator password when requested.
+             11. Enter your administrator password when requested.
 
-            12. Wait several minutes for the copying process to complete. When it does, you may see an error box pop up:
+             12. Wait several minutes for the copying process to complete. When it does, you may see an error box pop up:
 
-                ![](null)
+                 ![](null)
 
-                This is expected; it's because the USB is written in a format readable by Ubuntu, but not readable by macOS. 
+                 This is expected; it's because the USB is written in a format readable by Ubuntu, but not readable by macOS. 
 
-            13. Click Ignore. 
+             13. Click Ignore. 
 
-        20. Verify the integrity of the SETUP 1 BOOT USB (i.e. no errors or malware infection).
+         20. Verify the integrity of the SETUP 1 BOOT USB (i.e. no errors or malware infection).
 
-            1. Remove the USB drive from the USB slot and immediately reinsert it.
+             1. Remove the USB drive from the USB slot and immediately reinsert it.
 
-            15. Wait 10 seconds for the operating system to recognize the USB.
+             15. Wait 10 seconds for the operating system to recognize the USB.
 
-            16. You may see the same error box pop up again. Select Ignore.
+             16. You may see the same error box pop up again. Select Ignore.
 
-            17. The USB's device identifier may have changed. Find it again:
+             17. The USB's device identifier may have changed. Find it again:
 
-                    $ diskutil list
+                     $ diskutil list
 
-            18. 
+             18. 
 
-                    $ cd $HOME/Downloads
+                     $ cd $HOME/Downloads
 
-            19. 
+             19. 
 
-                    $ sudo cmp -n `stat -f '%z' ubuntu-16.04.1-desktop-amd64.img.dmg` ubuntu-16.04.1-desktop-amd64.img.dmg USB-device-identifier-here
+                     $ sudo cmp -n `stat -f '%z' ubuntu-16.04.1-desktop-amd64.img.dmg` ubuntu-16.04.1-desktop-amd64.img.dmg USB-device-identifier-here
 
-                (See the corresponding step in the Ubuntu section for a detailed footnote.)
+                 (See the corresponding step in the Ubuntu section for a detailed footnote.)
 
-            20. Wait a few minutes for the verification process to complete.
+             20. Wait a few minutes for the verification process to complete.
 
-            21. If all goes well, the command will output no data, returning to your usual terminal prompt.
+             21. If all goes well, the command will output no data, returning to your usual terminal prompt.
 
-            22. If there is a discrepancy, you'll see a message like:
+             22. If there is a discrepancy, you'll see a message like:
 
-                    ubuntu-16.04.1-desktop-amd64.img.dmg /dev/disk2 differ: byte 1, line 1 
+                     ubuntu-16.04.1-desktop-amd64.img.dmg /dev/disk2 differ: byte 1, line 1 
 
-                If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
+                 If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
 
     - **Ubuntu** (Adapted from this official guide.)
 
@@ -805,7 +805,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
         23. Verify the integrity of the SETUP 1 BOOT USB (i.e. no errors or malware infection).
 
-            33. On your desktop, right-click the corresponding USB drive icon in your dock and select Eject from the pop-up menu.
+            1. On your desktop, right-click the corresponding USB drive icon in your dock and select Eject from the pop-up menu.
 
             34. Remove the USB drive from the USB slot and immediately re-insert it. (Technical details: In order to avoid detection, it's conceivable that malware might wait until a USB drive is in the process of being ejected (and all integrity checks presumably completed) before infecting the USB. Ejecting and re-inserting the USB before integrity checking is a simple workaround to defend against this.)
 
@@ -961,7 +961,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
        **If you are ever using Glacier in the future and notice that this step has changed (or that this warning has been removed), there is a security risk.** Stop and seek assistance. (See corresponding footnote in Section I for technical details.)
 
-       6. Access Glacier's Keybase profile at [https://keybase.io/glacierprotocol](https://keybase.io/glacierprotocol).
+       1. Access Glacier's Keybase profile at [https://keybase.io/glacierprotocol](https://keybase.io/glacierprotocol).
 
        7. Click the string of letters and numbers next to the key icon.
 
@@ -977,7 +977,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
     5. Verify the integrity of the Glacier download.
 
-        11. Import the Glacier public key into your local GPG installation:
+        1. Import the Glacier public key into your local GPG installation:
 
                 $ gpg --import ~/Downloads/glacier.asc
 
@@ -1012,7 +1012,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
     6. Copy the glacier folder to the Q1 APP USB.
 
-        15. Click on the File Manager icon in the launching dock along the left side of the screen.
+        1. Click on the File Manager icon in the launching dock along the left side of the screen.
 
          ![](null)
 
@@ -1036,7 +1036,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
     7. Configure our system to enable access to the software we need in Ubuntu's "package repository": (A "package repository" is roughly analogous to an "app store" on other platforms, although all of the software is free.) (Technical details: On Ubuntu 16.04.01 there is a bug in Ubuntu's package manager that affects systems running off a bootable Ubuntu USB. The commands in steps a and b are a workaround.)
 
-        19. 
+        1. 
 
                 $ sudo mv /var/cache/app-info/xapian/default /var/cache/app-info/xapian/default_old
 
@@ -1068,7 +1068,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
     9. Copy that software to the Q1 APP USB.
 
-        24. Create a folder for the application files that will be moved to the USB: 
+        1. Create a folder for the application files that will be moved to the USB: 
 
                 $ mkdir ~/apps
 
@@ -1078,7 +1078,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
         26. Copy the contents of the apps folder to the Q1 APP USB:
 
-            5. Click on the File Manager icon in the launching dock: ![](null)
+            1. Click on the File Manager icon in the launching dock: ![](null)
 
             6. Navigate to the "Home" folder.
 
@@ -1086,40 +1086,40 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
 7. Click on the USB drive icon to verify that it has the correct files.
 
- The contents should look like this: (The reason the list has more than the software packages we explicitly downloaded is because the software we requested requires the other pieces of software to work properly, so apt-get automatically downloaded them.)
+   The contents should look like this: (The reason the list has more than the software packages we explicitly downloaded is because the software we requested requires the other pieces of software to work properly, so apt-get automatically downloaded them.)
 
-        apps
-        glacier
+       apps
+       glacier
 
- Click the apps folder. It will have the following content: (Note that the version number of the Bitcoin package may change as new versions are released. Future versions of Glacier may pin to a specific version.)
+   Click the apps folder. It will have the following content: (Note that the version number of the Bitcoin package may change as new versions are released. Future versions of Glacier may pin to a specific version.)
 
-        bitcoind_0.13.2-xenial1_amd64.deb
-        libboost-chrono1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb
-        libboost-program-options1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb
-        libboost-thread1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb
-        libdb4.8++_4.8.30-xenial2_amd64.deb
-        libevent-core-2.0-5_2.0.21-stable-2_amd64.deb
-        libevent-pthreads-2.0-5_2.0.21-stable-2_amd64.deb
-        libqrencode3_3.4.4-1_amd64.deb
-        libsodium18_1.0.8-5_amd64.deb
-        libzbar0_0.10+doc-10ubuntu1_amd64.deb
-        libzmq5_4.1.4-7_amd64.deb
-        qrencode_3.4.4-1_amd64.deb
-        zbar-tools_0.10+doc-10ubuntu1_amd64.deb
+       bitcoind_0.13.2-xenial1_amd64.deb
+       libboost-chrono1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb
+       libboost-program-options1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb
+       libboost-thread1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb
+       libdb4.8++_4.8.30-xenial2_amd64.deb
+       libevent-core-2.0-5_2.0.21-stable-2_amd64.deb
+       libevent-pthreads-2.0-5_2.0.21-stable-2_amd64.deb
+       libqrencode3_3.4.4-1_amd64.deb
+       libsodium18_1.0.8-5_amd64.deb
+       libzbar0_0.10+doc-10ubuntu1_amd64.deb
+       libzmq5_4.1.4-7_amd64.deb
+       qrencode_3.4.4-1_amd64.deb
+       zbar-tools_0.10+doc-10ubuntu1_amd64.deb
 
- Click the glacier folder. It will have the following content: 
+   Click the glacier folder. It will have the following content: 
 
-        base58.py
-        Glacier.pdf
-        glacierscript.py
-        LICENSE
-        README.md
-        SHA256SUMS
-        SHA256SUMS.sig
+       base58.py
+       Glacier.pdf
+       glacierscript.py
+       LICENSE
+       README.md
+       SHA256SUMS
+       SHA256SUMS.sig
 
 8. Eject and physically remove the Q1 APP USB from the SETUP 1 computer.
 
- **The Q1 APP USB is now eternally quarantined. It should never again be plugged into anything besides the Q1 computer.**
+   **The Q1 APP USB is now eternally quarantined. It should never again be plugged into anything besides the Q1 computer.**
 
 9. Repeat all above steps using the SETUP 2 computer, SETUP 2 BOOT USB, and Q2 APP USB.
 
@@ -1137,33 +1137,33 @@ If you are executing the Setup Protocol for the first time and do **not** plan o
 
    1. Visual side channel
 
-       1. Ensure that no humans or cameras (e.g. home security cameras, which can be hacked) have visual line-of-sight to the Quarantined Computers.
+      1. Ensure that no humans or cameras (e.g. home security cameras, which can be hacked) have visual line-of-sight to the Quarantined Computers.
 
-       2. Close doors and window shades.
+      2. Close doors and window shades.
 
    2. [Acoustic side channel](https://en.wikipedia.org/wiki/Acoustic_cryptanalysis)
 
-       3. Choose a room where sound will not travel easily outside.
+      1. Choose a room where sound will not travel easily outside.
 
-       4. Shut down nearby devices with microphones (e.g. smartphones and other laptops). 
+      4. Shut down nearby devices with microphones (e.g. smartphones and other laptops). 
 
        5. Plug in and turn on a table fan to generate white noise.
 
    3. [Power side channel](http://sharps.org/wp-content/uploads/CLARK-ESORICS13.pdf)
 
-       6. Unplug both Quarantined Computers from the wall.
+      1. Unplug both Quarantined Computers from the wall.
 
-       7. Run them **only on battery power** throughout this protocol.
+      7. Run them **only on battery power** throughout this protocol.
 
-       8. Make sure they are fully charged first!  If you run out of battery, you'll need to start over.
+      8. Make sure they are fully charged first!  If you run out of battery, you'll need to start over.
 
    4. [Radio](http://cyber.bgu.ac.il/content/how-leak-sensitive-data-isolated-computer-air-gap-near-mobile-phone-airhopper) and other side channels (Including seismic, thermal, and magnetic.)
 
-       9. Turn off all other computers and smartphones in the room.
+      1. Turn off all other computers and smartphones in the room.
 
-       10. Put portable computing devices in the Faraday bag and seal the bag.
+      10. Put portable computing devices in the Faraday bag and seal the bag.
 
-       11. Unplug desktop computers.
+      11. Unplug desktop computers.
 
 2. Put your Q1 BOOT USB into an open slot in your Q1 computer.
 
@@ -1173,32 +1173,32 @@ If you are executing the Setup Protocol for the first time and do **not** plan o
 
 5. Copy the software to the Q1 computer's RAM disk.
 
-    5. Click the File Manager icon from the launchpad on the left side of the screen. 
+   1. Click the File Manager icon from the launchpad on the left side of the screen. 
 
-    6. Click on the App USB on the left of the file manager. It will look like the image on the right, but may have a different name.
+   6. Click on the App USB on the left of the file manager. It will look like the image on the right, but may have a different name.
 
-    7. Drag the contents of the USB to the "Home" directory on the left side of file manager.
+   7. Drag the contents of the USB to the "Home" directory on the left side of file manager.
 
 6. Open a copy of this document on the Q1 computer.
 
-    8. In the File Manager find the glacier folder. The PDF file for this document should be visible with the name "Glacier.pdf."  Open it. 
+   1. In the File Manager find the glacier folder. The PDF file for this document should be visible with the name "Glacier.pdf."  Open it. 
 
- You won't be able to click any external links in the document, since you don't have a network connection. If you need to look something up on the internet, do so in a distant room. Do not remove devices from the Faraday bag before doing going to the other room.
+   You won't be able to click any external links in the document, since you don't have a network connection. If you need to look something up on the internet, do so in a distant room. Do not remove devices from the Faraday bag before doing going to the other room.
 
 7. Open a Terminal window by pressing Ctrl-Alt-T.
 
 8. Install the application software on the Q1 computer's RAM disk.
 
-        $ cd ~/apps
-        $ sudo dpkg -i *.deb
+       $ cd ~/apps
+       $ sudo dpkg -i *.deb
 
 9. Change into the glacier directory. You'll be using this directory to execute software for the protocol.
 
-        $ cd ~/glacier
+       $ cd ~/glacier
 
 10. Prepare GlacierScript for execution.
 
-        $ chmod +x glacierscript.py
+       $ chmod +x glacierscript.py
 
 11. Prepare the "Quarantined Scratchpad" -- an empty file you'll use as a place to jot notes.
 
