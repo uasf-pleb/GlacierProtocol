@@ -1951,25 +1951,25 @@ We recommend the Maintenance Protocol be executed **six months** after the initi
 
 2. Check for Glacier security upgrades
 
-    1. Access the latest full release of Glacier (*not* just the protocol document) at [https://glacierprotocol.org/releases](https://glacierprotocol.org/releases).
+   1. Access the latest full release of Glacier (*not* just the protocol document) at [https://glacierprotocol.org/releases](https://glacierprotocol.org/releases).
 
-    2. Open the protocol document (Glacier.pdf) within the ZIP file.
+   2. Open the protocol document (Glacier.pdf) within the ZIP file.
 
-    3. In Appendix E, locate release notes for all versions since the last time you executed the Maintenance Protocol (or if it's the first time, since the Glacier version specified on your Cold Storage Information Page).
+   3. In Appendix E, locate release notes for all versions since the last time you executed the Maintenance Protocol (or if it's the first time, since the Glacier version specified on your Cold Storage Information Page).
 
-    4. See whether any of those releases recommend any security upgrades. (Any recommendations are prominently mentioned at the top of the notes for each version.)
+   4. See whether any of those releases recommend any security upgrades. (Any recommendations are prominently mentioned at the top of the notes for each version.)
 
-    5. Whether or not you decide to upgrade, review the errata for the version of Glacier you are using at [https://glacierprotocol.org/errata](https://glacierprotocol.org/errata).
+   5. Whether or not you decide to upgrade, review the errata for the version of Glacier you are using at [https://glacierprotocol.org/errata](https://glacierprotocol.org/errata).
 
 3. Have each Cold Storage Information Packet visually inspected (either by you, or the signatory that has it in custody):
 
-    6. Verify the packet is in its expected location.
+   1. Verify the packet is in its expected location.
 
-    7. Verify the packet's location is secured as expected (any locks in working order, etc.)
+   7. Verify the packet's location is secured as expected (any locks in working order, etc.)
 
-    8. Verify the packet is in good physical condition.
+   8. Verify the packet is in good physical condition.
 
-    9. Verify the tamper-resistant seals appear to be intact.
+   9. Verify the tamper-resistant seals appear to be intact.
 
 4. Execute the Withdrawal Protocol for a small test amount.
 
@@ -2272,7 +2272,7 @@ v0.91 has no security improvements, but withdrawals will fail in some cases. Fun
 
     * With extremely large transactions, GlacierScript was incapable of processing them
 
-Workarounds have been implemented for both issues.
+  Workarounds have been implemented for both issues.
 
 * Fixed minor errors in Setup Protocol for Windows machines
 
