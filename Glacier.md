@@ -1135,35 +1135,35 @@ If you are executing the Setup Protocol for the first time and do **not** plan o
 
  [Side-channel attacks](https://en.wikipedia.org/wiki/Side-channel_attack) are a form of electronic threat based on the physical nature of computing hardware (as opposed to algorithms or their software implementations). Side channel attacks are rare, but it's relatively straightforward to defend against most of them.
 
-    1. Visual side channel
+   1. Visual side channel
 
-        1. Ensure that no humans or cameras (e.g. home security cameras, which can be hacked) have visual line-of-sight to the Quarantined Computers.
+       1. Ensure that no humans or cameras (e.g. home security cameras, which can be hacked) have visual line-of-sight to the Quarantined Computers.
 
-        2. Close doors and window shades.
+       2. Close doors and window shades.
 
-    2. [Acoustic side channel](https://en.wikipedia.org/wiki/Acoustic_cryptanalysis)
+   2. [Acoustic side channel](https://en.wikipedia.org/wiki/Acoustic_cryptanalysis)
 
-        3. Choose a room where sound will not travel easily outside.
+       3. Choose a room where sound will not travel easily outside.
 
-        4. Shut down nearby devices with microphones (e.g. smartphones and other laptops). 
+       4. Shut down nearby devices with microphones (e.g. smartphones and other laptops). 
 
-        5. Plug in and turn on a table fan to generate white noise.
+       5. Plug in and turn on a table fan to generate white noise.
 
-    3. [Power side channel](http://sharps.org/wp-content/uploads/CLARK-ESORICS13.pdf)
+   3. [Power side channel](http://sharps.org/wp-content/uploads/CLARK-ESORICS13.pdf)
 
-        6. Unplug both Quarantined Computers from the wall.
+       6. Unplug both Quarantined Computers from the wall.
 
-        7. Run them **only on battery power** throughout this protocol.
+       7. Run them **only on battery power** throughout this protocol.
 
-        8. Make sure they are fully charged first!  If you run out of battery, you'll need to start over.
+       8. Make sure they are fully charged first!  If you run out of battery, you'll need to start over.
 
-    4. [Radio](http://cyber.bgu.ac.il/content/how-leak-sensitive-data-isolated-computer-air-gap-near-mobile-phone-airhopper) and other side channels (Including seismic, thermal, and magnetic.)
+   4. [Radio](http://cyber.bgu.ac.il/content/how-leak-sensitive-data-isolated-computer-air-gap-near-mobile-phone-airhopper) and other side channels (Including seismic, thermal, and magnetic.)
 
-        9. Turn off all other computers and smartphones in the room.
+       9. Turn off all other computers and smartphones in the room.
 
-        10. Put portable computing devices in the Faraday bag and seal the bag.
+       10. Put portable computing devices in the Faraday bag and seal the bag.
 
-        11. Unplug desktop computers.
+       11. Unplug desktop computers.
 
 2. Put your Q1 BOOT USB into an open slot in your Q1 computer.
 
@@ -1246,19 +1246,19 @@ In this protocol, the total number of private keys you're creating will be refer
 
 3. Create entropy for private keys
 
- Creating an unguessable private key requires *entropy* -- random data. We'll combine two sources of entropy to generate our keys. This ensures securely random keys even if *one* entropy source is somehow flawed or compromised to be less-than-perfectly random.
+   Creating an unguessable private key requires *entropy* -- random data. We'll combine two sources of entropy to generate our keys. This ensures securely random keys even if *one* entropy source is somehow flawed or compromised to be less-than-perfectly random.
 
-    5. Generate dice entropy
+   5. Generate dice entropy
 
-        1. Type "DICE ENTROPY" into both Quarantined Scratchpads.
+      1. Type "DICE ENTROPY" into both Quarantined Scratchpads.
 
-        2. Roll 62 six-sided dice (62 dice rolls corresponds to 160 bits of entropy. See the design document for details.), shaking the dice thoroughly each roll.
+      2. Roll 62 six-sided dice (62 dice rolls corresponds to 160 bits of entropy. See the design document for details.), shaking the dice thoroughly each roll.
 
-        3. If you are rolling multiple dice at the same time, read the dice left-to-right. **This is important.** (Humans are horrible at generating random data and great at noticing patterns. Without a consistent heuristic like "read the dice left to right", you may subconsciously read them in a non-random order (like tending to record lower numbers first). This can drastically undermine the randomness of the data, and could be exploited to guess your private keys.)
+      3. If you are rolling multiple dice at the same time, read the dice left-to-right. **This is important.** (Humans are horrible at generating random data and great at noticing patterns. Without a consistent heuristic like "read the dice left to right", you may subconsciously read them in a non-random order (like tending to record lower numbers first). This can drastically undermine the randomness of the data, and could be exploited to guess your private keys.)
 
-        4. Manually enter the numbers into the Quarantined Scratchpads on *both* quarantined computers. Put all rolls on the same line to create one line of 62 numbers. (It's fine to add spaces for readability.)
+      4. Manually enter the numbers into the Quarantined Scratchpads on *both* quarantined computers. Put all rolls on the same line to create one line of 62 numbers. (It's fine to add spaces for readability.)
 
-    6. Repeat this process a total of *N* times, so that you have a total of *N* lines of numbers in each Quarantined Scratchpad.Generate computer entropy
+   6. Repeat this process a total of *N* times, so that you have a total of *N* lines of numbers in each Quarantined Scratchpad.Generate computer entropy
 
         5. Type "COMPUTER ENTROPY" into both computers' Quarantined Scratchpads. (This is a descriptive heading to keep your notes organized and minimize risk of error.)
 
@@ -1285,9 +1285,9 @@ In this protocol, the total number of private keys you're creating will be refer
 
         9. Manually enter the *N* lines of entropy into the Quarantined Scratchpad on the *other* quarantined computer. 
 
-    7. Generate new cold storage data information using your entropy
+   7. Generate new cold storage data information using your entropy
 
-     **On the Q1 computer:**
+      **On the Q1 computer:**
 
         10. Run GlacierScript to generate the private keys.
 
@@ -1324,7 +1324,7 @@ In this protocol, the total number of private keys you're creating will be refer
                 QR code for cold storage address in address.png
                 QR code for redemption script in redemption.png
 
-    8. Verify the integrity of the cold storage data.
+   8. Verify the integrity of the cold storage data.
 
         13. **On the Q2 computer,** repeat step (c) above.
 
