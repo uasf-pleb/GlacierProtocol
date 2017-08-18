@@ -1667,7 +1667,7 @@ On any Internet-connected computer:
 
                01000000016847105309a8604c7e4f5773d0a16c45248acce057dab62edb0fedc2810d49a4010000006b48304502210093e6b4154d42c1bba27c548a80488673967be32c8de2f11e01a1402a5500e13302203e20874e5d0af516c902d3b600ee94571a7ce68a14a384dc05d4346e1009fe000121039fd6f25c87f183260c1d4a3a3ae33a2c06414db4c40d0c2ab76a71921fef0939ffffffff01e0930400000000001976a914e770a7c13f9774783e80607f40be4547780315b688ac00000000
 
-        2. This entire page be referred to as a **raw unspent transaction**.
+        2. This entire page will be referred to as a **raw unspent transaction**.
 
         3. Copy-paste the raw unspent transaction next to the unspent transaction ID in your temporary scratchpad.
 
@@ -1733,9 +1733,9 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
 2. Construct the withdrawal transaction
 
- **On the Q1 computer:**
+   **On the Q1 computer:**
 
-    1. Import QR code data 
+   1. Import QR code data 
 
         1. Start the QR code reader:
 
@@ -1757,11 +1757,11 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
             5. Make a note of what the data is, based on your handwritten label from the printed QR code (i.e. "raw unspent transaction" or "redemption script").
 
-    2. Close the window with the live video feed.
+   2. Close the window with the live video feed.
 
-    3. Verify the destination address in the Quarantined Scratchpad matches your handwritten copy of the destination address.
+   3. Verify the destination address in the Quarantined Scratchpad matches your handwritten copy of the destination address.
 
-    4. Transcribe the other information you will be using into the Quarantined Scratchpad. (If you make a transcription error, it will be easier to identify and fix in the scratchpad compared to a situation where you transcribed it directly into GlacierScript.)
+   4. Transcribe the other information you will be using into the Quarantined Scratchpad. (If you make a transcription error, it will be easier to identify and fix in the scratchpad compared to a situation where you transcribed it directly into GlacierScript.)
 
         3. Private keys
 
@@ -1769,7 +1769,7 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
      Transcribe the private keys with reasonable care, but painstaking verification is not critical. (If you make an error, the withdrawal will simply fail, prompting you to fix your transcription error.)
 
-    5. If any raw unspent transactions are too long, move each too-long transaction to its own file.
+   5. If any raw unspent transactions are too long, move each too-long transaction to its own file.
 
      GlacierScript normally takes input by copy-pasting values, but it can only accept copy-pasted values up to about 4000 characters in size. (Technical note: This seems to be due to limitations inherent in Unix terminals.)
 
@@ -1781,22 +1781,22 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
         7. Make sure to save it to the folder containing glacierscript.py.
 
-    6. Begin construction of the withdrawal transaction:
+   6. Begin construction of the withdrawal transaction:
 
             $ cd ~/glacier
             $ ./glacierscript.py create-withdrawal-data
 
-    7. When prompted for the number of private keys to use:
+   7. When prompted for the number of private keys to use:
 
         8. **If you are doing an initial test withdrawal for a new cold storage address, choose *N*** (i.e. the total number of keys in your [multisignature withdrawal policy](#bookmark=id.aa8bluz5qae9) -- 4 if you use the default recommendation).
 
         9. Otherwise, select 2 (assuming you're using the recommended 2-of-n withdrawal policy).
 
-    8. Enter all data as prompted by copy-pasting from the Quarantined Scratchpad.
+   8. Enter all data as prompted by copy-pasting from the Quarantined Scratchpad.
 
         10. *Technical note for experienced Bitcoin users:*  If the withdrawal amount & fee are cumulatively less than the total amount of the unspent transactions, the remainder will be sent back to the same cold storage address as change.
 
-    9. The script will output a "raw signed transaction" and a *fingerprint* of the signed transaction for verification purposes.
+   9. The script will output a "raw signed transaction" and a *fingerprint* of the signed transaction for verification purposes.
 
      Example output:
 
@@ -1813,7 +1813,7 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
 3. Verify transaction construction
 
-    10. **On the Q2 computer,**repeat step 2 above.
+    10. **On the Q2 computer**, repeat step 2 above.
 
         11. Note: it is important to enter the private keys in the same order on each of the quarantined computers.
 
