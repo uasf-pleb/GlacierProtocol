@@ -550,42 +550,42 @@ You are strongly encouraged to use the printed copy as a checklist, physically m
 
 1. Separate your quarantined hardware into two parallel sets. Each set should contain:
 
-    - One laptop
-    - Two USB drives from the same manufacturer
+   - One laptop
+   - Two USB drives from the same manufacturer
 
- Each component should be supplied by *different* manufacturers from the other set. i.e. your two laptops should be from two different manufacturers, and the USB drives in one set should be from a different manufacturer than the USB drives in the other set.
+   Each component should be supplied by *different* manufacturers from the other set. i.e. your two laptops should be from two different manufacturers, and the USB drives in one set should be from a different manufacturer than the USB drives in the other set.
 
 2. In each set, label all hardware with a permanent marker. Write directly on the hardware.
 
-    1. Label the laptops ("Quarantined Computers") "Q1" and "Q2".
+   1. Label the laptops ("Quarantined Computers") "Q1" and "Q2".
 
-    2. Label one USB drive from each set with "Q1 BOOT" or "Q2 BOOT". These USBs will have the operating system you'll boot the computer with.
+   2. Label one USB drive from each set with "Q1 BOOT" or "Q2 BOOT". These USBs will have the operating system you'll boot the computer with.
 
-    3. Label the other USB drive from each set with "Q1 APP" or "Q2 APP". These USBs will have the software applications you'll use.
+   3. Label the other USB drive from each set with "Q1 APP" or "Q2 APP". These USBs will have the software applications you'll use.
 
 3. **Labeled hardware should only be used with hardware that shares the same label ("Q1", "Q2", or "SETUP 1", or "SETUP 2").** For example:
 
-    4. **Don't** plug a **"Q1"** USB drive into a **"Q2"** laptop. 
+   1. **Don't** plug a **"Q1"** USB drive into a **"Q2"** laptop. 
 
-    5. **Don't** plug a **"SETUP 2"** USB drive into a **"Q1"** or **"Q2"** laptop.
+   5. **Don't** plug a **"SETUP 2"** USB drive into a **"Q1"** or **"Q2"** laptop.
 
-    6. **Don't** plug an **unlabeled** USB drive into a **"Q1"** or **"Q2"** laptop.
+   6. **Don't** plug an **unlabeled** USB drive into a **"Q1"** or **"Q2"** laptop.
 
 4. Quarantine the network and wireless interfaces for both laptops: 
 
-    7. Unbox laptop. Do **not** power it on.
+   1. Unbox laptop. Do **not** power it on.
 
-    8. Put a [tamper-resistant seal](https://www.amazon.com/Security-Warranty-Hologram-Sequential-Numbering/dp/B0051JNB6A/ref=sr_1_1?ie=UTF8&qid=1471760406&sr=8-1&keywords=tamper+resistant+stickers) over the Ethernet port, if it has one. 
+   8. Put a [tamper-resistant seal](https://www.amazon.com/Security-Warranty-Hologram-Sequential-Numbering/dp/B0051JNB6A/ref=sr_1_1?ie=UTF8&qid=1471760406&sr=8-1&keywords=tamper+resistant+stickers) over the Ethernet port, if it has one. 
 
-    9. Physically remove the wireless card.
+   9. Physically remove the wireless card.
 
-        1. For the recommended Dell laptop, Dell's official instructions for doing so are [here](http://topics-cdn.dell.com/pdf/inspiron-11-3162-laptop_Service%20Manual_en-us.pdf). A YouTube video showing an abbreviated procedure is [here](https://www.youtube.com/watch?v=nFYXQQPoh90).
+      1. For the recommended Dell laptop, Dell's official instructions for doing so are [here](http://topics-cdn.dell.com/pdf/inspiron-11-3162-laptop_Service%20Manual_en-us.pdf). A YouTube video showing an abbreviated procedure is [here](https://www.youtube.com/watch?v=nFYXQQPoh90).
 
-        2. For the recommended Acer laptop, the process is similar to the Dell. Note there are two cover screws hidden underneath rubber feet on the bottom of the laptop.
+      2. For the recommended Acer laptop, the process is similar to the Dell. Note there are two cover screws hidden underneath rubber feet on the bottom of the laptop.
 
-    10. After removing the wireless card, cover the ends of the internal wi-fi antennae with electrical tape.
+   10. After removing the wireless card, cover the ends of the internal wi-fi antennae with electrical tape.
 
-    11. If the computer has separate cards for WiFi and Bluetooth, be sure to remove both. (Most modern laptops, including the recommended Acer and Dell, have a single wireless card which handles both.)
+   11. If the computer has separate cards for WiFi and Bluetooth, be sure to remove both. (Most modern laptops, including the recommended Acer and Dell, have a single wireless card which handles both.)
 
 5. Fully charge both laptops.
 
@@ -610,59 +610,59 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 3. Download Ubuntu by going to this link: 
 [http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso](http://old-releases.ubuntu.com/releases/xenial/ubuntu-16.04.1-desktop-amd64.iso)
 
- Wait until the download is complete.
+   Wait until the download is complete.
 
 4. Open a terminal window.
 
-    1. **Windows:** Press Windows-R, type "powershell" and click OK.
+   - **Windows:** Press Windows-R, type "powershell" and click OK.
 
-    2. **macOS:** Click the Searchlight (magnifying glass) icon in the menu bar, and type "terminal". Select the Terminal application from the search results.
+   - **macOS:** Click the Searchlight (magnifying glass) icon in the menu bar, and type "terminal". Select the Terminal application from the search results.
 
-    3. **Linux:** Varies; on Ubuntu, press Ctrl-Alt-T. (On Ubuntu, press Ctrl-Alt-T.)
+   - **Linux:** Varies; on Ubuntu, press Ctrl-Alt-T. (On Ubuntu, press Ctrl-Alt-T.)
 
 5. Verify the integrity of the Ubuntu download.
 
-    4. Change the terminal window's active folder to the folder where you downloaded Ubuntu, customizing the folder name if necessary:
+   1. Change the terminal window's active folder to the folder where you downloaded Ubuntu, customizing the folder name if necessary:
 
-        1. **Windows:**
+      - **Windows:**
 
-                > cd $HOME/Downloads
+            > cd $HOME/Downloads
 
-        2. **macOS:**
+      - **macOS:**
 
-                $ cd $HOME/Downloads
+            $ cd $HOME/Downloads
 
-        3. **Linux:**
+      - **Linux:**
 
-                $ cd $HOME/Downloads
+            $ cd $HOME/Downloads
 
-    5. View the fingerprint of the file: (Technical details: Because you verified the checksum & checksum signature for this document in Section I, we are omitting the GPG verification of some other fingerprints in the protocol. For a detailed security analysis, see the design document.)
+   5. View the fingerprint of the file: (Technical details: Because you verified the checksum & checksum signature for this document in Section I, we are omitting the GPG verification of some other fingerprints in the protocol. For a detailed security analysis, see the design document.)
 
-        4. **Windows:**
+      - **Windows:**
 
-                > Get-FileHash -a sha256 ubuntu-16.04.1-desktop-amd64.iso
+            > Get-FileHash -a sha256 ubuntu-16.04.1-desktop-amd64.iso
 
-        5. **macOS:**
+      - **macOS:**
 
-                $ shasum -a 256 ubuntu-16.04.1-desktop-amd64.iso
+            $ shasum -a 256 ubuntu-16.04.1-desktop-amd64.iso
 
-        6. **Ubuntu:**
+      - **Ubuntu:**
 
-                $ sha256sum ubuntu-16.04.1-desktop-amd64.iso
+            $ sha256sum ubuntu-16.04.1-desktop-amd64.iso
 
-    6. The following fingerprint should be displayed: (You can verify this is the official Ubuntu fingerprint here, or follow Ubuntu's full verification process using this guide.)
+   6. The following fingerprint should be displayed: (You can verify this is the official Ubuntu fingerprint here, or follow Ubuntu's full verification process using this guide.)
 
-                dc7dee086faabc9553d5ff8ff1b490a7f85c379f49de20c076f11fb6ac7c0f34
+          dc7dee086faabc9553d5ff8ff1b490a7f85c379f49de20c076f11fb6ac7c0f34
 
- It's not important to check every single character when visually verifying a fingerprint. It's sufficient to check the **first 8 characters, last 8 characters, and a few somewhere in the middle.** (The way these fingerprints work mathematically is that changing even a single bit in the file will result in a completely different fingerprint, so any modification is easy to detect. For technical details about our specific spot checking recommendation, see the design document.)
+   It's not important to check every single character when visually verifying a fingerprint. It's sufficient to check the **first 8 characters, last 8 characters, and a few somewhere in the middle.** (The way these fingerprints work mathematically is that changing even a single bit in the file will result in a completely different fingerprint, so any modification is easy to detect. For technical details about our specific spot checking recommendation, see the design document.)
 
 6. Create the SETUP 1 BOOT USB.
 
-    7. **Windows** (Adapted from this official guide.)
+   - **Windows** (Adapted from this official guide.)
 
-        7. Download the [Rufus disk utility](https://rufus.akeo.ie/) and run it.
+     1. Download the [Rufus disk utility](https://rufus.akeo.ie/) and run it.
 
-        8. Insert the SETUP 1 BOOT USB in an empty USB slot.
+        1. Insert the SETUP 1 BOOT USB in an empty USB slot.
 
         9. In the "Device" dropdown at the top of the Rufus window, ensure the empty USB drive is selected.
 
@@ -680,25 +680,25 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
         16. The program will take a few minutes to write the USB.
 
-    8. **macOS** (Adapted from this official guide.)
+    - **macOS** (Adapted from this official guide.)
 
-        17. Prepare the Ubuntu download for copying to the USB.
+      1. Prepare the Ubuntu download for copying to the USB.
 
-            1. 
+         1. 
 
                 $ cd $HOME/Downloads
 
-             (This command changes your terminal's active folder to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.)
+            (This command changes your terminal's active folder to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.)
 
-            2. 
+            1. 
 
-                $ hdiutil convert ubuntu-16.04.1-desktop-amd64.iso -format UDRW -o ubuntu-16.04.1-desktop-amd64.img
+                  $ hdiutil convert ubuntu-16.04.1-desktop-amd64.iso -format UDRW -o ubuntu-16.04.1-desktop-amd64.img
 
         18. Determine the macOS "device identifier" for the Boot USB.
 
-            3. 
+            1. 
 
-                    $ diskutil list
+                   $ diskutil list
 
             4. Insert the SETUP 1 BOOT USB in an empty USB slot.
 
@@ -706,7 +706,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
             6. Once more:
 
-                    $ diskutil list
+                   $ diskutil list
 
             7. The output of the second command should include an additional section that was not present in the first command's output.
 
@@ -716,35 +716,35 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
             8. Make a note of the device identifier.
 
-                3. The device identifier is the part of the new section header that comes before (external, physical) (for example /dev/disk2).
+                1. The device identifier is the part of the new section header that comes before (external, physical) (for example /dev/disk2).
 
         19. Put Ubuntu on the SETUP 1 BOOT USB.
 
-            9. First, unmount the usb
+            1. First, unmount the usb
 
-                    $ diskutil unmountDisk USB-device-identifier-here
+                   $ diskutil unmountDisk USB-device-identifier-here
 
             10. Enter the following command, **making sure to use the correct device identifier; using the wrong one could overwrite your hard drive!**
 
-                    $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=USB-device-identifier-here bs=1m
+                   $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=USB-device-identifier-here bs=1m
 
-             Example:
+                Example:
 
-                    $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=/dev/disk2 bs=1m
+                   $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=/dev/disk2 bs=1m
 
             11. Enter your administrator password when requested.
 
             12. Wait several minutes for the copying process to complete. When it does, you may see an error box pop up:
 
-             ![](null)
+                ![](null)
 
-             This is expected; it's because the USB is written in a format readable by Ubuntu, but not readable by macOS. 
+                This is expected; it's because the USB is written in a format readable by Ubuntu, but not readable by macOS. 
 
             13. Click Ignore. 
 
         20. Verify the integrity of the SETUP 1 BOOT USB (i.e. no errors or malware infection).
 
-            14. Remove the USB drive from the USB slot and immediately reinsert it.
+            1. Remove the USB drive from the USB slot and immediately reinsert it.
 
             15. Wait 10 seconds for the operating system to recognize the USB.
 
@@ -762,7 +762,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                     $ sudo cmp -n `stat -f '%z' ubuntu-16.04.1-desktop-amd64.img.dmg` ubuntu-16.04.1-desktop-amd64.img.dmg USB-device-identifier-here
 
-             (See the corresponding step in the Ubuntu section for a detailed footnote.)
+                (See the corresponding step in the Ubuntu section for a detailed footnote.)
 
             20. Wait a few minutes for the verification process to complete.
 
@@ -772,19 +772,19 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                     ubuntu-16.04.1-desktop-amd64.img.dmg /dev/disk2 differ: byte 1, line 1 
 
-             If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
+                If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
 
-    9. **Ubuntu** (Adapted from this official guide.)
+    - **Ubuntu** (Adapted from this official guide.)
 
-        21. If this is your first time using Ubuntu, note:
+        1. If this is your first time using Ubuntu, note:
 
-            23. You can copy-paste text in most applications (e.g. Firefox) by pressing **Ctrl-C** or **Ctrl-V.**
+           1. You can copy-paste text in most applications (e.g. Firefox) by pressing **Ctrl-C** or **Ctrl-V.**
 
-            24. You can copy-paste* *text in a *terminal window* by pressing **Ctrl-Shift-C** or **Ctrl-Shift-V.**
+           24. You can copy-paste* *text in a *terminal window* by pressing **Ctrl-Shift-C** or **Ctrl-Shift-V.**
 
         22. Put Ubuntu on the SETUP BOOT 1 USB.
 
-            25. Open the Ubuntu search console by clicking the purple circle/swirl icon in the upper-left corner of the screen.
+            1. Open the Ubuntu search console by clicking the purple circle/swirl icon in the upper-left corner of the screen.
 
             26. Type "startup disk creator" in the text box that appears
 
@@ -815,13 +815,13 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                     $ cd $HOME/Downloads
 
-             (This command changes your terminal's active folder to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.)
+                (This command changes your terminal's active folder to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.)
 
             37. 
 
                     $ sudo cmp -n `stat -c '%s' ubuntu-16.04.1-desktop-amd64.iso` ubuntu-16.04.1-desktop-amd64.iso USB-device-identifier-here
 
-             (Technical details: When writing the ISO to the USB, there are padding bits written after the end of the files, so the comparison is not, by default, identical. cmp's -n flag allows us to exclude the padding from the comparison by only looking at the first N bytes, where N is the size of the .iso.)
+                (Technical details: When writing the ISO to the USB, there are padding bits written after the end of the files, so the comparison is not, by default, identical. cmp's -n flag allows us to exclude the padding from the comparison by only looking at the first N bytes, where N is the size of the .iso.)
 
             38. If prompted for a password, enter the computer's root password.
 
@@ -833,27 +833,27 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                     ubuntu-16.04.1-desktop-amd64.iso /dev/sda differ: byte 1, line 1 
 
-             If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
+                If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
 
 7. Create the Q1 BOOT USB
 
-    10. Boot the SETUP 1 computer from the SETUP 1 BOOT USB.
+    1. Boot the SETUP 1 computer from the SETUP 1 BOOT USB.
 
-        24. Reboot the computer.
+       1. Reboot the computer.
 
-        25. Press your laptop's key sequence to bring up the boot device selection menu. (Some PCs may offer a boot device selection menu; see below.)
+       25. Press your laptop's key sequence to bring up the boot device selection menu. (Some PCs may offer a boot device selection menu; see below.)
 
-            42. **PC:** Varies by manufacturer, but is often **F12** or **Del**. The timing may vary as well; try pressing it when the boot logo appears.
+           1. **PC:** Varies by manufacturer, but is often **F12** or **Del**. The timing may vary as well; try pressing it when the boot logo appears.
 
-                4. On the recommended Dell laptop, press F12. You should see a horizontal blue bar appear underneath the Dell logo.
+                1. On the recommended Dell laptop, press F12. You should see a horizontal blue bar appear underneath the Dell logo.
 
                 5. The recommended Acer laptop does not have a boot menu. See below for instructions. 
 
-            43. **Mac:** When you hear the startup chime, press and hold **Option (⌥)**.
+           43. **Mac:** When you hear the startup chime, press and hold **Option (⌥)**.
 
         26. Select the proper device to boot from.
 
-            44. **PC:** Varies by manufacturer; option will often say "USB" and/or "UEFI".
+            1.  **PC:** Varies by manufacturer; option will often say "USB" and/or "UEFI".
 
                 6. On the recommended Dell laptop, select "USB1" under "UEFI OPTIONS".
 
@@ -863,9 +863,9 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
         27. Some laptops don't have a boot device selection menu, and you need to go into the BIOS configuration and change the boot order so that the USB drive is first.
 
-            46. On the recommended Acer laptop:
+            1.  On the recommended Acer laptop:
 
-                8. Press F2 while booting to enter BIOS configuration.
+                1. Press F2 while booting to enter BIOS configuration.
 
                 9. Navigate to the Boot menu.
 
@@ -875,7 +875,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
         28. If the computer boots into its regular OS rather than presenting you with a boot device or BIOS configuration screen, you probably pressed the wrong button, or waited too long.
 
-            47. Hold down your laptop's power button for 10 seconds. (The screen may turn black sooner than that; keep holding it down.)
+            1. Hold down your laptop's power button for 10 seconds. (The screen may turn black sooner than that; keep holding it down.)
 
             48. Turn the laptop back on and try again. Spam the appropriate button(s) repeatedly as it boots.
 
@@ -887,11 +887,11 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
     11. Enable WiFi connectivity.
 
-        31. Click the cone-shaped WiFi icon near the right side of the menu bar. 
+        1. Click the cone-shaped WiFi icon near the right side of the menu bar. 
 
         32. If the dropdown says "No network devices available" at the top, you need to enable your networking drivers: (Drivers are software that allows the operating system to interface with a piece of hardware.)
 
-            50. Click on "System Settings". It's the gear-and-wrench icon along the left side of the screen.
+            1. Click on "System Settings". It's the gear-and-wrench icon along the left side of the screen.
 
             51. A System Settings window will appear. Click the "Software & Updates" icon.
 
@@ -907,9 +907,9 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
     12. Repeat steps 1-6 using the SETUP 1 computer to create the Q1 BOOT USB rather than the SETUP 1 BOOT USB. 
 
-        34. **The instruction to plug a Quarantined Boot USB into your Setup computer *should* raise a red flag for you, because you should never plug a quarantined USB into anything other than the quarantined computer it is designated for!** 
+        1. **The instruction to plug a Quarantined Boot USB into your Setup computer *should* raise a red flag for you, because you should never plug a quarantined USB into anything other than the quarantined computer it is designated for!** 
 
-         This setup process is the ONE exception.
+           This setup process is the ONE exception.
 
         35. Because you have booted the SETUP 1 computer off the SETUP 1 BOOT USB, you will follow the instructions for Ubuntu, even if your computer normally runs Windows or macOS.
 
@@ -923,7 +923,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
 8. Create the SETUP 2 BOOT USB and Q2 BOOT USB
 
-    13. Repeat steps 1-7 using the SETUP 2 computer, SETUP 2 BOOT USB, and Q2 BOOT USB.
+    1. Repeat steps 1-7 using the SETUP 2 computer, SETUP 2 BOOT USB, and Q2 BOOT USB.
 
 ## Setup Protocol, Section V: Create App USBs
 
