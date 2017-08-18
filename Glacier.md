@@ -935,7 +935,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
     1. **The instruction to plug a Quarantined App USB into your Setup computer *should* raise a red flag for you, because you should never plug a quarantined USB into anything other than the quarantined computer it is designated for!** 
 
-     This setup process is the ONE exception.
+       This setup process is the ONE exception.
 
 3. Press Ctrl-Alt-T to open a terminal window.
 
@@ -947,7 +947,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
         1. When the download starts, Firefox will ask you if you want to open the ZIP file with Archive Manager. Click OK.
 
-         When the ZIP file download completes, it will be opened with Archive Manager.
+           When the ZIP file download completes, it will be opened with Archive Manager.
 
         2. There will be a single entry in a list named "GlacierProtocol-version-here", where version-here is replaced with the current version number (like "v1.0"). Click on that and then click the "Extract" button. 
 
@@ -979,7 +979,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
         1. Import the Glacier public key into your local GPG installation:
 
-                $ gpg --import ~/Downloads/glacier.asc
+               $ gpg --import ~/Downloads/glacier.asc
 
         12. Switch to the glacier folder:
 
@@ -1034,39 +1034,39 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
 6. Install the remaining application software on the Q1 APP USB.
 
-    1.  Configure our system to enable access to the software we need in Ubuntu's "package repository": (A "package repository" is roughly analogous to an "app store" on other platforms, although all of the software is free.) (Technical details: On Ubuntu 16.04.01 there is a bug in Ubuntu's package manager that affects systems running off a bootable Ubuntu USB. The commands in steps a and b are a workaround.)
+    1. Configure our system to enable access to the software we need in Ubuntu's "package repository": (A "package repository" is roughly analogous to an "app store" on other platforms, although all of the software is free.) (Technical details: On Ubuntu 16.04.01 there is a bug in Ubuntu's package manager that affects systems running off a bootable Ubuntu USB. The commands in steps a and b are a workaround.)
 
-        1. 
+       1. 
 
-                $ sudo mv /var/cache/app-info/xapian/default /var/cache/app-info/xapian/default_old
+               $ sudo mv /var/cache/app-info/xapian/default /var/cache/app-info/xapian/default_old
 
-        20. 
+       20. 
 
-                $ sudo mv /var/cache/app-info/xapian/default_old /var/cache/app-info/xapian/default
+               $ sudo mv /var/cache/app-info/xapian/default_old /var/cache/app-info/xapian/default
 
-        21. 
+       21. 
 
-                $ sudo apt-add-repository universe
+               $ sudo apt-add-repository universe
 
-        22. 
+       22. 
 
-                $ sudo apt-add-repository ppa:bitcoin/bitcoin
+               $ sudo apt-add-repository ppa:bitcoin/bitcoin
 
-            4. Press Enter when prompted.
+           Press Enter when prompted.
 
-        23. 
+       23. 
 
-                $ sudo apt-get update
+               $ sudo apt-get update
 
     8. Download and perform integrity verification (Integrity verification is done automatically by Ubuntu's apt-get command.) of software available from Ubuntu's package repository:
 
-     -  **bitcoind:** [Bitcoin Core](http://bitcoincore.org), which we'll use for cryptography & financial operations
-     -  **qrencode:** Used for creating QR codes to move data off quarantined computers
-     -  **zbar-tools:** Used for reading QR codes to import data into quarantined computers
+       - **bitcoind:** [Bitcoin Core](http://bitcoincore.org), which we'll use for cryptography & financial operations
+       - **qrencode:** Used for creating QR codes to move data off quarantined computers
+       - **zbar-tools:** Used for reading QR codes to import data into quarantined computers
 
-                $ sudo apt-get install qrencode=3.4.4-1 zbar-tools=0.10+doc-10ubuntu1 bitcoind
+           $ sudo apt-get install qrencode=3.4.4-1 zbar-tools=0.10+doc-10ubuntu1 bitcoind
 
-    9. Copy that software to the Q1 APP USB.
+    9.  Copy that software to the Q1 APP USB.
 
         1. Create a folder for the application files that will be moved to the USB: 
 
