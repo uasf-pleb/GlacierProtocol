@@ -692,7 +692,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
             1. 
 
-                  $ hdiutil convert ubuntu-16.04.1-desktop-amd64.iso -format UDRW -o ubuntu-16.04.1-desktop-amd64.img
+                    $ hdiutil convert ubuntu-16.04.1-desktop-amd64.iso -format UDRW -o ubuntu-16.04.1-desktop-amd64.img
 
          18. Determine the macOS "device identifier" for the Boot USB.
 
@@ -724,116 +724,116 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                     $ diskutil unmountDisk USB-device-identifier-here
 
-             10. Enter the following command, **making sure to use the correct device identifier; using the wrong one could overwrite your hard drive!**
+             2. Enter the following command, **making sure to use the correct device identifier; using the wrong one could overwrite your hard drive!**
 
-                     $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=USB-device-identifier-here bs=1m
+                    $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=USB-device-identifier-here bs=1m
 
-                 Example:
+                Example:
 
-                     $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=/dev/disk2 bs=1m
+                    $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=/dev/disk2 bs=1m
 
-             11. Enter your administrator password when requested.
+             3. Enter your administrator password when requested.
 
-             12. Wait several minutes for the copying process to complete. When it does, you may see an error box pop up:
+             4. Wait several minutes for the copying process to complete. When it does, you may see an error box pop up:
 
-                 ![](null)
+                ![](null)
 
-                 This is expected; it's because the USB is written in a format readable by Ubuntu, but not readable by macOS. 
+                This is expected; it's because the USB is written in a format readable by Ubuntu, but not readable by macOS. 
 
-             13. Click Ignore. 
+             5. Click Ignore. 
 
          20. Verify the integrity of the SETUP 1 BOOT USB (i.e. no errors or malware infection).
 
              1. Remove the USB drive from the USB slot and immediately reinsert it.
 
-             15. Wait 10 seconds for the operating system to recognize the USB.
+             2. Wait 10 seconds for the operating system to recognize the USB.
 
-             16. You may see the same error box pop up again. Select Ignore.
+             3. You may see the same error box pop up again. Select Ignore.
 
-             17. The USB's device identifier may have changed. Find it again:
+             4. The USB's device identifier may have changed. Find it again:
 
-                     $ diskutil list
+                    $ diskutil list
 
-             18. 
-
-                     $ cd $HOME/Downloads
-
-             19. 
-
-                     $ sudo cmp -n `stat -f '%z' ubuntu-16.04.1-desktop-amd64.img.dmg` ubuntu-16.04.1-desktop-amd64.img.dmg USB-device-identifier-here
-
-                 (See the corresponding step in the Ubuntu section for a detailed footnote.)
-
-             20. Wait a few minutes for the verification process to complete.
-
-             21. If all goes well, the command will output no data, returning to your usual terminal prompt.
-
-             22. If there is a discrepancy, you'll see a message like:
-
-                     ubuntu-16.04.1-desktop-amd64.img.dmg /dev/disk2 differ: byte 1, line 1 
-
-                 If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
-
-    - **Ubuntu** (Adapted from this official guide.)
-
-        1. If this is your first time using Ubuntu, note:
-
-           1. You can copy-paste text in most applications (e.g. Firefox) by pressing **Ctrl-C** or **Ctrl-V.**
-
-           24. You can copy-paste* *text in a *terminal window* by pressing **Ctrl-Shift-C** or **Ctrl-Shift-V.**
-
-        22. Put Ubuntu on the SETUP BOOT 1 USB.
-
-            1. Open the Ubuntu search console by clicking the purple circle/swirl icon in the upper-left corner of the screen.
-
-            26. Type "startup disk creator" in the text box that appears
-
-            27. Click on the "Startup Disk Creator" icon that appears.
-
-            28. The "Source disc image" panel should show the .iso file you downloaded. If it does not, click the "Other" button and find it in the folder you downloaded it to.
-
-            29. In the "Disk to use" panel, you should see two lines. They may vary from system to system, but each line will have a device identifier in it, highlighted in the example below.
-
-	                Generic Flash Disk (/dev/sda)
-	                Kanguru Flash Trust (/dev/sdb)
-
-            30. Select the line containing SETUP 1 BOOT USB. (If both USB entries look identical, you may have to remove the Q1 BOOT USB to see which entry it belongs to.) Make note of the disk identifier (e.g. /dev/sdb).
-
-            31. Click "Make Startup Disk" and then click "Yes".
-
-            32. Wait a few minutes for the copying process to complete.
-
-        23. Verify the integrity of the SETUP 1 BOOT USB (i.e. no errors or malware infection).
-
-            1. On your desktop, right-click the corresponding USB drive icon in your dock and select Eject from the pop-up menu.
-
-            34. Remove the USB drive from the USB slot and immediately re-insert it. (Technical details: In order to avoid detection, it's conceivable that malware might wait until a USB drive is in the process of being ejected (and all integrity checks presumably completed) before infecting the USB. Ejecting and re-inserting the USB before integrity checking is a simple workaround to defend against this.)
-
-            35. Wait 10 seconds for the operating system to recognize the USB.
-
-            36. 
+             5. 
 
                     $ cd $HOME/Downloads
 
-                (This command changes your terminal's active folder to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.)
+             6. 
 
-            37. 
+                    $ sudo cmp -n `stat -f '%z' ubuntu-16.04.1-desktop-amd64.img.dmg` ubuntu-16.04.1-desktop-amd64.img.dmg USB-device-identifier-here
 
-                    $ sudo cmp -n `stat -c '%s' ubuntu-16.04.1-desktop-amd64.iso` ubuntu-16.04.1-desktop-amd64.iso USB-device-identifier-here
+                 (See the corresponding step in the Ubuntu section for a detailed footnote.)
 
-                (Technical details: When writing the ISO to the USB, there are padding bits written after the end of the files, so the comparison is not, by default, identical. cmp's -n flag allows us to exclude the padding from the comparison by only looking at the first N bytes, where N is the size of the .iso.)
+             7. Wait a few minutes for the verification process to complete.
 
-            38. If prompted for a password, enter the computer's root password.
+             8. If all goes well, the command will output no data, returning to your usual terminal prompt.
 
-            39. Wait a few minutes for the verification process to complete.
+             9. If there is a discrepancy, you'll see a message like:
 
-            40. If all goes well, the command will output no data, returning to your usual terminal  prompt.
-
-            41. If there is an issue, you'll see a message like:
-
-                    ubuntu-16.04.1-desktop-amd64.iso /dev/sda differ: byte 1, line 1 
+                    ubuntu-16.04.1-desktop-amd64.img.dmg /dev/disk2 differ: byte 1, line 1 
 
                 If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
+
+    - **Ubuntu** (Adapted from this official guide.)
+
+      1. If this is your first time using Ubuntu, note:
+
+         1. You can copy-paste text in most applications (e.g. Firefox) by pressing **Ctrl-C** or **Ctrl-V.**
+
+         24. You can copy-paste* *text in a *terminal window* by pressing **Ctrl-Shift-C** or **Ctrl-Shift-V.**
+
+      22. Put Ubuntu on the SETUP BOOT 1 USB.
+
+          1. Open the Ubuntu search console by clicking the purple circle/swirl icon in the upper-left corner of the screen.
+
+          26. Type "startup disk creator" in the text box that appears
+
+          27. Click on the "Startup Disk Creator" icon that appears.
+
+          28. The "Source disc image" panel should show the .iso file you downloaded. If it does not, click the "Other" button and find it in the folder you downloaded it to.
+
+          29. In the "Disk to use" panel, you should see two lines. They may vary from system to system, but each line will have a device identifier in it, highlighted in the example below.
+
+	              Generic Flash Disk (/dev/sda)
+	              Kanguru Flash Trust (/dev/sdb)
+
+          30. Select the line containing SETUP 1 BOOT USB. (If both USB entries look identical, you may have to remove the Q1 BOOT USB to see which entry it belongs to.) Make note of the disk identifier (e.g. /dev/sdb).
+
+          31. Click "Make Startup Disk" and then click "Yes".
+
+          32. Wait a few minutes for the copying process to complete.
+
+      23. Verify the integrity of the SETUP 1 BOOT USB (i.e. no errors or malware infection).
+
+          1. On your desktop, right-click the corresponding USB drive icon in your dock and select Eject from the pop-up menu.
+
+          34. Remove the USB drive from the USB slot and immediately re-insert it. (Technical details: In order to avoid detection, it's conceivable that malware might wait until a USB drive is in the process of being ejected (and all integrity checks presumably completed) before infecting the USB. Ejecting and re-inserting the USB before integrity checking is a simple workaround to defend against this.)
+
+          35. Wait 10 seconds for the operating system to recognize the USB.
+
+          36. 
+
+                  $ cd $HOME/Downloads
+
+              (This command changes your terminal's active folder to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.)
+
+          37. 
+
+                  $ sudo cmp -n `stat -c '%s' ubuntu-16.04.1-desktop-amd64.iso` ubuntu-16.04.1-desktop-amd64.iso USB-device-identifier-here
+
+              (Technical details: When writing the ISO to the USB, there are padding bits written after the end of the files, so the comparison is not, by default, identical. cmp's -n flag allows us to exclude the padding from the comparison by only looking at the first N bytes, where N is the size of the .iso.)
+
+          38. If prompted for a password, enter the computer's root password.
+
+          39. Wait a few minutes for the verification process to complete.
+
+          40. If all goes well, the command will output no data, returning to your usual terminal  prompt.
+
+          41. If there is an issue, you'll see a message like:
+
+                  ubuntu-16.04.1-desktop-amd64.iso /dev/sda differ: byte 1, line 1 
+
+              If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
 
 7. Create the Q1 BOOT USB
 
@@ -1038,25 +1038,25 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
        1. 
 
-               $ sudo mv /var/cache/app-info/xapian/default /var/cache/app-info/xapian/default_old
+              $ sudo mv /var/cache/app-info/xapian/default /var/cache/app-info/xapian/default_old
 
-       20. 
+       2. 
 
-               $ sudo mv /var/cache/app-info/xapian/default_old /var/cache/app-info/xapian/default
+              $ sudo mv /var/cache/app-info/xapian/default_old /var/cache/app-info/xapian/default
 
-       21. 
+       3. 
 
-               $ sudo apt-add-repository universe
+              $ sudo apt-add-repository universe
 
-       22. 
+       4. 
 
-               $ sudo apt-add-repository ppa:bitcoin/bitcoin
+              $ sudo apt-add-repository ppa:bitcoin/bitcoin
 
-           Press Enter when prompted.
+          Press Enter when prompted.
 
-       23. 
+       5. 
 
-               $ sudo apt-get update
+              $ sudo apt-get update
 
     8. Download and perform integrity verification (Integrity verification is done automatically by Ubuntu's apt-get command.) of software available from Ubuntu's package repository:
 
@@ -1558,7 +1558,7 @@ You will need access to an electronic *and* paper copy of your Cold Storage Info
 
 5. Verify the deposit on the public blockchain.
 
-   8. Go to [Blockr](http://blockr.io), paste the address into the search bar, and press Enter. You'll be taken to a page that says "Bitcoin Address" at the top, with your cold storage address listed underneath.
+   1. Go to [Blockr](http://blockr.io), paste the address into the search bar, and press Enter. You'll be taken to a page that says "Bitcoin Address" at the top, with your cold storage address listed underneath.
 
    9. Within a couple of minutes (and often much faster), you should be able to refresh this page and see your funds listed under "Unconfirmed".
 
@@ -1594,7 +1594,7 @@ If this was your first deposit to this cold storage address, proceed to the next
 
 4. Maintenance planning
 
-   9. Create a reminder for yourself in six months to execute the [Maintenance Protocol](#maintenance-protocol). (If you don't have a reminder system you trust, [find one on the web](https://www.google.com/search?client=safari&rls=en&q=reminder+service&ie=UTF-8&oe=UTF-8).)
+   1. Create a reminder for yourself in six months to execute the [Maintenance Protocol](#maintenance-protocol). (If you don't have a reminder system you trust, [find one on the web](https://www.google.com/search?client=safari&rls=en&q=reminder+service&ie=UTF-8&oe=UTF-8).)
 
 5. Long-term storage of Cold Storage Information Packets
 
