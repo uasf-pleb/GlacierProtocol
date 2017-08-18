@@ -1466,13 +1466,13 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
 8. Create Cold Storage Information Pages.
 
- **Using any Internet-connected computer:**
+   **Using any Internet-connected computer:**
 
-    14. Access the copies of the cold storage address and redemption script you sent yourself from your smartphone previously.
+   14. Access the copies of the cold storage address and redemption script you sent yourself from your smartphone previously.
 
-    15. Open an empty document in any text editing application. This will be used to create the Cold Storage Information Page.
+   15. Open an empty document in any text editing application. This will be used to create the Cold Storage Information Page.
 
-    16. Put the following information into the document:
+   16. Put the following information into the document:
 
         13. Copy-paste the cold storage address
 
@@ -1482,13 +1482,13 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
         16. Type the version of Glacier used (listed on the first page of this document)
 
-    17. Do **not** put anything else in the document (such as "Bitcoin", "Glacier", "private key", etc.)
+   17. Do **not** put anything else in the document (such as "Bitcoin", "Glacier", "private key", etc.)
 
-    18. Save an electronic copy of the Cold Storage Information Page in a "conventionally secure" location of your choosing, such as a "Secure Note" in [1Password](https://1password.com) or a comparable password manager. (Because the Cold Storage Information Page contains moderately-sensitive data, there are some privacy considerations with keeping an electronic copy of it. See the Sensitive Data subsection for details.)
+   18. Save an electronic copy of the Cold Storage Information Page in a "conventionally secure" location of your choosing, such as a "Secure Note" in [1Password](https://1password.com) or a comparable password manager. (Because the Cold Storage Information Page contains moderately-sensitive data, there are some privacy considerations with keeping an electronic copy of it. See the Sensitive Data subsection for details.)
 
-    19. Print *N* copies of the Cold Storage Information Page.
+   19. Print *N* copies of the Cold Storage Information Page.
 
-    20. Shut down the computer. (It has a camera, and you will be working with critically sensitive data in a moment.)
+   20. Shut down the computer. (It has a camera, and you will be working with critically sensitive data in a moment.)
 
 9. Prepare Cold Storage Information Packets
 
@@ -1546,11 +1546,11 @@ You will need access to an electronic *and* paper copy of your Cold Storage Info
 
     5. Use the wallet software or service of your choice to **prepare** to send the desired amount of funds to your cold storage address. (The Bitcoin network requires a fee to process transactions. We recommend you use a wallet service that either covers the fees for you or recommends a fee amount automatically, which most do.
 
-     If you are familiar with how Bitcoin fees work, you may want to bump the fee amount to increase the chances that the deposit gets confirmed more quickly. This is not at all required.)
+       If you are familiar with how Bitcoin fees work, you may want to bump the fee amount to increase the chances that the deposit gets confirmed more quickly. This is not at all required.)
 
-     **Enter all necessary transaction information, but do not actually execute the transaction.**
+       **Enter all necessary transaction information, but do not actually execute the transaction.**
 
-        1. Copy-paste your cold storage address from the Cold Storage Information Page into the wallet software.
+       1. Copy-paste your cold storage address from the Cold Storage Information Page into the wallet software.
 
     6. **Double-check that the address you pasted matches the address in the Cold Storage Information Page. If you use the wrong address, you will lose all of your funds with no recourse.**
 
