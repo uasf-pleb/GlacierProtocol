@@ -36,7 +36,7 @@ The "Protocol Overview" section also describes some lower-security, lower-cost a
 
 The Glacier protocol covers bitcoin storage, not procurement. It assumes you already possess bitcoins and wish to store them more securely.
 
-If you are already familiar with Bitcoin security concepts and are certain that you want high security cold storage, you may prefer to read [Trusting This Protocol](#bookmark=id.y7o7xyn8dv19) and then skip to the section [Choosing a Multisignature Withdrawal Policy](#bookmark=id.aa8bluz5qae9).
+If you are already familiar with Bitcoin security concepts and are certain that you want high security cold storage, you may prefer to read [Trusting This Protocol](#Trusting-This-Protocol) and then skip to the section [Choosing a Multisignature Withdrawal Policy](#Choosing-a-Multisignature-Withdrawal-Policy).
 
 # Trusting This Protocol
 
@@ -48,7 +48,7 @@ Funds secured using Glacier can only be as secure as its design. Here's what you
 
    
 
-* **Community review:** The protocol has evolved in conjunction with the wider Bitcoin community -- early versions were circulated during development, and community feedback integrated. See our [list of contributors](#bookmark=id.m7j6tb3xpg95).
+* **Community review:** The protocol has evolved in conjunction with the wider Bitcoin community -- early versions were circulated during development, and community feedback integrated. See our [list of contributors](#Appendix-F:-Acknowledgments).
 
 * **Natural selection:** All documentation and code related to this protocol is under open licenses (Creative Commons for the document, MIT license for the code), enabling others to publish their own revisions. Inferior alternatives will tend to lose popularity over time.
 
@@ -272,7 +272,7 @@ These modifications are left as an exercise to the reader.
 
 There's always more one could do to increase security. While Glacier is designed to provide strong protection for almost everyone, some situations (e.g. being the focus of a targeted attack by a sophisticated, well-resourced criminal organization) are beyond its scope.
 
-For some additional security precautions beyond those provided in the standard protocol, see [Appendix A](#bookmark=id.2km18kmak558).
+For some additional security precautions beyond those provided in the standard protocol, see [Appendix A](#Appendix A:-Exceptional-Security-Measures).
 
 # Protocol Preparation
 
@@ -1167,7 +1167,7 @@ If you are executing the Setup Protocol for the first time and do **not** plan o
 
 2. Put your Q1 BOOT USB into an open slot in your Q1 computer.
 
-3. Boot off the USB drive. If you've forgotten how, refer to [the procedure in Section IV](#bookmark=id.2avz6oa2ba5v).
+3. Boot off the USB drive. If you've forgotten how, refer to [the procedure in Section IV](#Setup Protocol,-Section IV:-Create Boot USBs).
 
 4. Plug the Q1 APP USB into the Q1 computer.
 
@@ -1222,7 +1222,7 @@ If you have previously used the Deposit Protocol to deposit funds into cold stor
 
  By the end of this section, you will generate the following information.
 
-* The ***N* private keys:** These are the keys that will later be used to unlock your funds. You'll create several private keys, depending on the [multisignature withdrawal policy](#bookmark=id.aa8bluz5qae9) you chose (e.g. 4 keys for a 2-of-4 withdrawal policy).
+* The ***N* private keys:** These are the keys that will later be used to unlock your funds. You'll create several private keys, depending on the [multisignature withdrawal policy](#Choosing-a-Multisignature-Withdrawal-Policy) you chose (e.g. 4 keys for a 2-of-4 withdrawal policy).
 
 In this protocol, the total number of private keys you're creating will be referred to as *N*. 
 
@@ -1242,7 +1242,7 @@ In this protocol, the total number of private keys you're creating will be refer
 
     4. Whether or not you decide to upgrade, review the errata for the version of Glacier you are using at [https://glacierprotocol.org/errata](https://glacierprotocol.org/errata).
 
-2. Execute [Section VI of the Setup Protocol](#bookmark=id.xaan33r3o2hl) to prepare your quarantined workspace.
+2. Execute [Section VI of the Setup Protocol](#Setup Protocol,-Section VI:-Prepare-Quarantined-Workspaces) to prepare your quarantined workspace.
 
 3. Create entropy for private keys
 
@@ -1516,7 +1516,7 @@ Depositing funds requires the Internet, and does not require handling any critic
 
 3. Perform a test withdrawal.
 
-    3. Execute the [Withdrawal Protocol](#bookmark=id.jwa2tvfks89l) to withdraw the remaining balance ($6 USD - deposit fees) from cold storage to a regular Bitcoin address of your choice.
+    3. Execute the [Withdrawal Protocol](#Withdrawal-Protocol) to withdraw the remaining balance ($6 USD - deposit fees) from cold storage to a regular Bitcoin address of your choice.
 
     4. Wait for the Bitcoin network to confirm the transaction at least once. (Instructions for doing this are in the Withdrawal protocol.)
 
@@ -1526,7 +1526,7 @@ Depositing funds requires the Internet, and does not require handling any critic
 
 You will need access to an electronic *and* paper copy of your Cold Storage Information Page.
 
-1. Consider whether you want to route your funds through one or more intermediary non-cold-storage addresses for privacy purposes. (Review the [Privacy Considerations](#bookmark=id.9tdlm88u1jd2) subsection for details.)
+1. Consider whether you want to route your funds through one or more intermediary non-cold-storage addresses for privacy purposes. (Review the [Privacy Considerations](#Privacy-Considerations) subsection for details.)
 
  If you do, make those intermediate transfers using whatever means you normally use to transfer bitcoins.
 
@@ -1594,7 +1594,7 @@ If this was your first deposit to this cold storage address, proceed to the next
 
 4. Maintenance planning
 
-    9. Create a reminder for yourself in six months to execute the [Maintenance Protocol](#bookmark=kix.t9nwuilvrx12). (If you don't have a reminder system you trust, [find one on the web](https://www.google.com/search?client=safari&rls=en&q=reminder+service&ie=UTF-8&oe=UTF-8).)
+    9. Create a reminder for yourself in six months to execute the [Maintenance Protocol](#Maintenance-Protocol). (If you don't have a reminder system you trust, [find one on the web](https://www.google.com/search?client=safari&rls=en&q=reminder+service&ie=UTF-8&oe=UTF-8).)
 
 5. Long-term storage of Cold Storage Information Packets
 
@@ -1620,7 +1620,7 @@ You have finished securing your cold storage funds.
 
 The Withdrawal Protocol is used to transfer bitcoins out of high-security cold storage. 
 
-Before beginning, consider whether you want to route your funds through one or more intermediary non-cold-storage addresses for privacy purposes. (Review the [Privacy Considerations](#bookmark=id.9tdlm88u1jd2) subsection for details.) If you do, you may want to withdraw the funds to an intermediary address *first* before sending them on to their final destination.
+Before beginning, consider whether you want to route your funds through one or more intermediary non-cold-storage addresses for privacy purposes. (Review the [Privacy Considerations](#Privacy-Considerations) subsection for details.) If you do, you may want to withdraw the funds to an intermediary address *first* before sending them on to their final destination.
 
 In this first section, we'll gather physical hardcopies of all information needed to do the withdrawal. This is done with the help of a regular networked computer to find some of this information online and translate it into printed QR codes.
 
@@ -1707,7 +1707,7 @@ On any Internet-connected computer:
 
     15. Make sure you have the necessary number of Cold Storage Information Packets on hand (you'll need the private keys). 
 
-        10. For the recommended 2-of-n [multisignature withdrawal policy](#bookmark=id.aa8bluz5qae9), you'll need any 2 Cold Storage Information Packets.
+        10. For the recommended 2-of-n [multisignature withdrawal policy](#Choosing-a-Multisignature-Withdrawal-Policy), you'll need any 2 Cold Storage Information Packets.
 
         11. If you are performing an initial test withdrawal, you'll need *all* Cold Storage Information packets.
 
@@ -1729,7 +1729,7 @@ On any Internet-connected computer:
 
 In this section, we construct a "signed transaction" in our quarantined environments, verify it, and then use QR codes to extract it from the quarantined environments (for execution in the following section).
 
-1. Execute [Section VI of the Setup Protocol](#bookmark=id.xaan33r3o2hl) to prepare your quarantined workspace.
+1. Execute [Section VI of the Setup Protocol](#Setup Protocol,-Section VI:-Prepare-Quarantined-Workspaces) to prepare your quarantined workspace.
 
 2. Construct the withdrawal transaction
 
@@ -1788,7 +1788,7 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
    7. When prompted for the number of private keys to use:
 
-        8. **If you are doing an initial test withdrawal for a new cold storage address, choose *N*** (i.e. the total number of keys in your [multisignature withdrawal policy](#bookmark=id.aa8bluz5qae9) -- 4 if you use the default recommendation).
+        8. **If you are doing an initial test withdrawal for a new cold storage address, choose *N*** (i.e. the total number of keys in your [multisignature withdrawal policy](#Choosing-a-Multisignature-Withdrawal-Policy) -- 4 if you use the default recommendation).
 
         9. Otherwise, select 2 (assuming you're using the recommended 2-of-n withdrawal policy).
 
@@ -2051,7 +2051,7 @@ We do not recommend considering these measures unless you feel you have a strong
 
 This list describes the attack surface and other failure points for Glacier. We include only attacks and failures limited in scope to specific coins. Attacks and failures related to the Bitcoin ecosystem as a whole (newly discovered cryptographic flaws, critical Bitcoin protocol security or scalability failures, etc.) are not included as most are equally likely to impact the value of all Bitcoins whether or not they are secured with Glacier.
 
-This list assumes no security measures from [Appendix A](#bookmark=id.2km18kmak558) are implemented.
+This list assumes no security measures from [Appendix A](#Appendix A:-Exceptional-Security-Measures) are implemented.
 
 Most attacks require the presence of malware, either in or near the quarantined environment. We'll therefore inventory two layers of Glacier's attack surface:
 
