@@ -424,37 +424,37 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
    The risk of an unverified PGP installation is relatively small, since an attacker would have to compromise not just the hosting of GPG distributions, but also the hosting of other software distributions used by Glacier, and such a breach would be quickly detected by the global community.)
 
-   1. **Windows:** Download and install the latest available version of [Gpg4win](http://gpg4win.org). Use the default options.
+   - **Windows:** Download and install the latest available version of [Gpg4win](http://gpg4win.org). Use the default options.
 
-   8. **macOS:** Download and install the latest available version of [GPG Suite](http://gpgtools.org).
+   - **macOS:** Download and install the latest available version of [GPG Suite](http://gpgtools.org).
 
-   9. **Linux:** GnuPG comes pre-installed with Linux distributions.
+   - **Linux:** GnuPG comes pre-installed with Linux distributions.
 
 9. Open a terminal window.
 
-    10. **Windows:** Press Windows-R, type "powershell" and click OK.
+   - **Windows:** Press Windows-R, type "powershell" and click OK.
 
-    11. **macOS:** Click the Searchlight (magnifying glass) icon in the menu bar, and type "terminal". Select the Terminal application from the search results.
+   - **macOS:** Click the Searchlight (magnifying glass) icon in the menu bar, and type "terminal". Select the Terminal application from the search results.
 
-    12. **Linux:** Varies; on Ubuntu, press Ctrl-Alt-T.
+   - **Linux:** Varies; on Ubuntu, press Ctrl-Alt-T.
 
 10. Change the terminal window's active folder to your downloads folder. The commands below are based on common default settings; if you put your downloads is in a different place, you will need to customize this command.
 
-    13. **Windows:**
+    1. **Windows:**
 
             > cd $HOME/Downloads/glacier
 
-    14. **macOS:**
+    2. **macOS:**
 
             $ cd $HOME/Downloads/glacier
 
-    15. **Linux:**
+    3. **Linux:**
 
             $ cd $HOME/Downloads/glacier
 
 11. Verify the integrity of the downloaded document. (For technical background about this process, see https://en.wikipedia.org/wiki/Digital_signature.)
 
-    16. Import the Glacier public key into your local GPG installation:
+    1. Import the Glacier public key into your local GPG installation:
 
             $ gpg --import $HOME/Downloads/glacier.asc
 
@@ -462,7 +462,7 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
             $ gpg --verify SHA256SUMS.sig SHA256SUMS
 
-     Expected output (timestamp will vary, but e-mail and fingerprint should match):
+        Expected output (timestamp will vary, but e-mail and fingerprint should match):
 
             gpg: Signature made Thu Jan 19 13:45:48 2017 PST using RSA key ID 4B43EAB0
 
@@ -474,23 +474,23 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
             Primary key fingerprint: E1AA EBB7 AC90 C1FE 80F0 1034 9D1B 7F53 4B43 EAB0
 
-     The warning message is expected, and is not cause for alarm. (Technical details: GPG was designed on the premise that public keys would be verified as actually belonging to their owners -- either directly, by receiving a key face-to-face from someone known to you, or indirectly, via cryptographic signature by someone whose public key you've already verified. The warning message merely indicates that you have done neither of these verifications for Glacier's public key.
+        The warning message is expected, and is not cause for alarm. (Technical details: GPG was designed on the premise that public keys would be verified as actually belonging to their owners -- either directly, by receiving a key face-to-face from someone known to you, or indirectly, via cryptographic signature by someone whose public key you've already verified. The warning message merely indicates that you have done neither of these verifications for Glacier's public key.
 
-     This is standard practice with software distribution, even for major software packages like Ubuntu. Although you do not have the opportunity to personally verify Glacier's public key came from the Glacier team, you can nonetheless have some degree of trust in the validity of the key, to the extent you trust it was generated and is hosted in a secure manner, and that someone in the community may have noticed and raised an alarm if it were surreptitiously changed by an attacker.)
+        This is standard practice with software distribution, even for major software packages like Ubuntu. Although you do not have the opportunity to personally verify Glacier's public key came from the Glacier team, you can nonetheless have some degree of trust in the validity of the key, to the extent you trust it was generated and is hosted in a secure manner, and that someone in the community may have noticed and raised an alarm if it were surreptitiously changed by an attacker.)
 
     18. Verify the fingerprints in the fingerprint file match the fingerprints of the downloaded Glacier files.
 
         1. On Linux or Mac:
 
-         Linux:
+           Linux:
 
                 $ sha256sum -c SHA256SUMS 2>&1
 
-         Mac:
+           Mac:
 
                 $ shasum -a 256 -c SHA256SUMS 2>&1
 
-         Expected output:
+           Expected output:
 
                 Glacier.pdf: OK
                 glacierscript.py: OK
@@ -502,7 +502,7 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
                 > Get-FileHash -a sha256 Glacier.pdf
                 > cat SHA256SUMS | select-string -pattern "Glacier.pdf"
 
-         Ensure that the hash output from the first command matches the output by the second command. Upper/lower case doesn't matter.
+           Ensure that the hash output from the first command matches the output by the second command. Upper/lower case doesn't matter.
 
     19. If you do not see the expected output, your copy of the document has not been verified. Stop and seek assistance.
 
@@ -2294,7 +2294,7 @@ Workarounds have been implemented for both issues.
 
 ### Version 0.1 Alpha: January 24, 2017
 
-Initial non-public release to selected reviewers.
+* Initial non-public release to selected reviewers.
 
 ## Appendix F: Acknowledgments
 
