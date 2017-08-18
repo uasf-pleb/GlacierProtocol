@@ -843,23 +843,23 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
        25. Press your laptop's key sequence to bring up the boot device selection menu. (Some PCs may offer a boot device selection menu; see below.)
 
-           1. **PC:** Varies by manufacturer, but is often **F12** or **Del**. The timing may vary as well; try pressing it when the boot logo appears.
+           - **PC:** Varies by manufacturer, but is often **F12** or **Del**. The timing may vary as well; try pressing it when the boot logo appears.
 
-                1. On the recommended Dell laptop, press F12. You should see a horizontal blue bar appear underneath the Dell logo.
+             1. On the recommended Dell laptop, press F12. You should see a horizontal blue bar appear underneath the Dell logo.
 
-                5. The recommended Acer laptop does not have a boot menu. See below for instructions. 
+             5. The recommended Acer laptop does not have a boot menu. See below for instructions. 
 
-           43. **Mac:** When you hear the startup chime, press and hold **Option (⌥)**.
+           - **Mac:** When you hear the startup chime, press and hold **Option (⌥)**.
 
-        26. Select the proper device to boot from.
+       26. Select the proper device to boot from.
 
-            1.  **PC:** Varies by manufacturer; option will often say "USB" and/or "UEFI".
+           - **PC:** Varies by manufacturer; option will often say "USB" and/or "UEFI".
 
-                6. On the recommended Dell laptop, select "USB1" under "UEFI OPTIONS".
+             1. On the recommended Dell laptop, select "USB1" under "UEFI OPTIONS".
 
-                7. The recommended Acer laptop does not have a boot menu. See below for instructions. 
+             7. The recommended Acer laptop does not have a boot menu. See below for instructions. 
 
-            45. **Mac:** Click the "EFI Boot" option and then click the up arrow underneath it. (If more than one identical "EFI boot" option is shown, you may need to guess and reboot if you pick the wrong one.) You do not need to select a network at this time.
+           - **Mac:** Click the "EFI Boot" option and then click the up arrow underneath it. (If more than one identical "EFI boot" option is shown, you may need to guess and reboot if you pick the wrong one.) You do not need to select a network at this time.
 
         27. Some laptops don't have a boot device selection menu, and you need to go into the BIOS configuration and change the boot order so that the USB drive is first.
 
@@ -915,9 +915,9 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
         36. Immediately after you are finished executing steps 1-6 with the Q1 BOOT USB,  remove the Q1 BOOT USB from the SETUP 1 computer.
 
-            56. On your desktop, right-click the corresponding USB drive icon in your dock and select Eject from the pop-up menu.
+            1. On your desktop, right-click the corresponding USB drive icon in your dock and select Eject from the pop-up menu.
 
-            57. Remove the USB drive from the USB slot.
+            2. Remove the USB drive from the USB slot.
 
         37. **The Q1 BOOT USB is now eternally quarantined. It should never again be plugged into anything besides the Q1 computer.**
 
