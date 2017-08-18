@@ -406,29 +406,29 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
 7. Obtain the Glacier "public key," used to cryptographically verify the protocol document. (Technical details: Glacier's GPG keys are handled with good security practices. They were generated while booting off an Ubuntu Live USB on a factory-new laptop with the wireless card removed, and transferred via USB to a MacBook. The private key is not stored in the cloud. The public key is hosted separately from our software distributions, on Keybase, secured with separate credentials (all of which are in password managers).)
 
- **If you are ever using Glacier in the future and notice that this step has changed (or that this warning has been removed), there is a security risk.** Stop and seek assistance. (Technical details: There's a chicken-and-egg problem here, in that this document is giving instructions for how to verify itself. Any attacker that compromised this document could also compromise these instructions so that the verification (erroneously) passes. There's no way to prevent this, unless a reader is familiar with the document before the compromise and recognizes that the verification instructions have changed. (This is why we don't just include a direct download link to the public key -- if an attacker changed the link, it would be easy for people not to notice.)
+   **If you are ever using Glacier in the future and notice that this step has changed (or that this warning has been removed), there is a security risk.** Stop and seek assistance. (Technical details: There's a chicken-and-egg problem here, in that this document is giving instructions for how to verify itself. Any attacker that compromised this document could also compromise these instructions so that the verification (erroneously) passes. There's no way to prevent this, unless a reader is familiar with the document before the compromise and recognizes that the verification instructions have changed. (This is why we don't just include a direct download link to the public key -- if an attacker changed the link, it would be easy for people not to notice.)
 
- In the unfortunate event we legitimately need to change the verification instructions (i.e. to publish a new public key, or change the means of obtaining the existing key), we'll first disseminate a public announcement, signed at a minimum with our personal keys, and hopefully with the keys of well-known individuals from the Bitcoin community.)
+   In the unfortunate event we legitimately need to change the verification instructions (i.e. to publish a new public key, or change the means of obtaining the existing key), we'll first disseminate a public announcement, signed at a minimum with our personal keys, and hopefully with the keys of well-known individuals from the Bitcoin community.)
 
-    1. Access Glacier's Keybase profile at [https://keybase.io/glacierprotocol](https://keybase.io/glacierprotocol).
+   1. Access Glacier's Keybase profile at [https://keybase.io/glacierprotocol](https://keybase.io/glacierprotocol).
 
-    3. Click the string of letters and numbers next to the key icon.
+   3. Click the string of letters and numbers next to the key icon.
 
-    4. In the pop-up that appears, locate the link reading "this key". 
+   4. In the pop-up that appears, locate the link reading "this key". 
 
-    5. Right-click the link and select "Save Link As…" or "Download Linked File As..."
+   5. Right-click the link and select "Save Link As…" or "Download Linked File As..."
 
-    6. Name the file "glacier.asc".
+   6. Name the file "glacier.asc".
 
 8. Download and install [GnuPG](http://gnupg.org), the software we'll use for doing the cryptographic verification. (GnuPG is the same software recommended by the Electronic Frontier Foundation's Surveillance Self Defense protocol.) (Technical details: Note that we are foregoing verification of the integrity of GnuPG itself. Verification requires having access to a pre-existing, trusted installation of GnuPG, and for many Glacier users, this will not be easy to come by. If you do have access to a trusted installation of GnuPG, and understand how to do the verification process, we encourage you to do so. 
 
- The risk of an unverified PGP installation is relatively small, since an attacker would have to compromise not just the hosting of GPG distributions, but also the hosting of other software distributions used by Glacier, and such a breach would be quickly detected by the global community.)
+   The risk of an unverified PGP installation is relatively small, since an attacker would have to compromise not just the hosting of GPG distributions, but also the hosting of other software distributions used by Glacier, and such a breach would be quickly detected by the global community.)
 
-    1. **Windows:** Download and install the latest available version of [Gpg4win](http://gpg4win.org). Use the default options.
+   1. **Windows:** Download and install the latest available version of [Gpg4win](http://gpg4win.org). Use the default options.
 
-    8. **macOS:** Download and install the latest available version of [GPG Suite](http://gpgtools.org).
+   8. **macOS:** Download and install the latest available version of [GPG Suite](http://gpgtools.org).
 
-    9. **Linux:** GnuPG comes pre-installed with Linux distributions.
+   9. **Linux:** GnuPG comes pre-installed with Linux distributions.
 
 9. Open a terminal window.
 
@@ -569,7 +569,7 @@ You are strongly encouraged to use the printed copy as a checklist, physically m
 
     5. **Don't** plug a **"SETUP 2"** USB drive into a **"Q1"** or **"Q2"** laptop.
 
-    6. **Don't** plug an **unlabeled** USB drive into a **"Q1"**or **"Q2"** laptop.
+    6. **Don't** plug an **unlabeled** USB drive into a **"Q1"** or **"Q2"** laptop.
 
 4. Quarantine the network and wireless interfaces for both laptops: 
 
@@ -959,21 +959,21 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
     4. Obtain the Glacier "public key," used to cryptographically verify the Glacier document and GlacierScript.
 
-     **If you are ever using Glacier in the future and notice that this step has changed (or that this warning has been removed), there is a security risk.** Stop and seek assistance. (See corresponding footnote in Section I for technical details.)
+       **If you are ever using Glacier in the future and notice that this step has changed (or that this warning has been removed), there is a security risk.** Stop and seek assistance. (See corresponding footnote in Section I for technical details.)
 
-        6. Access Glacier's Keybase profile at [https://keybase.io/glacierprotocol](https://keybase.io/glacierprotocol).
+       6. Access Glacier's Keybase profile at [https://keybase.io/glacierprotocol](https://keybase.io/glacierprotocol).
 
-        7. Click the string of letters and numbers next to the key icon.
+       7. Click the string of letters and numbers next to the key icon.
 
          ![](null)
 
-        8. In the pop-up that appears, locate the link reading "this key". 
+       8. In the pop-up that appears, locate the link reading "this key". 
 
          ![](null) 
 
-        9. Right-click the link and select "Save Link As…"
+       9. Right-click the link and select "Save Link As…"
 
-        10. Name the file "glacier.asc".
+       10. Name the file "glacier.asc".
 
     5. Verify the integrity of the Glacier download.
 
