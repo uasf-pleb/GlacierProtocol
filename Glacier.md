@@ -442,21 +442,21 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
     - **Windows:**
 
-            > cd $HOME/Downloads/glacier
+          > cd $HOME/Downloads/glacier
 
     - **macOS:**
 
-            $ cd $HOME/Downloads/glacier
+          $ cd $HOME/Downloads/glacier
 
     - **Linux:**
 
-            $ cd $HOME/Downloads/glacier
+          $ cd $HOME/Downloads/glacier
 
 11. Verify the integrity of the downloaded document. (For technical background about this process, see https://en.wikipedia.org/wiki/Digital_signature.)
 
     1. Import the Glacier public key into your local GPG installation:
 
-            $ gpg --import $HOME/Downloads/glacier.asc
+           $ gpg --import $HOME/Downloads/glacier.asc
 
     17. Use the public key to verify that the Glacier "fingerprint file" is legitimate:
 
@@ -465,13 +465,9 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
         Expected output (timestamp will vary, but e-mail and fingerprint should match):
 
             gpg: Signature made Thu Jan 19 13:45:48 2017 PST using RSA key ID 4B43EAB0
-
             gpg: Good signature from "Glacier Team <contact@glacierprotocol.org>" [unknown]
-
             gpg: WARNING: This key is not certified with a trusted signature!
-
             gpg:          There is no indication that the signature belongs to the owner.
-
             Primary key fingerprint: E1AA EBB7 AC90 C1FE 80F0 1034 9D1B 7F53 4B43 EAB0
 
         The warning message is expected, and is not cause for alarm. (Technical details: GPG was designed on the premise that public keys would be verified as actually belonging to their owners -- either directly, by receiving a key face-to-face from someone known to you, or indirectly, via cryptographic signature by someone whose public key you've already verified. The warning message merely indicates that you have done neither of these verifications for Glacier's public key.
@@ -482,25 +478,25 @@ The first thing we need to do is verify the integrity of the Glacier protocol do
 
         - On Linux or Mac:
 
-           Linux:
+          Linux:
 
-               $ sha256sum -c SHA256SUMS 2>&1
+              $ sha256sum -c SHA256SUMS 2>&1
 
-           Mac:
+          Mac:
 
-               $ shasum -a 256 -c SHA256SUMS 2>&1
+              $ shasum -a 256 -c SHA256SUMS 2>&1
 
-           Expected output:
+          Expected output:
 
-               Glacier.pdf: OK
-               glacierscript.py: OK
-               base58.py: OK
-               README.md: OK
+              Glacier.pdf: OK
+              glacierscript.py: OK
+              base58.py: OK
+              README.md: OK
 
         - On Windows (Get-FileHash is only available starting with Windows 10. On Windows 8.1, use CertUtil instead: 
 
-               > Get-FileHash -a sha256 Glacier.pdf
-               > cat SHA256SUMS | select-string -pattern "Glacier.pdf"
+              > Get-FileHash -a sha256 Glacier.pdf
+              > cat SHA256SUMS | select-string -pattern "Glacier.pdf"
 
           Ensure that the hash output from the first command matches the output by the second command. Upper/lower case doesn't matter.
 
