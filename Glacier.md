@@ -378,7 +378,7 @@ In the above example, the text splits across two lines because of the margins of
 
 ### Proceed Carefully
 
-If you encounter **anything** **that is different** from what the protocol says you should expect, **the recommendation is that you stop and seek help** unless your expert opinion gives you high confidence that you understand all possible causes and implications of the discrepancy.
+If you encounter **anything that is different** from what the protocol says you should expect, **the recommendation is that you stop and seek help** unless your expert opinion gives you high confidence that you understand all possible causes and implications of the discrepancy.
 
 **In general, follow the protocol carefully, keep track of what step you are on, and double-check your work.** Any errors or deviations can undermine your security.
 
@@ -593,7 +593,7 @@ You are strongly encouraged to use the printed copy as a checklist, physically m
 
 Because the eternally quarantined computers cannot connect to a network, they cannot download software. We'll be using USB drives to transfer the necessary software to them.
 
-We will prepare four (4) bootable [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system)) USB drives. ("Bootable" means that the Ubutnu operating system will be booted directly from the USB drive, without using the computer's hard drive in any way.)
+We will prepare four (4) bootable [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system)) USB drives. ("Bootable" means that the Ubuntu operating system will be booted directly from the USB drive, without using the computer's hard drive in any way.)
 
 The *first two* USB drives ("Setup Boot USBs") are the USB drives you labeled "SETUP 1 BOOT" and "SETUP 2 BOOT" in Section II. They will be prepared using your Setup Computers, which may be running Windows, macOS, or something else.
 
@@ -1082,7 +1082,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
             6. Navigate to the "Home" folder.
 
-            7. Click and drag "apps" folder** **to the icon representing the USB drive on the left panel. The USB drive will look like this, but may have a different name: ![](null)
+            7. Click and drag "apps" folder to the icon representing the USB drive on the left panel. The USB drive will look like this, but may have a different name: ![](null)
 
 7. Click on the USB drive icon to verify that it has the correct files.
 
@@ -1220,11 +1220,11 @@ The Deposit Protocol is used to transfer bitcoins into high-security cold storag
 
 If you have previously used the Deposit Protocol to deposit funds into cold storage, and want to deposit additional funds to the same cold storage address, skip to Section IV.
 
- By the end of this section, you will generate the following information.
+By the end of this section, you will generate the following information.
 
 * The ***N* private keys:** These are the keys that will later be used to unlock your funds. You'll create several private keys, depending on the [multisignature withdrawal policy](#choosing-a-multisignature-withdrawal-policy) you chose (e.g. 4 keys for a 2-of-4 withdrawal policy).
 
-In this protocol, the total number of private keys you're creating will be referred to as *N*. 
+  In this protocol, the total number of private keys you're creating will be referred to as *N*. 
 
 * The **cold storage address:** An alphanumeric string indicating the virtual location of your funds.
 
@@ -1234,13 +1234,13 @@ In this protocol, the total number of private keys you're creating will be refer
 
 1. If this is **not** your first time working with Glacier:
 
-    1. Use a networked computer to access the latest full release of Glacier (*not* just the protocol document) at [https://glacierprotocol.org/releases](https://glacierprotocol.org/releases).
+   1. Use a networked computer to access the latest full release of Glacier (*not* just the protocol document) at [https://glacierprotocol.org/releases](https://glacierprotocol.org/releases).
 
-    2. Open the protocol document (Glacier.pdf) within the ZIP file.
+   2. Open the protocol document (Glacier.pdf) within the ZIP file.
 
-    3. Check the Release Notes (Appendix E) of the protocol document to see if there are any new versions of Glacier recommended.
+   3. Check the Release Notes (Appendix E) of the protocol document to see if there are any new versions of Glacier recommended.
 
-    4. Whether or not you decide to upgrade, review the errata for the version of Glacier you are using at [https://glacierprotocol.org/errata](https://glacierprotocol.org/errata).
+   4. Whether or not you decide to upgrade, review the errata for the version of Glacier you are using at [https://glacierprotocol.org/errata](https://glacierprotocol.org/errata).
 
 2. Execute [Section VI of the Setup Protocol](#setup-protocol-section-vi-prepare-quarantined-workspaces) to prepare your quarantined workspace.
 
@@ -1248,7 +1248,7 @@ In this protocol, the total number of private keys you're creating will be refer
 
    Creating an unguessable private key requires *entropy* -- random data. We'll combine two sources of entropy to generate our keys. This ensures securely random keys even if *one* entropy source is somehow flawed or compromised to be less-than-perfectly random.
 
-   5. Generate dice entropy
+   1. Generate dice entropy
 
       1. Type "DICE ENTROPY" into both Quarantined Scratchpads.
 
@@ -1260,26 +1260,26 @@ In this protocol, the total number of private keys you're creating will be refer
 
    6. Repeat this process a total of *N* times, so that you have a total of *N* lines of numbers in each Quarantined Scratchpad.Generate computer entropy
 
-        5. Type "COMPUTER ENTROPY" into both computers' Quarantined Scratchpads. (This is a descriptive heading to keep your notes organized and minimize risk of error.)
+      1. Type "COMPUTER ENTROPY" into both computers' Quarantined Scratchpads. (This is a descriptive heading to keep your notes organized and minimize risk of error.)
 
-        6. Make sure you are in the ~/glacier folder:
+      6. Make sure you are in the ~/glacier folder:
 
-                $ cd ~/glacier
+             $ cd ~/glacier
 
-        7. **On the Q1 computer** enter the following command. You'll need to supply the number of keys required for your multisignature withdrawal policy (4 by default).
+      7. **On the Q1 computer** enter the following command. You'll need to supply the number of keys required for your multisignature withdrawal policy (4 by default).
 
-                $ ./glacierscript.py entropy --num-keys number-of-keys-here
+             $ ./glacierscript.py entropy --num-keys number-of-keys-here
 
          Example:
 
-                $ ./glacierscript.py entropy --num-keys 4
+             $ ./glacierscript.py entropy --num-keys 4
 
          Example output:
 
-                Computer entropy #1: f8e1 39f4 8dd2 129c 689c 1cb1 1280 79fe db56 573f
-                Computer entropy #2: c36b 0f66 3344 cd74 1d03 c659 0e7a 92e7 5d1a 663b
-                Computer entropy #3: 6873 b3a9 f1b6 5a06 064a 6e84 7faf f61c 1ef6 5407
-                Computer entropy #4: 5668 abd2 a7d9 5eb8 f7db 211d fc82 0c15 d4e4 0a04
+             Computer entropy #1: f8e1 39f4 8dd2 129c 689c 1cb1 1280 79fe db56 573f
+             Computer entropy #2: c36b 0f66 3344 cd74 1d03 c659 0e7a 92e7 5d1a 663b
+             Computer entropy #3: 6873 b3a9 f1b6 5a06 064a 6e84 7faf f61c 1ef6 5407
+             Computer entropy #4: 5668 abd2 a7d9 5eb8 f7db 211d fc82 0c15 d4e4 0a04
 
         8. Copy-paste the *N* lines of entropy into the Quarantined Scratchpad. 
 
@@ -1289,66 +1289,66 @@ In this protocol, the total number of private keys you're creating will be refer
 
       **On the Q1 computer:**
 
-        10. Run GlacierScript to generate the private keys.
+      1. Run GlacierScript to generate the private keys.
 
          In the command below, you'll need to specify the number of keys required by your multisignature withdrawal policy.
 
-                $ ./glacierscript.py create-deposit-data -m required-keys -n total-keys
+             $ ./glacierscript.py create-deposit-data -m required-keys -n total-keys
 
          For example, for a 2-of-4 withdrawal policy:
 
-                $ ./glacierscript.py create-deposit-data -m 2 -n 4
+             $ ./glacierscript.py create-deposit-data -m 2 -n 4
 
-        11. GlacierScript will prompt you to enter *N* 62-number lines of dice entropy and *N*  line of computer entropy.
+      2. GlacierScript will prompt you to enter *N* 62-number lines of dice entropy and *N*  line of computer entropy.
 
-        12. GlacierScript will output your cold storage data:
+      3. GlacierScript will output your cold storage data:
 
-            - *N* private keys
-            - A cold storage address
-            - A redemption script
+         - *N* private keys
+         - A cold storage address
+         - A redemption script
 
          Example output:
 
-                Private keys:
-                Key #1: 5JAwK9bihMRFe9zw32csUUEn7N5MvLvuwXKv5qUnQVjbthZyuwQ
-                Key #2: 5KC6MNFkqN665YAbb1wrveGWmygainm99wX8fSxA779UZh3yP2t
-                Key #3: 5J4DNddHjUkSoG2GZAkxwqmz1T5TTVbnf7Q5ho8Eqkinbc2hvSe
-                Key #4: 5K7idDARSfWLGjA926DFvVL8igZANsJsUcGo8vztmPH45iScp8K
+             Private keys:
+             Key #1: 5JAwK9bihMRFe9zw32csUUEn7N5MvLvuwXKv5qUnQVjbthZyuwQ
+             Key #2: 5KC6MNFkqN665YAbb1wrveGWmygainm99wX8fSxA779UZh3yP2t
+             Key #3: 5J4DNddHjUkSoG2GZAkxwqmz1T5TTVbnf7Q5ho8Eqkinbc2hvSe
+             Key #4: 5K7idDARSfWLGjA926DFvVL8igZANsJsUcGo8vztmPH45iScp8K
                 
-                Cold storage address:
-                3Hy6A3rSXKRumyVqURBoiv4QpQLt6vMCzt
+             Cold storage address:
+             3Hy6A3rSXKRumyVqURBoiv4QpQLt6vMCzt
                 
-                Redemption script:
-                51410421167f7dac2a159bc3957e3498bb6a7c2f16874bf1fbbe5b523b3632d2c0c43f1b491f6f2f449ae45c9b0716329c0c2dbe09f3e5d4e9fb6843af083e222a70a441043704eafafd73f1c32fafe10837a69731b93c0179fa268fc325bdc08f3bb3056b002eac4fa58c520cc3f0041a097232afbe002037edd5ebdab2e493f18ef19e9052ae
+             Redemption script:
+             51410421167f7dac2a159bc3957e3498bb6a7c2f16874bf1fbbe5b523b3632d2c0c43f1b491f6f2f449ae45c9b0716329c0c2dbe09f3e5d4e9fb6843af083e222a70a441043704eafafd73f1c32fafe10837a69731b93c0179fa268fc325bdc08f3bb3056b002eac4fa58c520cc3f0041a097232afbe002037edd5ebdab2e493f18ef19e9052ae
                 
-                QR code for cold storage address in address.png
-                QR code for redemption script in redemption.png
+             QR code for cold storage address in address.png
+             QR code for redemption script in redemption.png
 
    8. Verify the integrity of the cold storage data.
 
-        13. **On the Q2 computer,** repeat step (c) above.
+      1. **On the Q2 computer,** repeat step (c) above.
 
-        14. Verify that the output of GlacierScript shown in the terminal window is identical on both computers:
+      2. Verify that the output of GlacierScript shown in the terminal window is identical on both computers:
 
-            1. All private keys
+         1. All private keys
 
-            2. Cold storage address
+         2. Cold storage address
 
-            3. Redemption script
+         3. Redemption script
 
          **For the private keys and cold storage address, verify every character.** For the redemption script, it's sufficient to check the first 8 characters, last 8 characters, and a few somewhere in the middle. (Technical notes: There are attack vectors which could replace just a portion of private keys or a cold storage address, making the private keys easier to brute force, so it's important to check them thoroughly. If we know the private keys and cold storage address are good, then the redemption script is almost certainly good as well. And if there are any errors in the redemption script, they will be caught during the test deposit & withdrawal process later in the protocol; a painstaking manual verification is not required.)
 
-        15. **If there are any discrepancies, do not proceed.**
+        4. **If there are any discrepancies, do not proceed.**
 
-            4. Check whether the entropy in both Quarantined Scratchpads matches precisely. 
+           1. Check whether the entropy in both Quarantined Scratchpads matches precisely. 
 
-                1. If they are different by 1-3 characters (presumably due to transcription errors), manually tweak them to make them match. It doesn't matter which scratchpad is tweaked.
+              1. If they are different by 1-3 characters (presumably due to transcription errors), manually tweak them to make them match. It doesn't matter which scratchpad is tweaked.
 
-                2. If they are different by more than 3 characters, restart the Deposit Protocol.
+              2. If they are different by more than 3 characters, restart the Deposit Protocol.
 
-                3. If the are identical, restart the Deposit Protocol.
+              3. If the are identical, restart the Deposit Protocol.
 
-            5. Seek assistance if discrepancies persist.
+           5. Seek assistance if discrepancies persist.
 
 ## Deposit Protocol, Section II: Transfer Cold Storage Data to Paper
 
@@ -1356,43 +1356,43 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
 1. Transfer the private keys to paper.
 
-    1. Write each private key on a **separate** piece of TerraSlate paper (**one** key per page).
+   1. Write each private key on a **separate** piece of TerraSlate paper (**one** key per page).
 
-        1. Do **not** write anything else on the paper unless specifically instructed (such as "Bitcoin", "Glacier", "private key", etc.) (In the event the key is seen by someone untrustworthy or stolen by a random thief, such clues help them understand the significance of the key and give them an incentive to plot further thefts or attacks.)
+      1. Do **not** write anything else on the paper unless specifically instructed (such as "Bitcoin", "Glacier", "private key", etc.) (In the event the key is seen by someone untrustworthy or stolen by a random thief, such clues help them understand the significance of the key and give them an incentive to plot further thefts or attacks.)
 
-        2. Transcribe **by hand**. Do not use QR codes or any other method to transfer.
+      2. Transcribe **by hand**. Do not use QR codes or any other method to transfer.
 
-        3. Private keys **are** case-sensitive.
+      3. Private keys **are** case-sensitive.
 
-        4. **Write clearly.**
+      4. **Write clearly.**
 
-            1. Use care when transcribing "o" (lower-case "o"). Note that private keys do **not** contain "O" (upper-case "o") or "0" (number zero).
+         1. Use care when transcribing "o" (lower-case "o"). Note that private keys do **not** contain "O" (upper-case "o") or "0" (number zero).
 
-            2. Use care when transcribing "1" (number one). Note that private keys do **not** contain "I" (upper-case "i") or "l" (lower-case "L").
+         2. Use care when transcribing "1" (number one). Note that private keys do **not** contain "I" (upper-case "i") or "l" (lower-case "L").
 
-            3. Use care to distinguish between "t" and "+". (Private keys do not contain plus signs.)
+         3. Use care to distinguish between "t" and "+". (Private keys do not contain plus signs.)
 
-            4. Use care to distinguish between "2" and "Z".
+         4. Use care to distinguish between "2" and "Z".
 
-            5. Use care to distinguish between "5" and "S".
+         5. Use care to distinguish between "5" and "S".
 
-            6. Use care to distinguish between "6" and "b".
+         6. Use care to distinguish between "6" and "b".
 
-            7. Use care to distinguish between "6" and "G".
+         7. Use care to distinguish between "6" and "G".
 
-            8. Use care to distinguish between "K" and "k".
+         8. Use care to distinguish between "K" and "k".
 
-            9. Use care to distinguish between "u" and "v".
+         9. Use care to distinguish between "u" and "v".
 
-            10. Use care to distinguish between "U" and "V".
+         10. Use care to distinguish between "U" and "V".
 
     2. **Double-check that you transcribed all private keys correctly.** If you make a mistake, you'll have to redo a lot of work.
 
     3. Label each page with:
 
-        5. Today's date
+       1. Today's date
 
-        6. The version of Glacier used (listed on the front page of this document)
+       2. The version of Glacier used (listed on the front page of this document)
 
 2. Visually hide all critically sensitive data.
 
@@ -1400,87 +1400,87 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
    **This step is important. Failing to execute it properly creates a substantial security risk.**
 
-   4. Put your handwritten private keys out of sight (don't just turn them face down; paper is not completely opaque). This prevents a smartphone camera from accidentally seeing them.
+   1. Put your handwritten private keys out of sight (don't just turn them face down; paper is not completely opaque). This prevents a smartphone camera from accidentally seeing them.
 
    5. Delete all text from the Quarantined Scratchpad on the **Q1 and Q2** computers.
 
    6. **On the Q1 computer:**
 
-        7. Type "COLD STORAGE ADDRESS" into the Quarantined Scratchpad.
+      1. Type "COLD STORAGE ADDRESS" into the Quarantined Scratchpad.
 
-        8. Copy-paste the cold storage address from the terminal window to the Quarantined Scratchpad.
+      8. Copy-paste the cold storage address from the terminal window to the Quarantined Scratchpad.
 
-        9. Type "REDEMPTION SCRIPT" into the Quarantined Scratchpad.
+      9. Type "REDEMPTION SCRIPT" into the Quarantined Scratchpad.
 
-        10. Copy-paste the redemption script from the terminal window to the Quarantined Scratchpad.
+      10. Copy-paste the redemption script from the terminal window to the Quarantined Scratchpad.
 
-        11. Enable line wrapping so the entire redemption script can be seen.
+      11. Enable line wrapping so the entire redemption script can be seen.
 
-            11. With the Quarantined Scratchpad window active, go to the menu bar at the top of the screen.
+          1. With the Quarantined Scratchpad window active, go to the menu bar at the top of the screen.
 
-            12. Select Edit.
+          12. Select Edit.
 
-            13. Select Preferences.
+          13. Select Preferences.
 
-            14. Select the View tab.
+          14. Select the View tab.
 
-            15. Uncheck "Do not split words over two lines".
+          15. Uncheck "Do not split words over two lines".
 
    7. Clear the terminal windows on the **Q1 and Q2** computers.
 
-            $ clear
+          $ clear
 
 3. QR reader setup
 
-    8. Remove a smartphone from the Faraday bag and turn it on.
+   1. Remove a smartphone from the Faraday bag and turn it on.
 
-    9. If the smartphone doesn't already have a QR code reader on it, install one.
+   9. If the smartphone doesn't already have a QR code reader on it, install one.
 
-     Any reader is fine as long as it can read all types of QR codes, but here are recommendations we've tested with Glacier: [iOS](https://itunes.apple.com/us/app/qr-reader-for-iphone/id368494609?mt=8), [Android](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en)
+      Any reader is fine as long as it can read all types of QR codes, but here are recommendations we've tested with Glacier: [iOS](https://itunes.apple.com/us/app/qr-reader-for-iphone/id368494609?mt=8), [Android](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en)
 
 4. Transfer the cold storage address to a non-quarantined computer.
 
-    10. **On the Q1 computer,** display the cold storage address as a QR code on the screen:
+    1. **On the Q1 computer,** display the cold storage address as a QR code on the screen:
 
-        12. In File Manager, navigate to the "Home" folder, then the "glacier" folder, and double-click "address.png".
+       1. In File Manager, navigate to the "Home" folder, then the "glacier" folder, and double-click "address.png".
 
     11. Use the smartphone's QR code reader to read the QR code. When the QR code is successfully read, the smartphone should display the text cold storage address.
 
     12. Verify the cold storage address on the smartphone matches the cold storage address in the Quarantined Scratchpad.
 
-     **If it does not match, do not proceed.** Try using a different QR reader application or restarting the Deposit Protocol. Seek assistance if discrepancies persist.
+        **If it does not match, do not proceed.** Try using a different QR reader application or restarting the Deposit Protocol. Seek assistance if discrepancies persist.
 
     13. Use the smartphone to send the cold storage address to yourself using a messaging app which you'll be able to access from a laptop. (E-mail is not recommended for security reasons.)
 
 5. Repeat the previous step for the redemption script, stored in "redemption.png."
 
- When comparing the redemption script shown on the smartphone to the redemption script**  **in the Quarantined Scratchpad, it's sufficient to check the first 8 characters, the last 8 characters, and a handful of characters somewhere in the middle.
+   When comparing the redemption script shown on the smartphone to the redemption script in the Quarantined Scratchpad, it's sufficient to check the first 8 characters, the last 8 characters, and a handful of characters somewhere in the middle.
 
 6. Power down the smartphone and return it to the Faraday bag.
 
 7. Shut down **both** quarantined computers entirely. (As a precaution against side channel attacks, the quarantined computers should not be active except when they absolutely need to be.)
 
-        $ sudo shutdown now
+       $ sudo shutdown now
 
- The recommended Acer laptop may require you to hold down the power button for several seconds to complete the shutdown.
+   The recommended Acer laptop may require you to hold down the power button for several seconds to complete the shutdown.
 
 8. Create Cold Storage Information Pages.
 
    **Using any Internet-connected computer:**
 
-   14. Access the copies of the cold storage address and redemption script you sent yourself from your smartphone previously.
+   1. Access the copies of the cold storage address and redemption script you sent yourself from your smartphone previously.
 
    15. Open an empty document in any text editing application. This will be used to create the Cold Storage Information Page.
 
    16. Put the following information into the document:
 
-        13. Copy-paste the cold storage address
+       1. Copy-paste the cold storage address
 
-        14. Copy-paste the redemption script
+       14. Copy-paste the redemption script
 
-        15. Type today's date
+       15. Type today's date
 
-        16. Type the version of Glacier used (listed on the first page of this document)
+       16. Type the version of Glacier used (listed on the first page of this document)
 
    17. Do **not** put anything else in the document (such as "Bitcoin", "Glacier", "private key", etc.)
 
@@ -1492,7 +1492,7 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
 9. Prepare Cold Storage Information Packets
 
-    21. Put each handwritten private key page along with one Cold Storage Information Page in its own opaque envelope. (While this obviously won't deter a determined thief, it makes it quite difficult for a thief to steal a key without leaving evidence they have done so -- and noticing theft of a single key gives you a chance to move your funds away before the thief can steal a second key.)
+    1. Put each handwritten private key page along with one Cold Storage Information Page in its own opaque envelope. (While this obviously won't deter a determined thief, it makes it quite difficult for a thief to steal a key without leaving evidence they have done so -- and noticing theft of a single key gives you a chance to move your funds away before the thief can steal a second key.)
 
     22. Each pair of pages will be referred to as a Cold Storage Information Packet.
 
@@ -1508,17 +1508,17 @@ Depositing funds requires the Internet, and does not require handling any critic
 
 2. Perform a test deposit.
 
-    1. Use the wallet software or service of your choice to send the approximate equivalent of $6 USD ($6 USD is a trivial amount of funds for testing, yet is still large enough to pay any fees necessary for timely transaction processing for the foreseeable future.) of bitcoins to your cold storage address. (The Bitcoin network requires a very small, flat fee to process transactions. We recommend you use a wallet service that recommends (or pays) a fee for you automatically, which most do.)
+   1. Use the wallet software or service of your choice to send the approximate equivalent of $6 USD ($6 USD is a trivial amount of funds for testing, yet is still large enough to pay any fees necessary for timely transaction processing for the foreseeable future.) of bitcoins to your cold storage address. (The Bitcoin network requires a very small, flat fee to process transactions. We recommend you use a wallet service that recommends (or pays) a fee for you automatically, which most do.)
 
-        1. Copy-paste your cold storage address from the Cold Storage Information Page into the wallet software.
+      1. Copy-paste your cold storage address from the Cold Storage Information Page into the wallet software.
 
-    2. Wait for the Bitcoin network to confirm the transaction at least once. The way you tell whether a transaction has been confirmed varies depending on the software or service you are using to send funds, but it should be displayed prominently.
+   2. Wait for the Bitcoin network to confirm the transaction at least once. The way you tell whether a transaction has been confirmed varies depending on the software or service you are using to send funds, but it should be displayed prominently.
 
 3. Perform a test withdrawal.
 
-    3. Execute the [Withdrawal Protocol](#withdrawal-protocol) to withdraw the remaining balance ($6 USD - deposit fees) from cold storage to a regular Bitcoin address of your choice.
+   1. Execute the [Withdrawal Protocol](#withdrawal-protocol) to withdraw the remaining balance ($6 USD - deposit fees) from cold storage to a regular Bitcoin address of your choice.
 
-    4. Wait for the Bitcoin network to confirm the transaction at least once. (Instructions for doing this are in the Withdrawal protocol.)
+   4. Wait for the Bitcoin network to confirm the transaction at least once. (Instructions for doing this are in the Withdrawal protocol.)
 
 ## Deposit Protocol, Section IV: Deposit Execution
 
@@ -1528,41 +1528,41 @@ You will need access to an electronic *and* paper copy of your Cold Storage Info
 
 1. Consider whether you want to route your funds through one or more intermediary non-cold-storage addresses for privacy purposes. (Review the [Privacy Considerations](#privacy-considerations) subsection for details.)
 
- If you do, make those intermediate transfers using whatever means you normally use to transfer bitcoins.
+   If you do, make those intermediate transfers using whatever means you normally use to transfer bitcoins.
 
 2. If you are depositing a large amount, consider making a small deposit as a test followed by a second deposit for the remainder.
 
 3. Verify cold storage address.
 
-    1. Get one of the paper Cold Storage Information Pages containing your cold storage address.
+   1. Get one of the paper Cold Storage Information Pages containing your cold storage address.
 
-    2. Open your electronic copy of the Cold Storage Information Page (see Section II for details). (If you've lost access to it, you'll need to recreate a new electronic copy by transcribing one of the hardcopies (attached to each public key) by hand.)
+   2. Open your electronic copy of the Cold Storage Information Page (see Section II for details). (If you've lost access to it, you'll need to recreate a new electronic copy by transcribing one of the hardcopies (attached to each public key) by hand.)
 
-    3. **Visually verify that the cold storage addresses are identical in the electronic copy and paper copy.** (This is to insure that the electronic copy was not damaged, hacked, accidentally changed due to a typo, etc.)
+   3. **Visually verify that the cold storage addresses are identical in the electronic copy and paper copy.** (This is to insure that the electronic copy was not damaged, hacked, accidentally changed due to a typo, etc.)
 
-    4. Return the paper Cold Storage Information Page to its normal secure storage.
+   4. Return the paper Cold Storage Information Page to its normal secure storage.
 
 4. Perform the deposit.
 
-    5. Use the wallet software or service of your choice to **prepare** to send the desired amount of funds to your cold storage address. (The Bitcoin network requires a fee to process transactions. We recommend you use a wallet service that either covers the fees for you or recommends a fee amount automatically, which most do.
+   1. Use the wallet software or service of your choice to **prepare** to send the desired amount of funds to your cold storage address. (The Bitcoin network requires a fee to process transactions. We recommend you use a wallet service that either covers the fees for you or recommends a fee amount automatically, which most do.
 
-       If you are familiar with how Bitcoin fees work, you may want to bump the fee amount to increase the chances that the deposit gets confirmed more quickly. This is not at all required.)
+      If you are familiar with how Bitcoin fees work, you may want to bump the fee amount to increase the chances that the deposit gets confirmed more quickly. This is not at all required.)
 
-       **Enter all necessary transaction information, but do not actually execute the transaction.**
+      **Enter all necessary transaction information, but do not actually execute the transaction.**
 
-       1. Copy-paste your cold storage address from the Cold Storage Information Page into the wallet software.
+      1. Copy-paste your cold storage address from the Cold Storage Information Page into the wallet software.
 
-    6. **Double-check that the address you pasted matches the address in the Cold Storage Information Page. If you use the wrong address, you will lose all of your funds with no recourse.**
+   6. **Double-check that the address you pasted matches the address in the Cold Storage Information Page. If you use the wrong address, you will lose all of your funds with no recourse.**
 
-    7. Execute the transaction.
+   7. Execute the transaction.
 
 5. Verify the deposit on the public blockchain.
 
-    8. Go to [Blockr](http://blockr.io), paste the address into the search bar, and press Enter. You'll be taken to a page that says "Bitcoin Address" at the top, with your cold storage address listed underneath.
+   8. Go to [Blockr](http://blockr.io), paste the address into the search bar, and press Enter. You'll be taken to a page that says "Bitcoin Address" at the top, with your cold storage address listed underneath.
 
-    9. Within a couple of minutes (and often much faster), you should be able to refresh this page and see your funds listed under "Unconfirmed".
+   9. Within a couple of minutes (and often much faster), you should be able to refresh this page and see your funds listed under "Unconfirmed".
 
-    10. Periodically refresh the page until you see the funds moved from "Unconfirmed" to be reflected in "Balance". (This generally happens within 15 minutes; if the Bitcoin network is unusually congested, it may take longer.)
+   10. Periodically refresh the page until you see the funds moved from "Unconfirmed" to be reflected in "Balance". (This generally happens within 15 minutes; if the Bitcoin network is unusually congested, it may take longer.)
 
 Your funds are now secured in cold storage.
 
@@ -1574,43 +1574,43 @@ If this was your first deposit to this cold storage address, proceed to the next
 
 2. Immediate storage of Cold Storage Information Packets
 
-    1. Double-check to make sure each envelope contains a handwritten private key and a Cold Storage Information Page.
+   1. Double-check to make sure each envelope contains a handwritten private key and a Cold Storage Information Page.
 
-    2. Seal each envelope.
+   2. Seal each envelope.
 
-    3. Use tamper-resistant seals in addition to the envelope's normal adhesive to seal it.
+   3. Use tamper-resistant seals in addition to the envelope's normal adhesive to seal it.
 
-    4. **Immediately** put all Cold Storage Information Packets in the safest possible location in your home or office that is immediately accessible. 
+   4. **Immediately** put all Cold Storage Information Packets in the safest possible location in your home or office that is immediately accessible. 
 
-    5. No, really. Like right now. That's basically a [huge pile of cash](https://www.flickr.com/photos/52721617@N00/2230260796) you have just sitting there in envelopes on your desk.
+   5. No, really. Like right now. That's basically a [huge pile of cash](https://www.flickr.com/photos/52721617@N00/2230260796) you have just sitting there in envelopes on your desk.
 
 3. Hardware storage
 
-    6. Put tamper-resistant seals on the ends of all USB drives.
+   1. Put tamper-resistant seals on the ends of all USB drives.
 
-    7. Close the quarantined laptops, and seal the screen shut with a tamper-resistant seal.
+   7. Close the quarantined laptops, and seal the screen shut with a tamper-resistant seal.
 
-    8. Store the hardware somewhere where it is unlikely to be used by accident.
+   8. Store the hardware somewhere where it is unlikely to be used by accident.
 
 4. Maintenance planning
 
-    9. Create a reminder for yourself in six months to execute the [Maintenance Protocol](#maintenance-protocol). (If you don't have a reminder system you trust, [find one on the web](https://www.google.com/search?client=safari&rls=en&q=reminder+service&ie=UTF-8&oe=UTF-8).)
+   9. Create a reminder for yourself in six months to execute the [Maintenance Protocol](#maintenance-protocol). (If you don't have a reminder system you trust, [find one on the web](https://www.google.com/search?client=safari&rls=en&q=reminder+service&ie=UTF-8&oe=UTF-8).)
 
 5. Long-term storage of Cold Storage Information Packets
 
-    10. As soon as possible, transfer each Cold Storage Information Packet to its secure storage location (e.g. safe deposit box).
+   1. As soon as possible, transfer each Cold Storage Information Packet to its secure storage location (e.g. safe deposit box).
 
-    11. Don't put more than one packet in long-term storage in the same building! (Storing two keys in the same building increases the risk of losing both keys in a disaster (e.g. fire) or to a thorough thief.)
+   11. Don't put more than one packet in long-term storage in the same building! (Storing two keys in the same building increases the risk of losing both keys in a disaster (e.g. fire) or to a thorough thief.)
 
-    12. If you are entrusting any packets to trusted signatories:
+   12. If you are entrusting any packets to trusted signatories:
 
-        1. Do **not** send them the packet electronically -- no e-mail, no photograph, no "secure instant message". If they are distant, using a courier service is probably fine, as long as you get tracking and send packets on different days and/or from different locations (Prevents an opportunistic thief from happening across two of your private keys. Also avoids a case where you send all your keys out in the same batch, and that entire batch is lost -- along with your access to your money.)
+       1. Do **not** send them the packet electronically -- no e-mail, no photograph, no "secure instant message". If they are distant, using a courier service is probably fine, as long as you get tracking and send packets on different days and/or from different locations (Prevents an opportunistic thief from happening across two of your private keys. Also avoids a case where you send all your keys out in the same batch, and that entire batch is lost -- along with your access to your money.)
 
-        2. Tell them verbally who the other signatories are, to facilitate access to funds if you are dead or incapacitated.
+       2. Tell them verbally who the other signatories are, to facilitate access to funds if you are dead or incapacitated.
 
-        3. Instruct them not to keep any related notes *on* or *with* the packets. (In the event the key is seen by someone untrustworthy or stolen by a random thief, such clues help them understand the significance of the key and give them an incentive to plot further thefts or attacks.)
+       3. Instruct them not to keep any related notes *on* or *with* the packets. (In the event the key is seen by someone untrustworthy or stolen by a random thief, such clues help them understand the significance of the key and give them an incentive to plot further thefts or attacks.)
 
-        4. Remember that signatories will have the ability to know your cold storage balance!
+       4. Remember that signatories will have the ability to know your cold storage balance!
 
 You have finished securing your cold storage funds.
 
