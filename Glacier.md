@@ -1133,7 +1133,7 @@ If you are executing the Setup Protocol for the first time and do **not** plan o
 
 1. Block side channels
 
- [Side-channel attacks](https://en.wikipedia.org/wiki/Side-channel_attack) are a form of electronic threat based on the physical nature of computing hardware (as opposed to algorithms or their software implementations). Side channel attacks are rare, but it's relatively straightforward to defend against most of them.
+   [Side-channel attacks](https://en.wikipedia.org/wiki/Side-channel_attack) are a form of electronic threat based on the physical nature of computing hardware (as opposed to algorithms or their software implementations). Side channel attacks are rare, but it's relatively straightforward to defend against most of them.
 
    1. Visual side channel
 
@@ -1396,15 +1396,15 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
 2. Visually hide all critically sensitive data.
 
- We'll be using a smartphone with a live Internet connection to read QR codes from the quarantined computer screens. Any malware (or a malicious QR reader app) could steal sensitive data if it is not visually hidden.
+   We'll be using a smartphone with a live Internet connection to read QR codes from the quarantined computer screens. Any malware (or a malicious QR reader app) could steal sensitive data if it is not visually hidden.
 
- **This step is important. Failing to execute it properly creates a substantial security risk.**
+   **This step is important. Failing to execute it properly creates a substantial security risk.**
 
-    4. Put your handwritten private keys out of sight (don't just turn them face down; paper is not completely opaque). This prevents a smartphone camera from accidentally seeing them.
+   4. Put your handwritten private keys out of sight (don't just turn them face down; paper is not completely opaque). This prevents a smartphone camera from accidentally seeing them.
 
-    5. Delete all text from the Quarantined Scratchpad on the **Q1 and Q2** computers.
+   5. Delete all text from the Quarantined Scratchpad on the **Q1 and Q2** computers.
 
-    6. **On the Q1 computer:**
+   6. **On the Q1 computer:**
 
         7. Type "COLD STORAGE ADDRESS" into the Quarantined Scratchpad.
 
@@ -1426,7 +1426,7 @@ In this section, you'll move the cold storage data you generated in Section I fr
 
             15. Uncheck "Do not split words over two lines".
 
-    7. Clear the terminal windows on the **Q1 and Q2** computers.
+   7. Clear the terminal windows on the **Q1 and Q2** computers.
 
             $ clear
 
