@@ -1628,27 +1628,27 @@ On any Internet-connected computer:
 
 1. If this is **not** your first time working with Glacier:
 
-    1. Use a networked computer to access the latest full release of Glacier (*not* just the protocol document) at [https://glacierprotocol.org/releases](https://glacierprotocol.org/releases).
+   1. Use a networked computer to access the latest full release of Glacier (*not* just the protocol document) at [https://glacierprotocol.org/releases](https://glacierprotocol.org/releases).
 
-    2. Open the protocol document (Glacier.pdf) within the ZIP file.
+   2. Open the protocol document (Glacier.pdf) within the ZIP file.
 
-    3. Check the Release Notes (Appendix E) of the protocol document to see if there are any new versions of Glacier recommended.
+   3. Check the Release Notes (Appendix E) of the protocol document to see if there are any new versions of Glacier recommended.
 
-    4. Whether or not you decide to upgrade, review the errata for the version of Glacier you are using at [https://glacierprotocol.org/errata](https://glacierprotocol.org/errata).
+   4. Whether or not you decide to upgrade, review the errata for the version of Glacier you are using at [https://glacierprotocol.org/errata](https://glacierprotocol.org/errata).
 
 2. Open your electronic copy of the Cold Storage Information Page (see Section II of the Deposit Protocol for details). (If you've lost access to it, you'll need to recreate a new electronic copy by transcribing one of the hardcopies (attached to each public key) by hand.)
 
 3. Identify the blockchain transactions associated with the funds you'd like to withdraw. (This process is necessary due to the internal workings of Bitcoin. With Internet connectivity, wallet software handles this step for you automatically, but since we'll be creating transactions in a non-networked quarantined environment, we need a different approach.)
 
-    5. Go to [Blockchain.info](https://blockchain.info), paste your cold storage address into the search bar, and press Enter.
+   1. Go to [Blockchain.info](https://blockchain.info), paste your cold storage address into the search bar, and press Enter.
 
-    6. You'll be taken to a page that says "Bitcoin Address" at the top, with your cold storage address listed underneath.
+   6. You'll be taken to a page that says "Bitcoin Address" at the top, with your cold storage address listed underneath.
 
-    7. Click the "Unspent Outputs" link.
+   7. Click the "Unspent Outputs" link.
 
-     The page will show a list of **transaction IDs** (Each transaction ID corresponds to a deposit you made, the remainder of a deposit you made after doing a partial withdrawal, or a deposit someone else made to your cold storage address.) (in horizontal gray bars) and their corresponding **amounts** (in green boxes). (If you're taken to a page that says "No free outputs to spend", this indicates a zero balance at the address. Verify you pasted the address correctly.)
+      The page will show a list of **transaction IDs** (Each transaction ID corresponds to a deposit you made, the remainder of a deposit you made after doing a partial withdrawal, or a deposit someone else made to your cold storage address.) (in horizontal gray bars) and their corresponding **amounts** (in green boxes). (If you're taken to a page that says "No free outputs to spend", this indicates a zero balance at the address. Verify you pasted the address correctly.)
 
-     ![](null)
+      ![](null)
 
     8. Identify a set of transaction IDs whose amounts are **cumulatively** greater than or equal to the amount you would like to withdraw. (Technical note: If a transaction ID is listed more than once (i.e. the same transaction has more than one unspent output going to your cold storage address), you just need to include the transaction ID once. GlacierScript will include all UTXOs in every supplied transaction ID.) 
 
@@ -1658,72 +1658,72 @@ On any Internet-connected computer:
 
 4. Get raw data for blockchain transactions.
 
-    11. For each unspent transaction ID from your temporary scratchpad:
+   1. For each unspent transaction ID from your temporary scratchpad:
 
-        1. Go to the following URL, substituting the unspent transaction ID in the specified place:
+      1. Go to the following URL, substituting the unspent transaction ID in the specified place:
 [https://blockchain.info/tx/transaction-id-here?format=hex](https://blockchain.info/tx/transaction-id-here?format=hex)
 
          Example page contents:
 
-               01000000016847105309a8604c7e4f5773d0a16c45248acce057dab62edb0fedc2810d49a4010000006b48304502210093e6b4154d42c1bba27c548a80488673967be32c8de2f11e01a1402a5500e13302203e20874e5d0af516c902d3b600ee94571a7ce68a14a384dc05d4346e1009fe000121039fd6f25c87f183260c1d4a3a3ae33a2c06414db4c40d0c2ab76a71921fef0939ffffffff01e0930400000000001976a914e770a7c13f9774783e80607f40be4547780315b688ac00000000
+             01000000016847105309a8604c7e4f5773d0a16c45248acce057dab62edb0fedc2810d49a4010000006b48304502210093e6b4154d42c1bba27c548a80488673967be32c8de2f11e01a1402a5500e13302203e20874e5d0af516c902d3b600ee94571a7ce68a14a384dc05d4346e1009fe000121039fd6f25c87f183260c1d4a3a3ae33a2c06414db4c40d0c2ab76a71921fef0939ffffffff01e0930400000000001976a914e770a7c13f9774783e80607f40be4547780315b688ac00000000
 
-        2. This entire page will be referred to as a **raw unspent transaction**.
+      2. This entire page will be referred to as a **raw unspent transaction**.
 
-        3. Copy-paste the raw unspent transaction next to the unspent transaction ID in your temporary scratchpad.
+      3. Copy-paste the raw unspent transaction next to the unspent transaction ID in your temporary scratchpad.
 
 5. Create QR codes
 
-    12. Find an online QR code generator, such as [http://goqr.me](http://goqr.me).
+   1. Find an online QR code generator, such as [http://goqr.me](http://goqr.me).
 
-    13. For each unspent transaction ID in your temporary scratchpad:
+   13. For each unspent transaction ID in your temporary scratchpad:
 
-        4. Copy-paste the raw unspent transaction into the QR code generator.
+       4. Copy-paste the raw unspent transaction into the QR code generator.
 
-         **NOTE:** Some raw unspent transactions are too long to be converted into a single QR code -- or the QR code may be such high resolution that some QR code readers may struggle to read it. 
+          **NOTE:** Some raw unspent transactions are too long to be converted into a single QR code -- or the QR code may be such high resolution that some QR code readers may struggle to read it. 
 
-         In these cases, you will need to split the data into multiple QR codes, and manually splice them back together on the quarantined computer after decoding each QR codes. 
+          In these cases, you will need to split the data into multiple QR codes, and manually splice them back together on the quarantined computer after decoding each QR codes. 
 
-         **Make sure there is no extra whitespace (i.e. a space, or pressing "Enter") at the end of any copy-pastes! This can change the QR code.**
+          **Make sure there is no extra whitespace (i.e. a space, or pressing "Enter") at the end of any copy-pastes! This can change the QR code.**
 
-        5. Print out the resulting QR code. (If printing from goqr.me, just print the first page.)
+       5. Print out the resulting QR code. (If printing from goqr.me, just print the first page.)
 
-        6. Write "raw unspent transaction" somewhere on the printout.
+       6. Write "raw unspent transaction" somewhere on the printout.
 
-    14. Repeat step (b) above for other needed information:
+   14. Repeat step (b) above for other needed information:
 
-        7. Cold storage address (from the Cold Storage Information Page)
+       1. Cold storage address (from the Cold Storage Information Page)
 
-        8. Redemption script (from the Cold Storage Information Page)
+       8. Redemption script (from the Cold Storage Information Page)
 
-        9. Destination address to which you will be withdrawing the funds
+       9. Destination address to which you will be withdrawing the funds
 
-            1. **Carefully** transcribe the destination address by hand on the printed page with its QR code. (This will facilitate verification in the quarantined environment.)
+          1. **Carefully** transcribe the destination address by hand on the printed page with its QR code. (This will facilitate verification in the quarantined environment.)
 
-            2. Double-check that the transcribed address is correct.
+          2. Double-check that the transcribed address is correct.
 
-            3. If you are sending funds directly to another party with whom you do *not* have high trust, be mindful of the risk of [transaction malleability fraud](https://news.bitcoin.com/identify-transaction-malleability-attacks/). 
+          3. If you are sending funds directly to another party with whom you do *not* have high trust, be mindful of the risk of [transaction malleability fraud](https://news.bitcoin.com/identify-transaction-malleability-attacks/). 
 
 6. Gather other information.
 
-    15. Make sure you have the necessary number of Cold Storage Information Packets on hand (you'll need the private keys). 
+   1. Make sure you have the necessary number of Cold Storage Information Packets on hand (you'll need the private keys). 
 
-        10. For the recommended 2-of-n [multisignature withdrawal policy](#choosing-a-multisignature-withdrawal-policy), you'll need any 2 Cold Storage Information Packets.
+      1. For the recommended 2-of-n [multisignature withdrawal policy](#choosing-a-multisignature-withdrawal-policy), you'll need any 2 Cold Storage Information Packets.
 
-        11. If you are performing an initial test withdrawal, you'll need *all* Cold Storage Information packets.
+         1. If you are performing an initial test withdrawal, you'll need *all* Cold Storage Information packets.
 
-    16. Get transaction fee market data. (The operators of the Bitcoin network require a (very small) fee for processing transactions. There is not a fixed fee schedule; if the fee is too low, the withdrawal will never get processed, and if the fee is too high, you unnecessarily waste money. This data will be used to calculate a reasonable fee for expedient transaction processing.)
+   2. Get transaction fee market data. (The operators of the Bitcoin network require a (very small) fee for processing transactions. There is not a fixed fee schedule; if the fee is too low, the withdrawal will never get processed, and if the fee is too high, you unnecessarily waste money. This data will be used to calculate a reasonable fee for expedient transaction processing.)
 
-        12. Go to [https://bitcoinfees.21.co/api/v1/fees/recommended](https://bitcoinfees.21.co/api/v1/fees/recommended)
+      1. Go to [https://bitcoinfees.21.co/api/v1/fees/recommended](https://bitcoinfees.21.co/api/v1/fees/recommended)
 
          Example page content:
 
-                {"fastestFee":100,"halfHourFee":100,"hourFee":70}
+             {"fastestFee":100,"halfHourFee":100,"hourFee":70}
 
-        13. Note the number next to "fastestFee" -- in the above example, 100. (This indicates that paying 100 satoshis/byte is sufficient to be among the transactions processed most quickly by the Bitcoin network. (1 satoshi = 10-8 BTC, and a typical transaction is under 1000 bytes))
+      13. Note the number next to "fastestFee" -- in the above example, 100. (This indicates that paying 100 satoshis/byte is sufficient to be among the transactions processed most quickly by the Bitcoin network. (1 satoshi = 10-8 BTC, and a typical transaction is under 1000 bytes))
 
-         As of January 2017, the number 100 is typical. **If the number is radically different (*not* between 10 and 1000), stop; something may be wrong.** Seek assistance.
+          As of January 2017, the number 100 is typical. **If the number is radically different (*not* between 10 and 1000), stop; something may be wrong.** Seek assistance.
 
-        14. Write that number down on a piece of paper labeled "Fee rate".
+      14. Write that number down on a piece of paper labeled "Fee rate".
 
 ## Withdrawal Protocol, Section II: Transaction Construction
 
@@ -1737,13 +1737,13 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
    1. Import QR code data 
 
-        1. Start the QR code reader:
+      1. Start the QR code reader:
 
-                $ zbarcam
+             $ zbarcam
 
          A window will appear with your laptop's video feed.
 
-        2. For each QR code you printed out in Section I:
+         1. For each QR code you printed out in Section I:
 
             1. Hold the QR code up to the webcam. 
 
@@ -1751,7 +1751,7 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
             3. Verify the decoded QR code is shown in the terminal window. Example:
 
-                    $QR-Code:51410421167f7dac2a159bc3957e3498bb6a7c2f16874bf1fbbe5b523b3632d2c0c43f1b491f6f2f449ae45c9b0716329c0c2dbe09f3e5d4e9fb6843af083e222a70a441043704eafafd73f1c32fafe10837a69731b93c0179fa268fc325bdc08f3bb3056b002eac4fa58c520cc3f0041a097232afbe002037edd5ebdab2e493f18ef19e9052ae
+                   $QR-Code:51410421167f7dac2a159bc3957e3498bb6a7c2f16874bf1fbbe5b523b3632d2c0c43f1b491f6f2f449ae45c9b0716329c0c2dbe09f3e5d4e9fb6843af083e222a70a441043704eafafd73f1c32fafe10837a69731b93c0179fa268fc325bdc08f3bb3056b002eac4fa58c520cc3f0041a097232afbe002037edd5ebdab2e493f18ef19e9052ae
 
             4. Copy-paste the decoded data (everything *after*, but not including, "QR-code:") into the Quarantined Scratchpad. 
 
@@ -1763,7 +1763,7 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
    4. Transcribe the other information you will be using into the Quarantined Scratchpad. (If you make a transcription error, it will be easier to identify and fix in the scratchpad compared to a situation where you transcribed it directly into GlacierScript.)
 
-      3. Private keys
+      1. Private keys
 
       4. Fee rate
 
@@ -1773,49 +1773,49 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
       GlacierScript normally takes input by copy-pasting values, but it can only accept copy-pasted values up to about 4000 characters in size. (Technical note: This seems to be due to limitations inherent in Unix terminals.)
 
-        5. If any raw unspent transaction is longer than 4000 characters, you'll need to save it to its own file on disk.
+      1. If any raw unspent transaction is longer than 4000 characters, you'll need to save it to its own file on disk.
 
-            6. If you're not sure if it's 4000 characters, you can try the copy-paste method. If it's too long (or if there is some other problem with it), you'll receive a "TX decode" error (code 22).
+         1. If you're not sure if it's 4000 characters, you can try the copy-paste method. If it's too long (or if there is some other problem with it), you'll receive a "TX decode" error (code 22).
 
-        6. You can do this by opening a new TextEdit window, pasting the raw unspent transaction into it, and saving the file.
+      6. You can do this by opening a new TextEdit window, pasting the raw unspent transaction into it, and saving the file.
 
-        7. Make sure to save it to the folder containing glacierscript.py.
+      7. Make sure to save it to the folder containing glacierscript.py.
 
    6. Begin construction of the withdrawal transaction:
 
-            $ cd ~/glacier
-            $ ./glacierscript.py create-withdrawal-data
+          $ cd ~/glacier
+          $ ./glacierscript.py create-withdrawal-data
 
    7. When prompted for the number of private keys to use:
 
-        8. **If you are doing an initial test withdrawal for a new cold storage address, choose *N*** (i.e. the total number of keys in your [multisignature withdrawal policy](#choosing-a-multisignature-withdrawal-policy) -- 4 if you use the default recommendation).
+      1. **If you are doing an initial test withdrawal for a new cold storage address, choose *N*** (i.e. the total number of keys in your [multisignature withdrawal policy](#choosing-a-multisignature-withdrawal-policy) -- 4 if you use the default recommendation).
 
-        9. Otherwise, select 2 (assuming you're using the recommended 2-of-n withdrawal policy).
+      9. Otherwise, select 2 (assuming you're using the recommended 2-of-n withdrawal policy).
 
    8. Enter all data as prompted by copy-pasting from the Quarantined Scratchpad.
 
-        10. *Technical note for experienced Bitcoin users:*  If the withdrawal amount & fee are cumulatively less than the total amount of the unspent transactions, the remainder will be sent back to the same cold storage address as change.
+      1. *Technical note for experienced Bitcoin users:*  If the withdrawal amount & fee are cumulatively less than the total amount of the unspent transactions, the remainder will be sent back to the same cold storage address as change.
 
    9. The script will output a "raw signed transaction" and a *fingerprint* of the signed transaction for verification purposes.
 
-     Example output:
+      Example output:
 
-            Sufficient private keys to execute transaction?
-            True
+          Sufficient private keys to execute transaction?
+          True
             
-            Raw signed transaction (hex):
-            01000000013cd6b24735801ad3d04c40e6da3404278b0d38dbc896df6ae50bf11c3043a49600000000fda001004730440220199d247cd11c14fa4960a52467e69ca6b77596e94c14f27ba956315f2d1c852302201b6f41ecfc62a1a7c7a423425ab150301cfffc47c1a78a5bf13b8232f767e41301483045022100e7ae7e5a77da47d5e622f974683a43d312e72a1eed329d4fdbd8fba2c22f84b4022050358fb63cf182e81905417d6e38a2981563495dd00c3177ee650ff7cd2d511a014d0b01524104fe0fcd054a31130749467f07e272426f7dd7a3029ab5b076d7285a931bd131d34ed9f28b2cc2fe266aa62c4cada3e82b70a4416966902201c4d73759f7f0425e41044f2ec9f80ef2c4f385f3d27b6167f77236de63548723ba1c90a324f4ec46dfd14a2fba5a9c048a5ec310aedfe875d8a254f336e8f7d5d17338d9451dc6f2188c4104aefb86098442adc6c3dffd9b0e27fe8e918462469a5ec5363e26920f09facea70b63e4f4d2736089286d4dd2352ca65016e7d593f105009f9a35c03a2464aa20410451e7f31ea2f5cb14ba76ca20952c1d453fe3a85959ebbefee8912ad6f74c443a03e52ef8a842f890f1ab2d69c6bb418e6de0f15bef944be2883887be3bb75cc054aeffffffff0194960700000000001976a914c018da1cb43c5d7b9e7757805ee78709f8a61ede88ac00000000
+          Raw signed transaction (hex):
+          01000000013cd6b24735801ad3d04c40e6da3404278b0d38dbc896df6ae50bf11c3043a49600000000fda001004730440220199d247cd11c14fa4960a52467e69ca6b77596e94c14f27ba956315f2d1c852302201b6f41ecfc62a1a7c7a423425ab150301cfffc47c1a78a5bf13b8232f767e41301483045022100e7ae7e5a77da47d5e622f974683a43d312e72a1eed329d4fdbd8fba2c22f84b4022050358fb63cf182e81905417d6e38a2981563495dd00c3177ee650ff7cd2d511a014d0b01524104fe0fcd054a31130749467f07e272426f7dd7a3029ab5b076d7285a931bd131d34ed9f28b2cc2fe266aa62c4cada3e82b70a4416966902201c4d73759f7f0425e41044f2ec9f80ef2c4f385f3d27b6167f77236de63548723ba1c90a324f4ec46dfd14a2fba5a9c048a5ec310aedfe875d8a254f336e8f7d5d17338d9451dc6f2188c4104aefb86098442adc6c3dffd9b0e27fe8e918462469a5ec5363e26920f09facea70b63e4f4d2736089286d4dd2352ca65016e7d593f105009f9a35c03a2464aa20410451e7f31ea2f5cb14ba76ca20952c1d453fe3a85959ebbefee8912ad6f74c443a03e52ef8a842f890f1ab2d69c6bb418e6de0f15bef944be2883887be3bb75cc054aeffffffff0194960700000000001976a914c018da1cb43c5d7b9e7757805ee78709f8a61ede88ac00000000
             
-            Transaction fingerprint (md5):
-            c49c366908296ae12478539d29fb4146
+          Transaction fingerprint (md5):
+          c49c366908296ae12478539d29fb4146
 
-            QR code for transaction in transaction.png
+          QR code for transaction in transaction.png
 
 3. Verify transaction construction
 
-    10. **On the Q2 computer**, repeat step 2 above.
+    1. **On the Q2 computer**, repeat step 2 above.
 
-        11. Note: it is important to enter the private keys in the same order on each of the quarantined computers.
+       1. Note: it is important to enter the private keys in the same order on each of the quarantined computers.
 
     11. Verify that the "Transaction fingerprint" output by GlacierScript is identical on both computers. (Technical details: It is possible for malware to exfiltrate bits of the private key in the transaction signature by choosing the nonce in a particular way. Bitcoin Core generates the nonce deterministically, as a function of a hash of the transaction, so we can detect the presence of any environment-specific malware by comparing the transaction generated in each quarantined environment.) 
 
@@ -1827,17 +1827,17 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
    **This step is important. Failing to execute it properly creates a substantial security risk.**
 
-   13. Put your Cold Storage Information Packets out of sight -- this prevents a smartphone camera from accidentally seeing them.
+   1. Put your Cold Storage Information Packets out of sight -- this prevents a smartphone camera from accidentally seeing them.
 
    14. Delete all text from the Quarantined Scratchpad on the **Q1 and Q2** computers.
 
    15. **On the Q1 computer:**
 
-       12. Copy-paste the raw signed transaction from the terminal window to the Quarantined Scratchpad.
+       1. Copy-paste the raw signed transaction from the terminal window to the Quarantined Scratchpad.
 
        13. Enable line wrapping so the entire raw signed transaction can be seen.
 
-           7. With the Quarantined Scratchpad window active, go to the menu bar at the top of the screen.
+           1. With the Quarantined Scratchpad window active, go to the menu bar at the top of the screen.
 
            8. Select Edit.
 
@@ -1853,25 +1853,25 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
 5. Extract the signed transaction from the quarantined environment.
 
-    17. QR reader setup
+    1. QR reader setup
 
-        14. Remove a smartphone from the Faraday bag and turn it on.
+       1. Remove a smartphone from the Faraday bag and turn it on.
 
-        15. If the smartphone doesn't already have a QR code reader on it, install one.
+       15. If the smartphone doesn't already have a QR code reader on it, install one.
 
-         Any reader is fine as long as it can read all types of QR codes, but here are recommendations we've tested with this protocol: [iOS](https://itunes.apple.com/us/app/qr-reader-for-iphone/id368494609?mt=8), [Android](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en)
+           Any reader is fine as long as it can read all types of QR codes, but here are recommendations we've tested with this protocol: [iOS](https://itunes.apple.com/us/app/qr-reader-for-iphone/id368494609?mt=8), [Android](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en)
 
     18. Transfer the signed transaction data to a non-quarantined computer.
 
-        16. **On the Q1 computer,** display the raw signed transaction as a QR code on the screen:
+        1. **On the Q1 computer,** display the raw signed transaction as a QR code on the screen:
 
-            12. In File Manager, navigate to the "Home" folder, then the "glacier" folder, and double-click "transaction.png".
+           1. In File Manager, navigate to the "Home" folder, then the "glacier" folder, and double-click "transaction.png".
 
         17. Use the smartphone's QR code reader to read the QR code. When the QR code is successfully read, the smartphone should display the raw signed transaction.
 
         18. Verify the raw signed transaction on the smartphone matches the signed transaction data in the Quarantined Scratchpad.
 
-         You only need to verify the first 16 characters, last 16 characters, and a few somewhere in the middle.
+            You only need to verify the first 16 characters, last 16 characters, and a few somewhere in the middle.
 
         19. **If it does not match, do not proceed.** Try using a different QR reader application or restarting the Withdrawal Protocol. Seek assistance if discrepancies persist.
 
