@@ -941,7 +941,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
 4. Install the Glacier document and GlacierScript on the Q1 APP USB.
 
-    2. Download the latest full release of Glacier (*not* just the protocol document) at [https://glacierprotocol.org/releases](https://glacierprotocol.org/releases).
+    1. Download the latest full release of Glacier (*not* just the protocol document) at [https://glacierprotocol.org/releases](https://glacierprotocol.org/releases).
 
     3. Unpack the Glacier ZIP file into a staging area.
 
@@ -965,11 +965,11 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
        7. Click the string of letters and numbers next to the key icon.
 
-         ![](null)
+          ![](null)
 
        8. In the pop-up that appears, locate the link reading "this key". 
 
-         ![](null) 
+          ![](null) 
 
        9. Right-click the link and select "Save Link As…"
 
@@ -989,7 +989,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
                 $ gpg --verify SHA256SUMS.sig SHA256SUMS
 
-         Expected output (timestamp will vary, but e-mail and fingerprint should match):
+            Expected output (timestamp will vary, but e-mail and fingerprint should match):
 
                 gpg: Signature made Thu Jan 19 13:45:48 2017 PST using RSA key ID 4B43EAB0
                 gpg: Good signature from "Glacier Team <contact@glacierprotocol.org>" [unknown]
@@ -997,24 +997,24 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
                 gpg:          There is no indication that the signature belongs to the owner.
                 Primary key fingerprint: E1AA EBB7 AC90 C1FE 80F0 1034 9D1B 7F53 4B43 EAB0
 
-         The warning message is expected, and is not cause for alarm. (For technical details, see the corresponding footnote in Section I.)
+            The warning message is expected, and is not cause for alarm. (For technical details, see the corresponding footnote in Section I.)
 
         14. Verify the fingerprints in the fingerprint file match the fingerprints of the downloaded Glacier files: 
 
                 $  sha256sum -c SHA256SUMS 2>&1
 
-         Expected output:
+            Expected output:
 
                 Glacier.pdf: OK
                 glacierscript.py: OK
                 base58.py: OK
                 README.md: OK
 
-    6. Copy the glacier folder to the Q1 APP USB.
+    6.  Copy the glacier folder to the Q1 APP USB.
 
         1. Click on the File Manager icon in the launching dock along the left side of the screen.
 
-         ![](null)
+           ![](null)
 
         16. Find the "glacier" folder under "Home". 
 
@@ -1034,7 +1034,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
 6. Install the remaining application software on the Q1 APP USB.
 
-    7. Configure our system to enable access to the software we need in Ubuntu's "package repository": (A "package repository" is roughly analogous to an "app store" on other platforms, although all of the software is free.) (Technical details: On Ubuntu 16.04.01 there is a bug in Ubuntu's package manager that affects systems running off a bootable Ubuntu USB. The commands in steps a and b are a workaround.)
+    1.  Configure our system to enable access to the software we need in Ubuntu's "package repository": (A "package repository" is roughly analogous to an "app store" on other platforms, although all of the software is free.) (Technical details: On Ubuntu 16.04.01 there is a bug in Ubuntu's package manager that affects systems running off a bootable Ubuntu USB. The commands in steps a and b are a workaround.)
 
         1. 
 
@@ -1198,7 +1198,7 @@ If you are executing the Setup Protocol for the first time and do **not** plan o
 
 10. Prepare GlacierScript for execution.
 
-       $ chmod +x glacierscript.py
+        $ chmod +x glacierscript.py
 
 11. Prepare the "Quarantined Scratchpad" -- an empty file you'll use as a place to jot notes.
 
