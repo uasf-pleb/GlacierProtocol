@@ -752,7 +752,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                 $ cd $HOME/Downloads
 
-         6. 
+         6. Compare the image on the USB device with the image file on your computer.
 
                 $ sudo cmp -n `stat -f '%z' ubuntu-16.04.1-desktop-amd64.img.dmg` ubuntu-16.04.1-desktop-amd64.img.dmg USB-device-identifier-here
 
@@ -809,7 +809,7 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
                   $ cd $HOME/Downloads
 
-          37.  
+          37. Compare the image on the USB device with the image file on your computer.
 
                   $ sudo cmp -n `stat -c '%s' ubuntu-16.04.1-desktop-amd64.iso` ubuntu-16.04.1-desktop-amd64.iso USB-device-identifier-here
 
@@ -1014,7 +1014,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
         18. If you see an "Error while copying" pop-up, you may be suffering from [this Ubuntu bug](https://bugs.launchpad.net/ubuntu/+source/nautilus/+bug/1021375). To fix it, do the following and then retry copying the files:
 
-            1. 
+            1. Rename the Nautilus configuration file to 'nautilus-bak'.
 
                     $ mv ~/.config/nautilus ~/.config/nautilus-bak
 
@@ -1028,25 +1028,25 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
     1. Configure our system to enable access to the software we need in Ubuntu's "package repository": (A "package repository" is roughly analogous to an "app store" on other platforms, although all of the software is free.) (Technical details: On Ubuntu 16.04.01 there is a bug in Ubuntu's package manager that affects systems running off a bootable Ubuntu USB. The commands in steps a and b are a workaround.)
 
-       1. 
+       1. Rename the app-info file.
 
               $ sudo mv /var/cache/app-info/xapian/default /var/cache/app-info/xapian/default_old
 
-       2. 
+       2. Rename it to the old version.
 
               $ sudo mv /var/cache/app-info/xapian/default_old /var/cache/app-info/xapian/default
 
-       3. 
+       3. Allow community-generated package repositories
 
               $ sudo apt-add-repository universe
 
-       4. 
+       4. Add the repository containing Bitcoin Core.
 
               $ sudo apt-add-repository ppa:bitcoin/bitcoin
 
           Press Enter when prompted.
 
-       5. 
+       5. Update your repository.
 
               $ sudo apt-get update
 
@@ -1055,6 +1055,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
        - **bitcoind:** [Bitcoin Core](http://bitcoincore.org), which we'll use for cryptography & financial operations
        - **qrencode:** Used for creating QR codes to move data off quarantined computers
        - **zbar-tools:** Used for reading QR codes to import data into quarantined computers
+
 
            $ sudo apt-get install qrencode=3.4.4-1 zbar-tools=0.10+doc-10ubuntu1 bitcoind
 
