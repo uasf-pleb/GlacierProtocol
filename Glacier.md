@@ -993,7 +993,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
         14. Verify the fingerprints in the fingerprint file match the fingerprints of the downloaded Glacier files: 
 
-                $  sha256sum -c SHA256SUMS 2>&1
+                $ sha256sum -c SHA256SUMS 2>&1
 
             Expected output:
 
@@ -1016,7 +1016,7 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
             1. Rename the Nautilus configuration file to 'nautilus-bak'.
 
-                    $ mv ~/.config/nautilus ~/.config/nautilus-bak
+                   $ mv ~/.config/nautilus ~/.config/nautilus-bak
 
             2. Log out of Ubuntu: Click the power icon in the top right of the screen and select "logout" from the drop-down menu. 
 
@@ -1050,12 +1050,13 @@ We will prepare two (2) "Quarantined App USB" drives with the software needed to
 
               $ sudo apt-get update
 
-    8. Download and perform integrity verification (Integrity verification is done automatically by Ubuntu's apt-get command.) of software available from Ubuntu's package repository:
+    8. We will install the following software packages for use in the protocol:
 
        - **bitcoind:** [Bitcoin Core](http://bitcoincore.org), which we'll use for cryptography & financial operations
        - **qrencode:** Used for creating QR codes to move data off quarantined computers
        - **zbar-tools:** Used for reading QR codes to import data into quarantined computers
 
+       Download and perform integrity verification (Integrity verification is done automatically by Ubuntu's apt-get command.) of software available from Ubuntu's package repository:
 
            $ sudo apt-get install qrencode=3.4.4-1 zbar-tools=0.10+doc-10ubuntu1 bitcoind
 
@@ -1140,7 +1141,7 @@ If you are executing the Setup Protocol for the first time and do **not** plan o
 
       4. Shut down nearby devices with microphones (e.g. smartphones and other laptops). 
 
-       5. Plug in and turn on a table fan to generate white noise.
+      5. Plug in and turn on a table fan to generate white noise.
 
    3. [Power side channel](http://sharps.org/wp-content/uploads/CLARK-ESORICS13.pdf)
 
@@ -1736,19 +1737,19 @@ In this section, we construct a "signed transaction" in our quarantined environm
 
          A window will appear with your laptop's video feed.
 
-         1. For each QR code you printed out in Section I:
+      2. For each QR code you printed out in Section I:
 
-            1. Hold the QR code up to the webcam. 
+         1. Hold the QR code up to the webcam. 
 
-            2. When a green square appears around the QR code on the video feed, it has been successfully read. 
+         2. When a green square appears around the QR code on the video feed, it has been successfully read. 
 
-            3. Verify the decoded QR code is shown in the terminal window. Example:
+         3. Verify the decoded QR code is shown in the terminal window. Example:
 
-                   $QR-Code:51410421167f7dac2a159bc3957e3498bb6a7c2f16874bf1fbbe5b523b3632d2c0c43f1b491f6f2f449ae45c9b0716329c0c2dbe09f3e5d4e9fb6843af083e222a70a441043704eafafd73f1c32fafe10837a69731b93c0179fa268fc325bdc08f3bb3056b002eac4fa58c520cc3f0041a097232afbe002037edd5ebdab2e493f18ef19e9052ae
+                $QR-Code:51410421167f7dac2a159bc3957e3498bb6a7c2f16874bf1fbbe5b523b3632d2c0c43f1b491f6f2f449ae45c9b0716329c0c2dbe09f3e5d4e9fb6843af083e222a70a441043704eafafd73f1c32fafe10837a69731b93c0179fa268fc325bdc08f3bb3056b002eac4fa58c520cc3f0041a097232afbe002037edd5ebdab2e493f18ef19e9052ae
 
-            4. Copy-paste the decoded data (everything *after*, but not including, "QR-code:") into the Quarantined Scratchpad. 
+         4. Copy-paste the decoded data (everything *after*, but not including, "QR-code:") into the Quarantined Scratchpad. 
 
-            5. Make a note of what the data is, based on your handwritten label from the printed QR code (i.e. "raw unspent transaction" or "redemption script").
+         5. Make a note of what the data is, based on your handwritten label from the printed QR code (i.e. "raw unspent transaction" or "redemption script").
 
    2. Close the window with the live video feed.
 
