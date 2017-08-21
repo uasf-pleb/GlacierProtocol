@@ -532,7 +532,7 @@ You are strongly encouraged to use the printed copy as a checklist, physically m
 
 4. Run a virus scan on the Setup Computers. (This is probably unnecessary, as the Setup Computer is only used for creating the USB drives, and our protocol for doing that safely is very robust. Still, can't hurt.) If you don't have virus scanning software installed, here are some options:
 
-   - Windows: [Kapersky](http://usa.kaspersky.com/products-services/home-computer-security/anti-virus/?affiliate=oND_NAM&CAMPAIGN=OND1673786&src_id=3&ond_affiliate_id=rn_a48914&ClickID=bsvzznnk1nkyl6zkssgvnykn6m1lkvnmmvlv) (Top-rated by Top Ten Reviews) ($39.99/yr), [Avira](https://www.avira.com/en/free-antivirus-windows) (Top-rated by TechRadar) (Free)
+   - Windows: [Kaspersky](http://usa.kaspersky.com/products-services/home-computer-security/anti-virus/?affiliate=oND_NAM&CAMPAIGN=OND1673786&src_id=3&ond_affiliate_id=rn_a48914&ClickID=bsvzznnk1nkyl6zkssgvnykn6m1lkvnmmvlv) (Top-rated by Top Ten Reviews) ($39.99/yr), [Avira](https://www.avira.com/en/free-antivirus-windows) (Top-rated by TechRadar) (Free)
 
    - macOS: [BitDefender](http://www.bitdefender.com/solutions/antivirus-for-mac.html?clickid=wXJWub03zwQTS5IVXDy3J2beUkkUjC0BMRboy80&bdaffc=global&irgwc=1) (Top-rated by AV-TEST and Tom's Guide) ($59.95/yr), [Sophos](https://www.sophos.com/en-us/lp/sophos-home.aspx) (Top-rated by Tom's Guide) (Free)
 
@@ -680,97 +680,93 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
       1. Prepare the Ubuntu download for copying to the USB.
 
-         1.  
-
+         1. Switch to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.
 
                 $ cd $HOME/Downloads
 
-            (This command changes your terminal's active folder to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.)
-
-         2.  
-
+         2. Convert the image file.
 
                 $ hdiutil convert ubuntu-16.04.1-desktop-amd64.iso -format UDRW -o ubuntu-16.04.1-desktop-amd64.img
 
-       2. Determine the macOS "device identifier" for the Boot USB.
+      2. Determine the macOS "device identifier" for the Boot USB.
 
-          1. 
+         1. List all connected storage media.
 
-                 $ diskutil list
+                $ diskutil list
 
-          4. Insert the SETUP 1 BOOT USB in an empty USB slot.
+         4. Insert the SETUP 1 BOOT USB in an empty USB slot.
 
-          5. Wait 10 seconds for the operating system to recognize the USB.
+         5. Wait 10 seconds for the operating system to recognize the USB.
 
-          6. Once more:
+         6. Once more:
 
-                 $ diskutil list
+                $ diskutil list
 
-          7. The output of the second command should include an additional section that was not present in the first command's output.
+         7. The output of the second command should include an additional section that was not present in the first command's output.
 
-             1. This section will have (external, physical) in the header.
+            1. This section will have (external, physical) in the header.
 
-             2. The first line of the section's SIZE column should reflect the capacity of the USB drive.
+            2. The first line of the section's SIZE column should reflect the capacity of the USB drive.
 
-          8. Make a note of the device identifier.
+         8. Make a note of the device identifier.
 
-             1. The device identifier is the part of the new section header that comes before (external, physical) (for example /dev/disk2).
+            1. The device identifier is the part of the new section header that comes before (external, physical) (for example /dev/disk2).
 
-       4. Put Ubuntu on the SETUP 1 BOOT USB.
+      4. Put Ubuntu on the SETUP 1 BOOT USB.
 
-          1. First, unmount the usb
+         1. First, unmount the usb
 
-                 $ diskutil unmountDisk USB-device-identifier-here
+                $ diskutil unmountDisk USB-device-identifier-here
 
-          2. Enter the following command, **making sure to use the correct device identifier; using the wrong one could overwrite your hard drive!**
+         2. Enter the following command, **making sure to use the correct device identifier; using the wrong one could overwrite your hard drive!**
 
-                 $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=USB-device-identifier-here bs=1m
+                $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=USB-device-identifier-here bs=1m
 
-             Example:
+            Example:
 
-                 $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=/dev/disk2 bs=1m
+                $ sudo dd if=ubuntu-16.04.1-desktop-amd64.img.dmg of=/dev/disk2 bs=1m
 
-          3. Enter your administrator password when requested.
+         3. Enter your administrator password when requested.
 
-          4. Wait several minutes for the copying process to complete. When it does, you may see an error box pop up:
+         4. Wait several minutes for the copying process to complete. When it does, you may see an error box pop up:
 
-             ![](null)
+            ![](null)
 
-             This is expected; it's because the USB is written in a format readable by Ubuntu, but not readable by macOS. 
+            This is expected; it's because the USB is written in a format readable by Ubuntu, but not readable by macOS. 
 
-          5. Click Ignore. 
+         5. Click Ignore. 
 
-       5. Verify the integrity of the SETUP 1 BOOT USB (i.e. no errors or malware infection).
+      5. Verify the integrity of the SETUP 1 BOOT USB (i.e. no errors or malware infection).
 
-          1. Remove the USB drive from the USB slot and immediately reinsert it.
+         1. Remove the USB drive from the USB slot and immediately reinsert it.
 
-          2. Wait 10 seconds for the operating system to recognize the USB.
+         2. Wait 10 seconds for the operating system to recognize the USB.
 
-          3. You may see the same error box pop up again. Select Ignore.
+         3. You may see the same error box pop up again. Select Ignore.
 
-          4. The USB's device identifier may have changed. Find it again:
+         4. The USB's device identifier may have changed. Find it again:
 
-                 $ diskutil list
+                $ diskutil list
 
-          5. 
+         5. Switch to the Downloads folder where you stored your Download of Ubuntu.
 
-                 $ cd $HOME/Downloads
+                $ cd $HOME/Downloads
 
-          6. 
+         6. 
 
-                 $ sudo cmp -n `stat -f '%z' ubuntu-16.04.1-desktop-amd64.img.dmg` ubuntu-16.04.1-desktop-amd64.img.dmg USB-device-identifier-here
+                $ sudo cmp -n `stat -f '%z' ubuntu-16.04.1-desktop-amd64.img.dmg` ubuntu-16.04.1-desktop-amd64.img.dmg USB-device-identifier-here
 
-             (See the corresponding step in the Ubuntu section for a detailed footnote.)
+            (See the corresponding step in the Ubuntu section for a detailed footnote.)
 
-          7. Wait a few minutes for the verification process to complete.
+         7. Wait a few minutes for the verification process to complete.
 
-          8. If all goes well, the command will output no data, returning to your usual terminal prompt.
+         8. If all goes well, the command will output no data, returning to your usual terminal prompt.
 
-          9. If there is a discrepancy, you'll see a message like:
+         9. If there is a discrepancy, you'll see a message like:
 
-                 ubuntu-16.04.1-desktop-amd64.img.dmg /dev/disk2 differ: byte 1, line 1 
+                ubuntu-16.04.1-desktop-amd64.img.dmg /dev/disk2 differ: byte 1, line 1 
 
-             If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
+            If you see a message like this, STOP -- this may be a security risk. Restart this section from the beginning. If the issue persists, try using a different USB drive or a different Setup Computer. 
 
     - **Ubuntu** (Adapted from this official guide.)
 
@@ -809,11 +805,9 @@ Second, it will be harder for any malware infections on a Setup Computer's defau
 
           35. Wait 10 seconds for the operating system to recognize the USB.
 
-          36.  
+          36. Switch to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.
 
                   $ cd $HOME/Downloads
-
-              (This command changes your terminal's active folder to the "Downloads" folder inside your home folder. If you've changed your default downloads folder, you'll again need to customize this command.)
 
           37.  
 
@@ -2040,8 +2034,6 @@ We do not recommend considering these measures unless you feel you have a strong
 * **Avoid location tracking:** To avoid surveillance (including from adjacent rooms, via side channels like radio waves), take steps to avoid location tracking when executing Glacier. Don't carry a GPS-enabled smartphone with you, don't use credit cards for purchases, etc.
 
 * **Deliver keys by hand:** Don't use couriers or [phones](http://www.cbsnews.com/news/60-minutes-hacking-your-phone/) to send keys to trusted associates. Hand-deliver them personally or using a trusted party.
-
- 
 
 * **Conventional personal security:** Home surveillance systems, bodyguards, etc.
 
